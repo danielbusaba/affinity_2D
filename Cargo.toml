@@ -1,5 +1,5 @@
 [package]
-name = "affinity_2D"
+name = "affinity_2_d"
 version = "0.1.0"
 authors = ["dbusaba"]
 edition = "2018"
