@@ -1,16 +1,22 @@
-extern crate rand;                  //Used for testing random cases
-use rand::{thread_rng, Rng};        //Used for random number generation
+#![allow(dead_code)]                //Removes annoying unused function warnings
+#![allow(unused_imports)]           //Removes annoying unused import warnings
+
+//Imports for code
 use std::fs;                        //Used for file I/O
-use std::fs::File;                  //Used for writing to files
-use std::io::Write;                 //Used for writing to files
 use std::env;                       //Used for command line arguments
 use std::collections::HashMap;      //Imports HashMap data structure
 
-const trace_dir: &str = "traces/";    //Stores trace directory globally
+//Imports for tests
+extern crate rand;                  //Used for testing random cases
+use rand::{thread_rng, Rng};        //Used for random number generation
+use std::fs::File;                  //Used for writing to files
+use std::io::Write;                 //Used for writing to files
+
+const TRACE_DIR: &str = "traces/";    //Stores trace directory globally
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
-    let contents = fs::read_to_string(trace_dir.to_owned() + &filename).expect(&("File Read Error: ".to_owned() + &filename)); //Reads the file into a String
+    let contents = fs::read_to_string(TRACE_DIR.to_owned() + &filename).expect(&("File Read Error: ".to_owned() + &filename)); //Reads the file into a String
 
     let mut output = Vec::with_capacity(y); //Allocates the output row array
     let mut rows = 0;   //Counts the number of rows
@@ -41,6 +47,13 @@ fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Co
     output
 }
 
+fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<u64>) -> HashMap<(u64, u64), u64>
+{
+    let single_frequencies: HashMap<(u64, u64), u64> = HashMap::new();
+
+    single_frequencies
+}
+
 fn main()
 {
     println!("{:?}", env::args());
@@ -56,7 +69,7 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
         let y = rng.gen_range(50, 100);
 
         let test_name = "temp_test";    //Stores the name of the test file
-        let mut file = File::create(trace_dir.to_owned() + test_name).unwrap();   //Creates the test trace file
+        let mut file = File::create(TRACE_DIR.to_owned() + test_name).unwrap();   //Creates the test trace file
         
         let mut expect = Vec::with_capacity(y); //Stores the expected reulting 2D array
         for i in 0 .. y //Iterates over the columns
@@ -91,6 +104,6 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
             }
         }
 
-        fs::remove_file(trace_dir.to_owned() + test_name).expect("File I/O Error"); //Deletes the test file
+        fs::remove_file(TRACE_DIR.to_owned() + test_name).expect("File I/O Error"); //Deletes the test file
     }
 }
