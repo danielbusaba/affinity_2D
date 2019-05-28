@@ -47,9 +47,77 @@ fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Co
     output
 }
 
-fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<u64>) -> HashMap<(u64, u64), u64>
+fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> Vec<HashMap<u64, usize>>
 {
-    let single_frequencies: HashMap<(u64, u64), u64> = HashMap::new();
+    let mut single_frequencies: Vec<HashMap<u64, usize>> = Vec::with_capacity(window_sizes.len());
+
+    for size in window_sizes
+    {
+        let mut last_seen: HashMap<(u64, usize), usize> = HashMap::new();
+        let mut frequencies: HashMap<u64, usize> = HashMap::new();
+        let y = trace.len();
+
+        let x = trace.get(0).unwrap().len();
+        for j in 0 .. x
+        {
+            for i in 0 .. y
+            {
+                let num = trace.get(i).unwrap().get(j).unwrap();
+
+                let mut start = i as isize - size as isize + 1;
+                if start < 0
+                {
+                    start = 0;
+                }
+
+                let mut end = (i + size - 1) as isize;
+                if end > (y as isize - 1)
+                {
+                    end = y as isize - 1;
+                }
+
+                let mut min = x;
+                let mut found = false;
+                for c in start ..= end
+                {
+                    if last_seen.contains_key(&(*num, c as usize))
+                    {
+                        let n = *last_seen.get(&(*num, c as usize)).unwrap();
+                        if n < min && n < (j + 1)
+                        {
+                            min = n;
+                            found = true;
+                        }
+                    }
+                }
+
+                if !found
+                {
+                    min = 0;
+                }
+
+                let rt = (j + 1) - min;
+
+                println!("num: {} | i: {} | j: {} | start: {} | end: {} | min: {} | rt: {}", num, i, j, start, end, min, rt);
+
+                if rt > size
+                {
+                    if frequencies.contains_key(num)
+                    {
+                        frequencies.insert(*num, frequencies.get(num).unwrap() + (rt - size));
+                    }
+                    else
+                    {
+                        frequencies.insert(*num, rt - size);
+                    }
+                }
+
+                last_seen.insert((*num, i), j + 1);
+            }
+        }
+
+        single_frequencies.push(frequencies);
+    }
 
     single_frequencies
 }
@@ -57,6 +125,24 @@ fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<u64>) -> HashM
 fn main()
 {
     println!("{:?}", env::args());
+    let arr = vec!(vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0));
+    let sizes = vec!(2, 3);
+    let test = get_single_frequencies(arr, sizes.clone());
+
+    let mut i = 0;
+    for hash in test
+    {
+        println!("Window Size {}", sizes[i]);
+        i = i + 1;
+
+        for key in hash.keys()
+        {
+            println!("{:?}: {}", key, hash.get(key).unwrap());
+        }
+    }
 }
 
 #[test]
@@ -106,4 +192,10 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
 
         fs::remove_file(TRACE_DIR.to_owned() + test_name).expect("File I/O Error"); //Deletes the test file
     }
+}
+
+#[test]
+fn test_single_frequencies()
+{
+
 }
