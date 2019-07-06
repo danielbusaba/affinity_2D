@@ -5,6 +5,7 @@
 use std::fs;                        //Used for file I/O
 use std::env;                       //Used for command line arguments
 use std::collections::HashMap;      //Imports HashMap data structure
+use std::collections::HashSet;      //Imports HashMap data structure
 
 //Imports for tests
 extern crate rand;                  //Used for testing random cases
@@ -47,16 +48,193 @@ fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Co
     output
 }
 
-fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<u64>) -> HashMap<(u64, u64), u64>
+fn get_single_frequencies(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> Vec<HashMap<(u64, usize), usize>>
 {
-    let single_frequencies: HashMap<(u64, u64), u64> = HashMap::new();
+    let mut single_frequencies: Vec<HashMap<(u64, usize), usize>> = Vec::with_capacity(window_sizes.len());
+
+    for size in window_sizes
+    {
+        let mut last_seen_row: HashMap<(u64, usize), usize> = HashMap::new();
+        let mut last_seen_col: HashMap<(u64, usize), usize> = HashMap::new();
+        let mut last_hit: HashMap<u64, usize> = HashMap::new();
+        let mut frequencies: HashMap<(u64, usize), usize> = HashMap::new();
+
+        let x = trace.get(0).unwrap().len();
+        let y = trace.len();
+        for j in 0 .. x
+        {
+            for i in 0 .. y
+            {
+                let current = *trace.get(i).unwrap().get(j).unwrap();
+                let mut rt = j + 1;
+                let tuple = (current, i + 1);
+                if last_seen_row.contains_key(&tuple)
+                {
+                    rt = rt - last_seen_row.get(&tuple).unwrap();
+                }
+
+                if rt > size
+                {
+                    if frequencies.contains_key(&tuple)
+                    {
+                        frequencies.insert(tuple, *frequencies.get(&tuple).unwrap() + rt - size);
+                    }
+                    else
+                    {
+                        frequencies.insert(tuple, rt - size);
+                    }
+                }
+                else
+                {
+                    last_hit.insert(current, i + 1);
+                }
+
+                last_seen_row.insert(tuple, j + 1);
+                last_seen_col.insert(tuple, i + 1);
+            }
+        }
+
+        for tuple in last_seen_row.keys()
+        {
+            let rt = x + 1 - last_seen_row.get(tuple).unwrap();
+            if rt > size
+            {
+                if frequencies.contains_key(tuple)
+                {
+                    frequencies.insert(*tuple, *frequencies.get(tuple).unwrap() + rt - size);
+                }
+                else
+                {
+                    frequencies.insert(*tuple, rt - size);
+                }
+            }
+        }
+
+        single_frequencies.push(frequencies);
+    }
 
     single_frequencies
+}
+
+fn get_frequencies_naive(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec<HashMap<u64, usize>>, Vec<HashMap<(u64, u64), usize>>)
+{
+    let mut single_frequencies_list: Vec<HashMap<u64, usize>> = Vec::with_capacity(window_sizes.len());
+    let mut joint_frequencies_list: Vec<HashMap<(u64, u64), usize>> = Vec::with_capacity(window_sizes.len());
+    for size in window_sizes
+    {
+        let mut single_frequencies: HashMap<u64, usize> = HashMap::new();
+        let mut joint_frequencies: HashMap<(u64, u64), usize> = HashMap::new();
+        for i in 0 .. (trace.len() - size + 1)
+        {
+            for j in 0 .. (trace.get(i).unwrap().len() - size + 1)
+            {
+                let mut singles: HashSet<u64> = HashSet::new();
+                let mut doubles: HashSet<(u64, u64)> = HashSet::new();
+                for r in i .. i + size
+                {
+                    for c in j .. j + size
+                    {
+                        let num = *trace.get(r).unwrap().get(c).unwrap();
+
+                        for sub_num in &singles
+                        {
+                            if *sub_num != num
+                            {
+                                if *sub_num < num
+                                {
+                                    doubles.insert((num, *sub_num));
+                                }
+                                else
+                                {
+                                    doubles.insert((*sub_num, num));
+                                }
+                            }
+                        }
+                        singles.insert(num);
+                    }
+                }
+
+                for single in singles
+                {
+                    if single_frequencies.contains_key(&single)
+                    {
+                        let current = *single_frequencies.get_mut(&single).unwrap();
+                        single_frequencies.insert(single, current + 1);
+                    }
+                    else
+                    {
+                        single_frequencies.insert(single, 1);
+                    }
+                }
+
+                for double in doubles
+                {
+                    if joint_frequencies.contains_key(&double)
+                    {
+                        let current = *joint_frequencies.get_mut(&double).unwrap();
+                        joint_frequencies.insert(double, current + 1);
+                    }
+                    else
+                    {
+                        joint_frequencies.insert(double, 1);
+                    }
+                }
+            }
+        }
+
+        single_frequencies_list.push(single_frequencies);
+        joint_frequencies_list.push(joint_frequencies);
+    }
+
+    (single_frequencies_list, joint_frequencies_list)
 }
 
 fn main()
 {
     println!("{:?}", env::args());
+    let arr = vec!(vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0),
+                   vec!(0, 1, 2, 3, 0));
+    let sizes = vec!(2, 3);
+    // let test = get_single_frequencies(arr.clone(), sizes.clone());
+
+    // let mut i = 0;
+    // for hash in test
+    // {
+    //     println!("Window Size {}", sizes[i]);
+    //     i = i + 1;
+
+    //     for key in hash.keys()
+    //     {
+    //         println!("{:?}: {}", key, hash.get(key).unwrap());
+    //     }
+    // }
+
+    let naive = get_frequencies_naive(arr, sizes.clone());
+    let mut i = 0;
+    for hash in naive.0
+    {
+        println!("Window Size {}", sizes[i]);
+        i = i + 1;
+
+        for key in hash.keys()
+        {
+            println!("{:?}: {}", key, hash.get(key).unwrap());
+        }
+    }
+
+    i = 0;
+    for hash in naive.1
+    {
+        println!("Window Size {}", sizes[i]);
+        i = i + 1;
+
+        for key in hash.keys()
+        {
+            println!("{:?}: {}", key, hash.get(key).unwrap());
+        }
+    }
 }
 
 #[test]
@@ -70,7 +248,7 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
 
         let test_name = "temp_test";    //Stores the name of the test file
         let mut file = File::create(TRACE_DIR.to_owned() + test_name).unwrap();   //Creates the test trace file
-        
+
         let mut expect = Vec::with_capacity(y); //Stores the expected reulting 2D array
         for i in 0 .. y //Iterates over the columns
         {
@@ -106,4 +284,10 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
 
         fs::remove_file(TRACE_DIR.to_owned() + test_name).expect("File I/O Error"); //Deletes the test file
     }
+}
+
+#[test]
+fn test_single_frequencies()
+{
+
 }
