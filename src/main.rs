@@ -235,7 +235,7 @@ fn main() -> std::io::Result<()>
     {
         let entry = entry?;
         let img = image::open(entry.path()).unwrap().to_luma();
-        println!("Dimensions: {:?}", img.dimensions());
+        println!("Name: {} | Dimensions: {:?}", entry.file_name().into_string().unwrap(), img.dimensions());
         let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
         for i in 0 .. img.width() - 2
         {
