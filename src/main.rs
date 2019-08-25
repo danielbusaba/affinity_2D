@@ -22,6 +22,7 @@ use std::io::Write;                 //Used for writing to files
 const TRACE_DIR: &str = "traces/";            //Stores trace directory globally
 const MAMMOGRAM_DIR: &str = "mammograms/";    //Stores trace directory globally
 const OUTPUT_DIR: &str = "output/";           //Stores output directory globally
+const SATURATE_DIR: &str = "saturated/";      //Stores saturated output directory globally
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
@@ -197,40 +198,39 @@ fn get_frequencies_naive(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec
     (single_frequencies_list, joint_frequencies_list)
 }
 
+fn saturate(image: &mut image::GrayImage)
+{
+    let mut min = 255;
+    let mut max = 0;
+    for i in 0 .. image.width()
+    {
+        for j in 0 .. image.height()
+        {
+            let pixel = image.get_pixel(i, j) [0];
+            if pixel > max
+            {
+                max = pixel;
+            }
+            if pixel < min
+            {
+                min = pixel;
+            }
+        }
+    }
+
+    let scale: f64 = (max - min) as f64 / 256.0;
+    for i in 0 .. image.width()
+    {
+        for j in 0 .. image.height()
+        {
+            let pixel = image.get_pixel(i, j) [0];
+            (*image).get_pixel_mut(i, j) [0] = ((pixel - min) as f64 * scale) as u8;
+        }
+    }
+}
+
 fn main() -> std::io::Result<()>
 {
-    println!("{:?}", env::args());
-    let arr = vec!(vec!(0, 1, 2, 3, 0),
-                   vec!(0, 1, 2, 3, 0),
-                   vec!(0, 1, 2, 3, 0),
-                   vec!(0, 1, 2, 3, 0));
-    let sizes = vec!(2, 3);
-
-    let naive = get_frequencies_naive(arr, sizes.clone());
-    let mut i = 0;
-    for hash in naive.0
-    {
-        println!("Window Size {}", sizes[i]);
-        i = i + 1;
-
-        for key in hash.keys()
-        {
-            println!("{:?}: {}", key, hash.get(key).unwrap());
-        }
-    }
-
-    i = 0;
-    for hash in naive.1
-    {
-        println!("Window Size {}", sizes[i]);
-        i = i + 1;
-
-        for key in hash.keys()
-        {
-            println!("{:?}: {}", key, hash.get(key).unwrap());
-        }
-    }
-
     for entry in fs::read_dir(MAMMOGRAM_DIR)?
     {
         let entry = entry?;
@@ -310,15 +310,17 @@ fn main() -> std::io::Result<()>
                         }
                     }
 
-                    image.get_pixel_mut(i, j).data = [max_diff];
+                    image.get_pixel_mut(i, j) [0] = max_diff;
                 }
                 else
                 {
-                    image.get_pixel_mut(i, j).data = [0];
+                    image.get_pixel_mut(i, j) [0] = 0;
                 }
             }
         }
         image.save(OUTPUT_DIR.to_owned() + &entry.file_name().into_string().unwrap()).unwrap();
+        saturate(&mut image);
+        image.save(SATURATE_DIR.to_owned() + &entry.file_name().into_string().unwrap()).unwrap();
     }
 
     Ok(())
