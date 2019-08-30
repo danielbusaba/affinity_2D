@@ -229,6 +229,95 @@ fn saturate(image: &mut image::GrayImage)
     }
 }
 
+fn analyze_affinity(img: &image::GrayImage, entry: &str)
+{
+    let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
+    for i in 0 .. img.width() - 2
+    {
+        for j in 0 .. img.height() - 2
+        {
+            let mut square: Vec<Vec<u64>> = Vec::with_capacity(3);
+            let mut not_zero = false;
+            for r in i .. i + 3
+            {
+                let mut col = Vec::with_capacity(3);
+                for c in j .. j + 3
+                {
+                    let num = img.get_pixel(r, c) [0];
+                    if num != 0
+                    {
+                        not_zero = true;
+                    }
+                    col.push(num as u64);
+                }
+                square.push(col);
+            }
+
+            if not_zero
+            {
+                let frequencies = get_frequencies_naive(square, vec!(2));
+                let mut max_diff: u8 = 0;
+                let mut max_affinity: f64 = 0.0;
+                for pair in frequencies.1 [0].keys()
+                {
+                    let single_frequecy_a = *frequencies.0 [0].get(&pair.0).unwrap() as f64;
+                    let single_frequecy_b = *frequencies.0 [0].get(&pair.1).unwrap() as f64;
+                    let mut affinity = *frequencies.1 [0].get(pair).unwrap() as f64;
+                    if single_frequecy_b < single_frequecy_a
+                    {
+                        affinity = affinity / single_frequecy_b;
+                    }
+                    else
+                    {
+                        affinity = affinity / single_frequecy_a;
+                    }
+
+                    if affinity > max_affinity
+                    {
+                        max_affinity = affinity;
+                        if pair.0 > pair.1
+                        {
+                            max_diff = (pair.0 - pair.1) as u8;
+                        }
+                        else
+                        {
+                            max_diff = (pair.1 - pair.0) as u8;
+                        }
+                    }
+                    else if affinity == max_affinity
+                    {
+                        if pair.0 > pair.1
+                        {
+                            let diff = (pair.0 - pair.1) as u8;
+                            if diff > max_diff
+                            {
+                                max_diff = (pair.0 - pair.1) as u8;
+                            }
+                        }
+                        else
+                        {
+                            let diff = (pair.1 - pair.0) as u8;
+                            if diff > max_diff
+                            {
+                                max_diff = (pair.1 - pair.0) as u8;
+                            }
+                        }
+                    }
+                }
+
+                image.get_pixel_mut(i, j) [0] = max_diff;
+            }
+            else
+            {
+                image.get_pixel_mut(i, j) [0] = 0;
+            }
+        }
+    }
+    image.save(OUTPUT_DIR.to_owned() + entry).unwrap();
+    saturate(&mut image);
+    image.save(SATURATE_DIR.to_owned() + entry).unwrap();
+}
+
 fn main() -> std::io::Result<()>
 {
     for entry in fs::read_dir(MAMMOGRAM_DIR)?
@@ -236,91 +325,7 @@ fn main() -> std::io::Result<()>
         let entry = entry?;
         let img = image::open(entry.path()).unwrap().to_luma();
         println!("Name: {} | Dimensions: {:?}", entry.file_name().into_string().unwrap(), img.dimensions());
-        let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
-        for i in 0 .. img.width() - 2
-        {
-            for j in 0 .. img.height() - 2
-            {
-                let mut square: Vec<Vec<u64>> = Vec::with_capacity(3);
-                let mut not_zero = false;
-                for r in i .. i + 3
-                {
-                    let mut col = Vec::with_capacity(3);
-                    for c in j .. j + 3
-                    {
-                        let num = img.get_pixel(r, c) [0];
-                        if num != 0
-                        {
-                            not_zero = true;
-                        }
-                        col.push(num as u64);
-                    }
-                    square.push(col);
-                }
-
-                if not_zero
-                {
-                    let frequencies = get_frequencies_naive(square, vec!(2));
-                    let mut max_diff: u8 = 0;
-                    let mut max_affinity: f64 = 0.0;
-                    for pair in frequencies.1 [0].keys()
-                    {
-                        let single_frequecy_a = *frequencies.0 [0].get(&pair.0).unwrap() as f64;
-                        let single_frequecy_b = *frequencies.0 [0].get(&pair.1).unwrap() as f64;
-                        let mut affinity = *frequencies.1 [0].get(pair).unwrap() as f64;
-                        if single_frequecy_b < single_frequecy_a
-                        {
-                            affinity = affinity / single_frequecy_b;
-                        }
-                        else
-                        {
-                            affinity = affinity / single_frequecy_a;
-                        }
-
-                        if affinity > max_affinity
-                        {
-                            max_affinity = affinity;
-                            if pair.0 > pair.1
-                            {
-                                max_diff = (pair.0 - pair.1) as u8;
-                            }
-                            else
-                            {
-                                max_diff = (pair.1 - pair.0) as u8;
-                            }
-                        }
-                        else if affinity == max_affinity
-                        {
-                            if pair.0 > pair.1
-                            {
-                                let diff = (pair.0 - pair.1) as u8;
-                                if diff > max_diff
-                                {
-                                    max_diff = (pair.0 - pair.1) as u8;
-                                }
-                            }
-                            else
-                            {
-                                let diff = (pair.1 - pair.0) as u8;
-                                if diff > max_diff
-                                {
-                                    max_diff = (pair.1 - pair.0) as u8;
-                                }
-                            }
-                        }
-                    }
-
-                    image.get_pixel_mut(i, j) [0] = max_diff;
-                }
-                else
-                {
-                    image.get_pixel_mut(i, j) [0] = 0;
-                }
-            }
-        }
-        image.save(OUTPUT_DIR.to_owned() + &entry.file_name().into_string().unwrap()).unwrap();
-        saturate(&mut image);
-        image.save(SATURATE_DIR.to_owned() + &entry.file_name().into_string().unwrap()).unwrap();
+        analyze_affinity(&img, &entry.file_name().into_string().unwrap());
     }
 
     Ok(())
