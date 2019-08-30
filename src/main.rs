@@ -11,8 +11,8 @@ use std::collections::HashMap;      //Imports HashMap data structure
 use std::collections::HashSet;      //Imports HashMap data structure
 use image::ImageDecoder;            //Decodes images
 use image::GenericImageView;        //Gets image meta data
-use image::ImageBuffer;
-use image::Rgb;
+use image::ImageBuffer;             //Raw image data from disk
+use std::time::Instant;             //Allows for timing computations
 
 //Imports for tests
 extern crate rand;                  //Used for testing random cases
@@ -232,6 +232,7 @@ fn saturate(image: &mut image::GrayImage)
 fn analyze_affinity(img: &image::GrayImage, entry: &str)
 {
     let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
+    let now = Instant::now();
     for i in 0 .. img.width() - 2
     {
         for j in 0 .. img.height() - 2
@@ -313,8 +314,15 @@ fn analyze_affinity(img: &image::GrayImage, entry: &str)
             }
         }
     }
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Affinity Analysis Completed in: {}", sec);
     image.save(OUTPUT_DIR.to_owned() + entry).unwrap();
+    let now = Instant::now();
     saturate(&mut image);
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Output Saturated in: {}", sec);
     image.save(SATURATE_DIR.to_owned() + entry).unwrap();
 }
 
