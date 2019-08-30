@@ -23,6 +23,8 @@ const TRACE_DIR: &str = "traces/";            //Stores trace directory globally
 const MAMMOGRAM_DIR: &str = "mammograms/";    //Stores trace directory globally
 const OUTPUT_DIR: &str = "output/";           //Stores output directory globally
 const SATURATE_DIR: &str = "saturated/";      //Stores saturated output directory globally
+const OUTPUT_SIMPLE_DIR: &str = "output_simple/";           //Stores output directory globally
+const SATURATE_SIMPLE_DIR: &str = "saturated_simple/";      //Stores saturated output directory globally
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
@@ -326,6 +328,48 @@ fn analyze_affinity(img: &image::GrayImage, entry: &str)
     image.save(SATURATE_DIR.to_owned() + entry).unwrap();
 }
 
+fn analyze_simple(img: &image::GrayImage, entry: &str)
+{
+    let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
+    let now = Instant::now();
+    for i in 0 .. img.width() - 2
+    {
+        for j in 0 .. img.height() - 2
+        {
+            let mut min = 255;
+            let mut max = 0;
+            for r in i .. i + 3
+            {
+                for c in j .. j + 3
+                {
+                    let num = img.get_pixel(r, c) [0];
+                    if num < min
+                    {
+                        min = num;
+                    }
+                    if num > max
+                    {
+                        max = num;
+                    }
+                }
+            }
+
+            image.get_pixel_mut(i, j) [0] = max - min;
+        }
+    }
+
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Simple Analysis Completed in: {}", sec);
+    image.save(OUTPUT_SIMPLE_DIR.to_owned() + entry).unwrap();
+    let now = Instant::now();
+    saturate(&mut image);
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Output Saturated in: {}", sec);
+    image.save(SATURATE_SIMPLE_DIR.to_owned() + entry).unwrap();
+}
+
 fn main() -> std::io::Result<()>
 {
     for entry in fs::read_dir(MAMMOGRAM_DIR)?
@@ -334,6 +378,8 @@ fn main() -> std::io::Result<()>
         let img = image::open(entry.path()).unwrap().to_luma();
         println!("Name: {} | Dimensions: {:?}", entry.file_name().into_string().unwrap(), img.dimensions());
         analyze_affinity(&img, &entry.file_name().into_string().unwrap());
+        analyze_simple(&img, &entry.file_name().into_string().unwrap());
+        println!("");
     }
 
     Ok(())
