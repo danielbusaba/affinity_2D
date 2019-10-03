@@ -1,8 +1,8 @@
 import os
 import shutil
 
-ANSWERS_FILE = "Answers"
-DIRS = ["mammograms/", "output/", "saturated/", "output_simple/", "saturated_simple/"]
+ANSWERS_FILE = "answers"
+DIRS = ["mammograms/", "output/", "saturated/", "output_max_diff/", "saturated_max_diff/", "output_center_diff/", "saturated_center_diff/", "output_average/", "saturated_average/"]
 
 for dir in DIRS:
     if not os.path.exists(dir + "Normal"):

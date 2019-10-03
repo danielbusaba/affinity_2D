@@ -23,8 +23,12 @@ const TRACE_DIR: &str = "traces/";            //Stores trace directory globally
 const MAMMOGRAM_DIR: &str = "mammograms/";    //Stores trace directory globally
 const OUTPUT_DIR: &str = "output/";           //Stores output directory globally
 const SATURATE_DIR: &str = "saturated/";      //Stores saturated output directory globally
-const OUTPUT_SIMPLE_DIR: &str = "output_simple/";           //Stores output directory globally
-const SATURATE_SIMPLE_DIR: &str = "saturated_simple/";      //Stores saturated output directory globally
+const OUTPUT_MAX_DIFF_DIR: &str = "output_max_diff/";           //Stores output directory globally
+const SATURATE_MAX_DIFF_DIR: &str = "saturated_max_diff/";      //Stores saturated output directory globally
+const OUTPUT_CENTER_DIFF_DIR: &str = "output_center_diff/";           //Stores output directory globally
+const SATURATE_CENTER_DIFF_DIR: &str = "saturated_center_diff/";      //Stores saturated output directory globally
+const OUTPUT_AVERAGE_DIR: &str = "output_average/";           //Stores output directory globally
+const SATURATE_AVERAGE_DIR: &str = "saturated_average/";      //Stores saturated output directory globally
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
@@ -328,7 +332,7 @@ fn analyze_affinity(img: &image::GrayImage, entry: &str)
     image.save(SATURATE_DIR.to_owned() + entry).unwrap();
 }
 
-fn analyze_simple(img: &image::GrayImage, entry: &str)
+fn analyze_max_diff(img: &image::GrayImage, entry: &str)
 {
     let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
     let now = Instant::now();
@@ -360,14 +364,88 @@ fn analyze_simple(img: &image::GrayImage, entry: &str)
 
     let elapsed = now.elapsed();
     let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Simple Analysis Completed in: {}", sec);
-    image.save(OUTPUT_SIMPLE_DIR.to_owned() + entry).unwrap();
+    println!("Max Diff Analysis Completed in: {}", sec);
+    image.save(OUTPUT_MAX_DIFF_DIR.to_owned() + entry).unwrap();
     let now = Instant::now();
     saturate(&mut image);
     let elapsed = now.elapsed();
     let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
     println!("Output Saturated in: {}", sec);
-    image.save(SATURATE_SIMPLE_DIR.to_owned() + entry).unwrap();
+    image.save(SATURATE_MAX_DIFF_DIR.to_owned() + entry).unwrap();
+}
+
+fn analyze_center_diff(img: &image::GrayImage, entry: &str)
+{
+    let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
+    let now = Instant::now();
+    for i in 0 .. img.width() - 2
+    {
+        for j in 0 .. img.height() - 2
+        {
+            let mut max = 0;
+            for r in i .. i + 3
+            {
+                for c in j .. j + 3
+                {
+                    let num = img.get_pixel(r, c) [0];
+                    let center = img.get_pixel(i + 1, j + 1) [0];
+                    if num > center
+                    {
+                        let diff = num - center;
+                        if diff > max
+                        {
+                            max = diff;
+                        }
+                    }
+                    else
+                    {
+                        let diff = center - num;
+                        if diff > max
+                        {
+                            max = diff;
+                        }
+                    }
+                }
+            }
+
+            image.get_pixel_mut(i, j) [0] = max;
+        }
+    }
+
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Center Diff Analysis Completed in: {}", sec);
+    image.save(OUTPUT_CENTER_DIFF_DIR.to_owned() + entry).unwrap();
+    let now = Instant::now();
+    saturate(&mut image);
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Output Saturated in: {}", sec);
+    image.save(SATURATE_CENTER_DIFF_DIR.to_owned() + entry).unwrap();
+}
+
+fn analyze_average(original: &image::GrayImage, analyzed: &image::GrayImage, entry: &str)
+{
+    let mut image: image::GrayImage = image::ImageBuffer::new(analyzed.width(), analyzed.height());
+    let now = Instant::now();
+    for i in 0 .. analyzed.width()
+    {
+        for j in 0 .. analyzed.height()
+        {
+            image.get_pixel_mut(i, j) [0] = ((original.get_pixel(i + 1, j + 1) [0] as u16 + analyzed.get_pixel(i, j) [0] as u16) / 2) as u8;
+        }
+    }
+
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Average Analysis Completed in: {}", sec);
+    image.save(OUTPUT_AVERAGE_DIR.to_owned() + entry).unwrap();
+    let now = Instant::now();
+    saturate(&mut image);
+    let elapsed = now.elapsed();
+    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
+    println!("Output Saturated in: {}", sec);
+    image.save(SATURATE_AVERAGE_DIR.to_owned() + entry).unwrap();
 }
 
 fn main() -> std::io::Result<()>
@@ -375,10 +453,13 @@ fn main() -> std::io::Result<()>
     for entry in fs::read_dir(MAMMOGRAM_DIR)?
     {
         let entry = entry?;
-        let img = image::open(entry.path()).unwrap().to_luma();
-        println!("Name: {} | Dimensions: {:?}", entry.file_name().into_string().unwrap(), img.dimensions());
-        analyze_affinity(&img, &entry.file_name().into_string().unwrap());
-        analyze_simple(&img, &entry.file_name().into_string().unwrap());
+        let original = image::open(entry.path()).unwrap().to_luma();
+        println!("Name: {} | Dimensions: {:?}", entry.file_name().into_string().unwrap(), original.dimensions());
+        analyze_affinity(&original, &entry.file_name().into_string().unwrap());
+        analyze_max_diff(&original, &entry.file_name().into_string().unwrap());
+        analyze_center_diff(&original, &entry.file_name().into_string().unwrap());
+        let analyzed = image::open(OUTPUT_DIR.to_owned() + &entry.file_name().into_string().unwrap()).unwrap().to_luma();
+        analyze_average(&original, &analyzed, &entry.file_name().into_string().unwrap());
         println!("");
     }
 
@@ -432,10 +513,4 @@ fn test_5_random_file_inputs() //Tests file input on 5 randomly generated trace 
 
         fs::remove_file(TRACE_DIR.to_owned() + test_name).expect("File I/O Error"); //Deletes the test file
     }
-}
-
-#[test]
-fn test_single_frequencies()
-{
-
 }

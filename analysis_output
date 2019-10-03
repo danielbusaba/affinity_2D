@@ -1,0 +1,3222 @@
+    Finished release [optimized] target(s) in 0.09s
+     Running `target/release/affinity_2_d`
+Name: mdb001.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.3629011220000002
+Output Saturated in: 0.007595805
+Max Diff Analysis Completed in: 0.050212835
+Output Saturated in: 0.005442171
+Center Diff Analysis Completed in: 0.046760604
+Output Saturated in: 0.004904756
+Average Analysis Completed in: 0.005889891
+Output Saturated in: 0.011750088
+
+Name: mdb002.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.9031852799999998
+Output Saturated in: 0.006176109
+Max Diff Analysis Completed in: 0.032143831
+Output Saturated in: 0.004636157
+Center Diff Analysis Completed in: 0.03636784
+Output Saturated in: 0.008758274
+Average Analysis Completed in: 0.008723093
+Output Saturated in: 0.006944459
+
+Name: mdb003.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.609294246
+Output Saturated in: 0.007235448
+Max Diff Analysis Completed in: 0.052977165
+Output Saturated in: 0.014536404
+Center Diff Analysis Completed in: 0.050526614
+Output Saturated in: 0.004819114
+Average Analysis Completed in: 0.008429616
+Output Saturated in: 0.01372083
+
+Name: mdb004.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.883902731
+Output Saturated in: 0.00770509
+Max Diff Analysis Completed in: 0.031791244
+Output Saturated in: 0.009531306
+Center Diff Analysis Completed in: 0.047991544
+Output Saturated in: 0.009165133
+Average Analysis Completed in: 0.015993104
+Output Saturated in: 0.005680296
+
+Name: mdb005.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.955752727
+Output Saturated in: 0.008862285
+Max Diff Analysis Completed in: 0.031025367
+Output Saturated in: 0.013177721
+Center Diff Analysis Completed in: 0.039321429
+Output Saturated in: 0.006155884
+Average Analysis Completed in: 0.006965425
+Output Saturated in: 0.004415188
+
+Name: mdb006.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.446900715
+Output Saturated in: 0.009081926
+Max Diff Analysis Completed in: 0.024265143
+Output Saturated in: 0.004546725
+Center Diff Analysis Completed in: 0.028504426
+Output Saturated in: 0.008433693
+Average Analysis Completed in: 0.004615462
+Output Saturated in: 0.017385027
+
+Name: mdb007.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.0936136850000002
+Output Saturated in: 0.013589297
+Max Diff Analysis Completed in: 0.030871776
+Output Saturated in: 0.013008021
+Center Diff Analysis Completed in: 0.041536398
+Output Saturated in: 0.011675901
+Average Analysis Completed in: 0.017291249
+Output Saturated in: 0.019111231
+
+Name: mdb008.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.232302319
+Output Saturated in: 0.0136735
+Max Diff Analysis Completed in: 0.026976283
+Output Saturated in: 0.004407901
+Center Diff Analysis Completed in: 0.030317371
+Output Saturated in: 0.004464
+Average Analysis Completed in: 0.016997936
+Output Saturated in: 0.005965105
+
+Name: mdb009.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.181077033
+Output Saturated in: 0.007477296
+Max Diff Analysis Completed in: 0.032998049
+Output Saturated in: 0.010632766
+Center Diff Analysis Completed in: 0.033813779
+Output Saturated in: 0.012197372
+Average Analysis Completed in: 0.007295745
+Output Saturated in: 0.004585419
+
+Name: mdb010.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 7.098968086
+Output Saturated in: 0.004711626
+Max Diff Analysis Completed in: 0.05061809
+Output Saturated in: 0.0046772
+Center Diff Analysis Completed in: 0.040003122
+Output Saturated in: 0.019102494
+Average Analysis Completed in: 0.008482244
+Output Saturated in: 0.025964829
+
+Name: mdb011.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 10.047944602
+Output Saturated in: 0.048118979
+Max Diff Analysis Completed in: 0.201828982
+Output Saturated in: 0.054337027
+Center Diff Analysis Completed in: 0.345141223
+Output Saturated in: 0.059708347
+Average Analysis Completed in: 0.047939467
+Output Saturated in: 0.067524237
+
+Name: mdb012.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 10.897543378
+Output Saturated in: 0.070437315
+Max Diff Analysis Completed in: 0.172284909
+Output Saturated in: 0.009718133
+Center Diff Analysis Completed in: 0.311597101
+Output Saturated in: 0.025798348
+Average Analysis Completed in: 0.022404455
+Output Saturated in: 0.048016414
+
+Name: mdb013.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.131566366
+Output Saturated in: 0.008452153
+Max Diff Analysis Completed in: 0.035148258
+Output Saturated in: 0.007129636
+Center Diff Analysis Completed in: 0.036679744
+Output Saturated in: 0.018439983
+Average Analysis Completed in: 0.019569843
+Output Saturated in: 0.017056315
+
+Name: mdb014.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 7.95103746
+Output Saturated in: 0.023808407
+Max Diff Analysis Completed in: 0.156569295
+Output Saturated in: 0.024810935
+Center Diff Analysis Completed in: 0.219393294
+Output Saturated in: 0.033908914
+Average Analysis Completed in: 0.041764416
+Output Saturated in: 0.052083855
+
+Name: mdb015.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 9.318756833
+Output Saturated in: 0.053625615
+Max Diff Analysis Completed in: 0.231649414
+Output Saturated in: 0.01641525
+Center Diff Analysis Completed in: 0.327286238
+Output Saturated in: 0.021831494
+Average Analysis Completed in: 0.034013433
+Output Saturated in: 0.042138218
+
+Name: mdb016.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 10.41797577
+Output Saturated in: 0.055280474
+Max Diff Analysis Completed in: 0.226440392
+Output Saturated in: 0.09451015
+Center Diff Analysis Completed in: 0.232408773
+Output Saturated in: 0.055111206
+Average Analysis Completed in: 0.04049714
+Output Saturated in: 0.02894935
+
+Name: mdb017.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 8.045406535
+Output Saturated in: 0.054245242
+Max Diff Analysis Completed in: 0.15643366
+Output Saturated in: 0.028499004
+Center Diff Analysis Completed in: 0.14915282
+Output Saturated in: 0.039081944
+Average Analysis Completed in: 0.071406026
+Output Saturated in: 0.034130502
+
+Name: mdb018.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 9.059415413
+Output Saturated in: 0.033710534
+Max Diff Analysis Completed in: 0.158435592
+Output Saturated in: 0.038660645
+Center Diff Analysis Completed in: 0.310793555
+Output Saturated in: 0.039841334
+Average Analysis Completed in: 0.054147354
+Output Saturated in: 0.026121572
+
+Name: mdb019.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.642051065
+Output Saturated in: 0.012425872
+Max Diff Analysis Completed in: 0.033895861
+Output Saturated in: 0.013818926
+Center Diff Analysis Completed in: 0.034614971
+Output Saturated in: 0.005590307
+Average Analysis Completed in: 0.015936957
+Output Saturated in: 0.006434065
+
+Name: mdb020.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.13262288
+Output Saturated in: 0.008708773
+Max Diff Analysis Completed in: 0.031024506
+Output Saturated in: 0.005348662
+Center Diff Analysis Completed in: 0.034511537
+Output Saturated in: 0.004448072
+Average Analysis Completed in: 0.004958656
+Output Saturated in: 0.007553709
+
+Name: mdb021.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.873814533
+Output Saturated in: 0.007612383
+Max Diff Analysis Completed in: 0.030104616
+Output Saturated in: 0.006868156
+Center Diff Analysis Completed in: 0.029442968
+Output Saturated in: 0.011037185
+Average Analysis Completed in: 0.009187679
+Output Saturated in: 0.012201541
+
+Name: mdb022.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.484319187
+Output Saturated in: 0.004605015
+Max Diff Analysis Completed in: 0.030673087
+Output Saturated in: 0.009162889
+Center Diff Analysis Completed in: 0.032539254
+Output Saturated in: 0.004412338
+Average Analysis Completed in: 0.016059772
+Output Saturated in: 0.007541919
+
+Name: mdb023.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.052222181
+Output Saturated in: 0.00441239
+Max Diff Analysis Completed in: 0.029473499
+Output Saturated in: 0.013507722
+Center Diff Analysis Completed in: 0.029591349
+Output Saturated in: 0.004997528
+Average Analysis Completed in: 0.005669056
+Output Saturated in: 0.006684444
+
+Name: mdb024.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.6779642519999998
+Output Saturated in: 0.010604799
+Max Diff Analysis Completed in: 0.022534555
+Output Saturated in: 0.01295356
+Center Diff Analysis Completed in: 0.032124303
+Output Saturated in: 0.010138694
+Average Analysis Completed in: 0.005550005
+Output Saturated in: 0.004562421
+
+Name: mdb025.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.403879804
+Output Saturated in: 0.014035899
+Max Diff Analysis Completed in: 0.032909804
+Output Saturated in: 0.012112154
+Center Diff Analysis Completed in: 0.033537687
+Output Saturated in: 0.011511049
+Average Analysis Completed in: 0.006435098
+Output Saturated in: 0.006548863
+
+Name: mdb026.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.109503524
+Output Saturated in: 0.013145057
+Max Diff Analysis Completed in: 0.023031087
+Output Saturated in: 0.01361326
+Center Diff Analysis Completed in: 0.03018145
+Output Saturated in: 0.007782835
+Average Analysis Completed in: 0.004959053
+Output Saturated in: 0.006128552
+
+Name: mdb027.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.917014994
+Output Saturated in: 0.006803777
+Max Diff Analysis Completed in: 0.023707564
+Output Saturated in: 0.010780784
+Center Diff Analysis Completed in: 0.025113898
+Output Saturated in: 0.008342356
+Average Analysis Completed in: 0.005102845
+Output Saturated in: 0.014261494
+
+Name: mdb028.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.121793065
+Output Saturated in: 0.008276235
+Max Diff Analysis Completed in: 0.02322912
+Output Saturated in: 0.011527644
+Center Diff Analysis Completed in: 0.024079462
+Output Saturated in: 0.007067441
+Average Analysis Completed in: 0.009512573
+Output Saturated in: 0.011381745
+
+Name: mdb029.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.801248223
+Output Saturated in: 0.01038364
+Max Diff Analysis Completed in: 0.022708124
+Output Saturated in: 0.009720675
+Center Diff Analysis Completed in: 0.028965977
+Output Saturated in: 0.007108845
+Average Analysis Completed in: 0.004921591
+Output Saturated in: 0.007506038
+
+Name: mdb030.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.445022281
+Output Saturated in: 0.01421723
+Max Diff Analysis Completed in: 0.021252635
+Output Saturated in: 0.006979258
+Center Diff Analysis Completed in: 0.026260709
+Output Saturated in: 0.012729155
+Average Analysis Completed in: 0.004664392
+Output Saturated in: 0.0045863
+
+Name: mdb031.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.225662416
+Output Saturated in: 0.004222059
+Max Diff Analysis Completed in: 0.029247365
+Output Saturated in: 0.01203709
+Center Diff Analysis Completed in: 0.030057422
+Output Saturated in: 0.011435985
+Average Analysis Completed in: 0.005335594
+Output Saturated in: 0.004281581
+
+Name: mdb032.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.314237013
+Output Saturated in: 0.013804804
+Max Diff Analysis Completed in: 0.02374226
+Output Saturated in: 0.013450968
+Center Diff Analysis Completed in: 0.024598436
+Output Saturated in: 0.007839892
+Average Analysis Completed in: 0.005364598
+Output Saturated in: 0.007219281
+
+Name: mdb033.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.692968327
+Output Saturated in: 0.012248116
+Max Diff Analysis Completed in: 0.039342144
+Output Saturated in: 0.005082533
+Center Diff Analysis Completed in: 0.037870388
+Output Saturated in: 0.005716936
+Average Analysis Completed in: 0.005233826
+Output Saturated in: 0.00683227
+
+Name: mdb035.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7200808680000002
+Output Saturated in: 0.014465494
+Max Diff Analysis Completed in: 0.040129066
+Output Saturated in: 0.011931767
+Center Diff Analysis Completed in: 0.031419117
+Output Saturated in: 0.009452782
+Average Analysis Completed in: 0.029356912
+Output Saturated in: 0.005780773
+
+Name: mdb036.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7680971429999999
+Output Saturated in: 0.006556979
+Max Diff Analysis Completed in: 0.035230278
+Output Saturated in: 0.007347695
+Center Diff Analysis Completed in: 0.030847611
+Output Saturated in: 0.007929987
+Average Analysis Completed in: 0.005286096
+Output Saturated in: 0.012880529
+
+Name: mdb037.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.68785341
+Output Saturated in: 0.011101994
+Max Diff Analysis Completed in: 0.03647708
+Output Saturated in: 0.005276838
+Center Diff Analysis Completed in: 0.037921968
+Output Saturated in: 0.010276542
+Average Analysis Completed in: 0.010709995
+Output Saturated in: 0.00706256
+
+Name: mdb038.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.8133605849999999
+Output Saturated in: 0.006941562
+Max Diff Analysis Completed in: 0.029425531
+Output Saturated in: 0.012022263
+Center Diff Analysis Completed in: 0.040901862
+Output Saturated in: 0.006627755
+Average Analysis Completed in: 0.008546963
+Output Saturated in: 0.014221231
+
+Name: mdb039.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.551181884
+Output Saturated in: 0.010215367
+Max Diff Analysis Completed in: 0.042867031
+Output Saturated in: 0.011495407
+Center Diff Analysis Completed in: 0.040488643
+Output Saturated in: 0.011443132
+Average Analysis Completed in: 0.015844162
+Output Saturated in: 0.015738929
+
+Name: mdb040.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.196322583
+Output Saturated in: 0.017562373
+Max Diff Analysis Completed in: 0.052048324
+Output Saturated in: 0.021727183
+Center Diff Analysis Completed in: 0.026675762
+Output Saturated in: 0.020655383
+Average Analysis Completed in: 0.015168238
+Output Saturated in: 0.018969404
+
+Name: mdb041.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.221246246
+Output Saturated in: 0.004608045
+Max Diff Analysis Completed in: 0.035799159
+Output Saturated in: 0.00906356
+Center Diff Analysis Completed in: 0.037055914
+Output Saturated in: 0.012002417
+Average Analysis Completed in: 0.017468062
+Output Saturated in: 0.008046773
+
+Name: mdb042.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.537051957
+Output Saturated in: 0.012075561
+Max Diff Analysis Completed in: 0.055732321
+Output Saturated in: 0.005302145
+Center Diff Analysis Completed in: 0.03350711
+Output Saturated in: 0.009018984
+Average Analysis Completed in: 0.016854647
+Output Saturated in: 0.011142626
+
+Name: mdb043.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.688344797
+Output Saturated in: 0.008695551
+Max Diff Analysis Completed in: 0.030042674
+Output Saturated in: 0.008700231
+Center Diff Analysis Completed in: 0.035307837
+Output Saturated in: 0.008078422
+Average Analysis Completed in: 0.008607092
+Output Saturated in: 0.013947548
+
+Name: mdb044.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.983553216
+Output Saturated in: 0.004552406
+Max Diff Analysis Completed in: 0.048152952
+Output Saturated in: 0.009296558
+Center Diff Analysis Completed in: 0.037653424
+Output Saturated in: 0.009465268
+Average Analysis Completed in: 0.016367585
+Output Saturated in: 0.013945343
+
+Name: mdb045.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.543943899
+Output Saturated in: 0.007306658
+Max Diff Analysis Completed in: 0.030472173
+Output Saturated in: 0.004887072
+Center Diff Analysis Completed in: 0.032286432
+Output Saturated in: 0.00467798
+Average Analysis Completed in: 0.016897006
+Output Saturated in: 0.00577219
+
+Name: mdb046.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.714956537
+Output Saturated in: 0.006847239
+Max Diff Analysis Completed in: 0.036419489
+Output Saturated in: 0.009922524
+Center Diff Analysis Completed in: 0.037088328
+Output Saturated in: 0.011241369
+Average Analysis Completed in: 0.004993963
+Output Saturated in: 0.004554908
+
+Name: mdb047.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.145329818
+Output Saturated in: 0.013916824
+Max Diff Analysis Completed in: 0.031556555
+Output Saturated in: 0.005658295
+Center Diff Analysis Completed in: 0.022762547
+Output Saturated in: 0.008998885
+Average Analysis Completed in: 0.017109784
+Output Saturated in: 0.00689923
+
+Name: mdb048.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.405857916
+Output Saturated in: 0.007408437
+Max Diff Analysis Completed in: 0.025740057
+Output Saturated in: 0.014281546
+Center Diff Analysis Completed in: 0.033353535
+Output Saturated in: 0.012015603
+Average Analysis Completed in: 0.013159466
+Output Saturated in: 0.007879252
+
+Name: mdb049.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.851205146
+Output Saturated in: 0.009730432
+Max Diff Analysis Completed in: 0.029776399
+Output Saturated in: 0.008852523
+Center Diff Analysis Completed in: 0.033633744
+Output Saturated in: 0.004337723
+Average Analysis Completed in: 0.005173391
+Output Saturated in: 0.006260569
+
+Name: mdb050.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.008824566
+Output Saturated in: 0.011170362
+Max Diff Analysis Completed in: 0.030142275
+Output Saturated in: 0.014405672
+Center Diff Analysis Completed in: 0.041790921
+Output Saturated in: 0.013420265
+Average Analysis Completed in: 0.005307804
+Output Saturated in: 0.005480016
+
+Name: mdb051.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.939364032
+Output Saturated in: 0.010235689
+Max Diff Analysis Completed in: 0.033273968
+Output Saturated in: 0.012175136
+Center Diff Analysis Completed in: 0.032861553
+Output Saturated in: 0.012515072
+Average Analysis Completed in: 0.013140442
+Output Saturated in: 0.008333303
+
+Name: mdb052.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.245382548
+Output Saturated in: 0.004230845
+Max Diff Analysis Completed in: 0.03053229
+Output Saturated in: 0.006818561
+Center Diff Analysis Completed in: 0.0321154
+Output Saturated in: 0.013714054
+Average Analysis Completed in: 0.012859133
+Output Saturated in: 0.004566547
+
+Name: mdb053.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.683481107
+Output Saturated in: 0.004601033
+Max Diff Analysis Completed in: 0.042591834
+Output Saturated in: 0.004666212
+Center Diff Analysis Completed in: 0.035888246
+Output Saturated in: 0.006437058
+Average Analysis Completed in: 0.008684811
+Output Saturated in: 0.006456385
+
+Name: mdb055.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.855284187
+Output Saturated in: 0.01387802
+Max Diff Analysis Completed in: 0.04117356
+Output Saturated in: 0.011394381
+Center Diff Analysis Completed in: 0.040439369
+Output Saturated in: 0.004288899
+Average Analysis Completed in: 0.015751512
+Output Saturated in: 0.011705075
+
+Name: mdb056.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.8877275070000001
+Output Saturated in: 0.011904731
+Max Diff Analysis Completed in: 0.045413838
+Output Saturated in: 0.007982659
+Center Diff Analysis Completed in: 0.064635092
+Output Saturated in: 0.011072493
+Average Analysis Completed in: 0.00704751
+Output Saturated in: 0.016114469
+
+Name: mdb057.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.785198892
+Output Saturated in: 0.004470445
+Max Diff Analysis Completed in: 0.035429826
+Output Saturated in: 0.004402885
+Center Diff Analysis Completed in: 0.033213561
+Output Saturated in: 0.004502514
+Average Analysis Completed in: 0.007370923
+Output Saturated in: 0.004503465
+
+Name: mdb058.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.6489330840000003
+Output Saturated in: 0.005563531
+Max Diff Analysis Completed in: 0.029824946
+Output Saturated in: 0.004733913
+Center Diff Analysis Completed in: 0.033155224
+Output Saturated in: 0.004899152
+Average Analysis Completed in: 0.016636672
+Output Saturated in: 0.00476566
+
+Name: mdb059.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.991308146
+Output Saturated in: 0.007053704
+Max Diff Analysis Completed in: 0.028999851
+Output Saturated in: 0.004569509
+Center Diff Analysis Completed in: 0.022692084
+Output Saturated in: 0.006713072
+Average Analysis Completed in: 0.017817813
+Output Saturated in: 0.005970985
+
+Name: mdb060.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.130382847
+Output Saturated in: 0.004514429
+Max Diff Analysis Completed in: 0.044224439
+Output Saturated in: 0.007563007
+Center Diff Analysis Completed in: 0.034667031
+Output Saturated in: 0.006864344
+Average Analysis Completed in: 0.008748324
+Output Saturated in: 0.004623159
+
+Name: mdb061.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.61568875
+Output Saturated in: 0.004477657
+Max Diff Analysis Completed in: 0.033395214
+Output Saturated in: 0.009063699
+Center Diff Analysis Completed in: 0.031255773
+Output Saturated in: 0.006140851
+Average Analysis Completed in: 0.009750509
+Output Saturated in: 0.004366142
+
+Name: mdb062.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.753451948
+Output Saturated in: 0.006525746
+Max Diff Analysis Completed in: 0.020057509
+Output Saturated in: 0.006232062
+Center Diff Analysis Completed in: 0.030259882
+Output Saturated in: 0.004478942
+Average Analysis Completed in: 0.022159165
+Output Saturated in: 0.008786584
+
+Name: mdb063.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.315333229
+Output Saturated in: 0.004475607
+Max Diff Analysis Completed in: 0.040172881
+Output Saturated in: 0.004474241
+Center Diff Analysis Completed in: 0.041786388
+Output Saturated in: 0.008091403
+Average Analysis Completed in: 0.01709611
+Output Saturated in: 0.007979763
+
+Name: mdb064.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.072422838
+Output Saturated in: 0.004415199
+Max Diff Analysis Completed in: 0.044268416
+Output Saturated in: 0.013175014
+Center Diff Analysis Completed in: 0.040298381
+Output Saturated in: 0.005413202
+Average Analysis Completed in: 0.0057243
+Output Saturated in: 0.009890376
+
+Name: mdb065.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.081397842
+Output Saturated in: 0.013831497
+Max Diff Analysis Completed in: 0.026091888
+Output Saturated in: 0.01257324
+Center Diff Analysis Completed in: 0.027939658
+Output Saturated in: 0.01230523
+Average Analysis Completed in: 0.010383911
+Output Saturated in: 0.005483638
+
+Name: mdb066.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.181565499
+Output Saturated in: 0.01424183
+Max Diff Analysis Completed in: 0.030472241
+Output Saturated in: 0.010948208
+Center Diff Analysis Completed in: 0.027537718
+Output Saturated in: 0.013834725
+Average Analysis Completed in: 0.005389721
+Output Saturated in: 0.008568587
+
+Name: mdb067.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.170299171
+Output Saturated in: 0.007591812
+Max Diff Analysis Completed in: 0.038612228
+Output Saturated in: 0.012909473
+Center Diff Analysis Completed in: 0.028007921
+Output Saturated in: 0.007233488
+Average Analysis Completed in: 0.004825764
+Output Saturated in: 0.004449222
+
+Name: mdb068.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.083618263
+Output Saturated in: 0.008278408
+Max Diff Analysis Completed in: 0.022519793
+Output Saturated in: 0.00864043
+Center Diff Analysis Completed in: 0.027364293
+Output Saturated in: 0.00603817
+Average Analysis Completed in: 0.004697717
+Output Saturated in: 0.01145585
+
+Name: mdb069.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.987828442
+Output Saturated in: 0.006869958
+Max Diff Analysis Completed in: 0.031349669
+Output Saturated in: 0.01067686
+Center Diff Analysis Completed in: 0.037119416
+Output Saturated in: 0.011953422
+Average Analysis Completed in: 0.007644188
+Output Saturated in: 0.013692326
+
+Name: mdb070.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.9649362999999997
+Output Saturated in: 0.010949581
+Max Diff Analysis Completed in: 0.028630666
+Output Saturated in: 0.01001618
+Center Diff Analysis Completed in: 0.027154008
+Output Saturated in: 0.011578212
+Average Analysis Completed in: 0.004923913
+Output Saturated in: 0.012119379
+
+Name: mdb071.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.709829893
+Output Saturated in: 0.015969505
+Max Diff Analysis Completed in: 0.052940726
+Output Saturated in: 0.011342929
+Center Diff Analysis Completed in: 0.045159537
+Output Saturated in: 0.022175318
+Average Analysis Completed in: 0.020032094
+Output Saturated in: 0.011141379
+
+Name: mdb072.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.651872666
+Output Saturated in: 0.010687277
+Max Diff Analysis Completed in: 0.031075741
+Output Saturated in: 0.006766294
+Center Diff Analysis Completed in: 0.045765881
+Output Saturated in: 0.006210912
+Average Analysis Completed in: 0.004715786
+Output Saturated in: 0.010876896
+
+Name: mdb073.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.617888823
+Output Saturated in: 0.00917688
+Max Diff Analysis Completed in: 0.04399555
+Output Saturated in: 0.011940018
+Center Diff Analysis Completed in: 0.043294331
+Output Saturated in: 0.012170941
+Average Analysis Completed in: 0.011986778
+Output Saturated in: 0.011396138
+
+Name: mdb074.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.702039429
+Output Saturated in: 0.011033011
+Max Diff Analysis Completed in: 0.037618571
+Output Saturated in: 0.009277354
+Center Diff Analysis Completed in: 0.039921431
+Output Saturated in: 0.008517071
+Average Analysis Completed in: 0.012174398
+Output Saturated in: 0.012522893
+
+Name: mdb075.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.294338313
+Output Saturated in: 0.004513713
+Max Diff Analysis Completed in: 0.037765933
+Output Saturated in: 0.012078858
+Center Diff Analysis Completed in: 0.032222841
+Output Saturated in: 0.006846447
+Average Analysis Completed in: 0.014922407
+Output Saturated in: 0.004711183
+
+Name: mdb076.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.484516348
+Output Saturated in: 0.004689709
+Max Diff Analysis Completed in: 0.029309575
+Output Saturated in: 0.012642184
+Center Diff Analysis Completed in: 0.033483706
+Output Saturated in: 0.01461841
+Average Analysis Completed in: 0.015916336
+Output Saturated in: 0.006591163
+
+Name: mdb077.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.970337254
+Output Saturated in: 0.007788158
+Max Diff Analysis Completed in: 0.023071819
+Output Saturated in: 0.007485303
+Center Diff Analysis Completed in: 0.024682557
+Output Saturated in: 0.00654501
+Average Analysis Completed in: 0.005138947
+Output Saturated in: 0.004560043
+
+Name: mdb078.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.804110384
+Output Saturated in: 0.004587846
+Max Diff Analysis Completed in: 0.023376355
+Output Saturated in: 0.00458946
+Center Diff Analysis Completed in: 0.032082237
+Output Saturated in: 0.008655836
+Average Analysis Completed in: 0.007093991
+Output Saturated in: 0.007623146
+
+Name: mdb079.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.424658417
+Output Saturated in: 0.015827091
+Max Diff Analysis Completed in: 0.027550263
+Output Saturated in: 0.009077555
+Center Diff Analysis Completed in: 0.042235981
+Output Saturated in: 0.012581091
+Average Analysis Completed in: 0.010379253
+Output Saturated in: 0.005841376
+
+Name: mdb080.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.203441177
+Output Saturated in: 0.012781103
+Max Diff Analysis Completed in: 0.026186547
+Output Saturated in: 0.010334128
+Center Diff Analysis Completed in: 0.024077414
+Output Saturated in: 0.013926068
+Average Analysis Completed in: 0.004927596
+Output Saturated in: 0.008453198
+
+Name: mdb081.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.409993263
+Output Saturated in: 0.012471252
+Max Diff Analysis Completed in: 0.029019443
+Output Saturated in: 0.005866078
+Center Diff Analysis Completed in: 0.033366466
+Output Saturated in: 0.007461659
+Average Analysis Completed in: 0.007018045
+Output Saturated in: 0.005884082
+
+Name: mdb083.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.936759185
+Output Saturated in: 0.005359371
+Max Diff Analysis Completed in: 0.041610876
+Output Saturated in: 0.006661643
+Center Diff Analysis Completed in: 0.036509533
+Output Saturated in: 0.009827199
+Average Analysis Completed in: 0.021236158
+Output Saturated in: 0.020511867
+
+Name: mdb084.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.20040361
+Output Saturated in: 0.006714289
+Max Diff Analysis Completed in: 0.023374572
+Output Saturated in: 0.013238241
+Center Diff Analysis Completed in: 0.034777099
+Output Saturated in: 0.011809516
+Average Analysis Completed in: 0.004617753
+Output Saturated in: 0.006920855
+
+Name: mdb085.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.278477548
+Output Saturated in: 0.00630766
+Max Diff Analysis Completed in: 0.037636734
+Output Saturated in: 0.010030941
+Center Diff Analysis Completed in: 0.042636481
+Output Saturated in: 0.008909126
+Average Analysis Completed in: 0.007103343
+Output Saturated in: 0.011831675
+
+Name: mdb086.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.107677704
+Output Saturated in: 0.009857903
+Max Diff Analysis Completed in: 0.028497935
+Output Saturated in: 0.004581302
+Center Diff Analysis Completed in: 0.056427439
+Output Saturated in: 0.005337543
+Average Analysis Completed in: 0.016951692
+Output Saturated in: 0.006934451
+
+Name: mdb087.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.406677866
+Output Saturated in: 0.004705072
+Max Diff Analysis Completed in: 0.039541054
+Output Saturated in: 0.011432907
+Center Diff Analysis Completed in: 0.04488423
+Output Saturated in: 0.004480311
+Average Analysis Completed in: 0.022492384
+Output Saturated in: 0.009335948
+
+Name: mdb088.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.124967451
+Output Saturated in: 0.007682754
+Max Diff Analysis Completed in: 0.029139194
+Output Saturated in: 0.00624284
+Center Diff Analysis Completed in: 0.031645356
+Output Saturated in: 0.009415746
+Average Analysis Completed in: 0.007420176
+Output Saturated in: 0.011976552
+
+Name: mdb089.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.127256824
+Output Saturated in: 0.006769067
+Max Diff Analysis Completed in: 0.039107587
+Output Saturated in: 0.009538062
+Center Diff Analysis Completed in: 0.039938121
+Output Saturated in: 0.005977294
+Average Analysis Completed in: 0.013378464
+Output Saturated in: 0.009158005
+
+Name: mdb090.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.106034432
+Output Saturated in: 0.011897649
+Max Diff Analysis Completed in: 0.034805813
+Output Saturated in: 0.014424011
+Center Diff Analysis Completed in: 0.030366985
+Output Saturated in: 0.004406546
+Average Analysis Completed in: 0.022259454
+Output Saturated in: 0.010473403
+
+Name: mdb091.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.668963189
+Output Saturated in: 0.011094451
+Max Diff Analysis Completed in: 0.023113087
+Output Saturated in: 0.011901922
+Center Diff Analysis Completed in: 0.027935254
+Output Saturated in: 0.004889838
+Average Analysis Completed in: 0.01333441
+Output Saturated in: 0.007592412
+
+Name: mdb092.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.209291452
+Output Saturated in: 0.004139016
+Max Diff Analysis Completed in: 0.02087571
+Output Saturated in: 0.007634452
+Center Diff Analysis Completed in: 0.02531013
+Output Saturated in: 0.006258593
+Average Analysis Completed in: 0.00474143
+Output Saturated in: 0.012753533
+
+Name: mdb093.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.1437585710000002
+Output Saturated in: 0.0091326
+Max Diff Analysis Completed in: 0.033538367
+Output Saturated in: 0.006680129
+Center Diff Analysis Completed in: 0.043441561
+Output Saturated in: 0.013497777
+Average Analysis Completed in: 0.014099311
+Output Saturated in: 0.009361933
+
+Name: mdb094.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.301423513
+Output Saturated in: 0.004631489
+Max Diff Analysis Completed in: 0.024478257
+Output Saturated in: 0.013680689
+Center Diff Analysis Completed in: 0.030842145
+Output Saturated in: 0.010786126
+Average Analysis Completed in: 0.004845302
+Output Saturated in: 0.01140356
+
+Name: mdb095.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.573349112
+Output Saturated in: 0.011476576
+Max Diff Analysis Completed in: 0.025238156
+Output Saturated in: 0.006551264
+Center Diff Analysis Completed in: 0.026915348
+Output Saturated in: 0.007316492
+Average Analysis Completed in: 0.004827918
+Output Saturated in: 0.005867661
+
+Name: mdb096.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.233660019
+Output Saturated in: 0.014690296
+Max Diff Analysis Completed in: 0.026104533
+Output Saturated in: 0.016054025
+Center Diff Analysis Completed in: 0.043145213
+Output Saturated in: 0.012439354
+Average Analysis Completed in: 0.011845363
+Output Saturated in: 0.006462611
+
+Name: mdb097.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.927074651
+Output Saturated in: 0.007817248
+Max Diff Analysis Completed in: 0.024516595
+Output Saturated in: 0.01108467
+Center Diff Analysis Completed in: 0.027330091
+Output Saturated in: 0.008462364
+Average Analysis Completed in: 0.01327519
+Output Saturated in: 0.011039074
+
+Name: mdb098.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.056533781
+Output Saturated in: 0.006467493
+Max Diff Analysis Completed in: 0.02263632
+Output Saturated in: 0.013184482
+Center Diff Analysis Completed in: 0.024167158
+Output Saturated in: 0.006388546
+Average Analysis Completed in: 0.004766936
+Output Saturated in: 0.010364261
+
+Name: mdb099.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.147842428
+Output Saturated in: 0.012253156
+Max Diff Analysis Completed in: 0.027365141
+Output Saturated in: 0.012983575
+Center Diff Analysis Completed in: 0.027626521
+Output Saturated in: 0.014102528
+Average Analysis Completed in: 0.007187618
+Output Saturated in: 0.00790132
+
+Name: mdb100.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.417297235
+Output Saturated in: 0.011038472
+Max Diff Analysis Completed in: 0.033191799
+Output Saturated in: 0.005586981
+Center Diff Analysis Completed in: 0.030579726
+Output Saturated in: 0.01513117
+Average Analysis Completed in: 0.007577062
+Output Saturated in: 0.004521086
+
+Name: mdb101.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.2350754
+Output Saturated in: 0.006358306
+Max Diff Analysis Completed in: 0.023682072
+Output Saturated in: 0.004965958
+Center Diff Analysis Completed in: 0.030493741
+Output Saturated in: 0.006699679
+Average Analysis Completed in: 0.005686443
+Output Saturated in: 0.011787844
+
+Name: mdb102.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.229587992
+Output Saturated in: 0.008225578
+Max Diff Analysis Completed in: 0.026286602
+Output Saturated in: 0.006750693
+Center Diff Analysis Completed in: 0.028255893
+Output Saturated in: 0.00929461
+Average Analysis Completed in: 0.007170181
+Output Saturated in: 0.012244755
+
+Name: mdb103.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.3332063339999998
+Output Saturated in: 0.011120391
+Max Diff Analysis Completed in: 0.021599571
+Output Saturated in: 0.013360864
+Center Diff Analysis Completed in: 0.031743835
+Output Saturated in: 0.011140421
+Average Analysis Completed in: 0.009619293
+Output Saturated in: 0.007264362
+
+Name: mdb104.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.152315091
+Output Saturated in: 0.008350368
+Max Diff Analysis Completed in: 0.021985258
+Output Saturated in: 0.013567941
+Center Diff Analysis Completed in: 0.031449401
+Output Saturated in: 0.012834481
+Average Analysis Completed in: 0.006059387
+Output Saturated in: 0.008670029
+
+Name: mdb105.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.5649108739999997
+Output Saturated in: 0.004280699
+Max Diff Analysis Completed in: 0.026077384
+Output Saturated in: 0.00473737
+Center Diff Analysis Completed in: 0.034006194
+Output Saturated in: 0.008687066
+Average Analysis Completed in: 0.009133234
+Output Saturated in: 0.007153746
+
+Name: mdb106.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.246998718
+Output Saturated in: 0.004299749
+Max Diff Analysis Completed in: 0.023207085
+Output Saturated in: 0.004261635
+Center Diff Analysis Completed in: 0.024424964
+Output Saturated in: 0.004337855
+Average Analysis Completed in: 0.004674507
+Output Saturated in: 0.004412079
+
+Name: mdb107.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.036995089
+Output Saturated in: 0.005371645
+Max Diff Analysis Completed in: 0.023518011
+Output Saturated in: 0.011233555
+Center Diff Analysis Completed in: 0.024559301
+Output Saturated in: 0.006028972
+Average Analysis Completed in: 0.005075683
+Output Saturated in: 0.006076551
+
+Name: mdb108.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.872432482
+Output Saturated in: 0.004266024
+Max Diff Analysis Completed in: 0.022878418
+Output Saturated in: 0.00885049
+Center Diff Analysis Completed in: 0.027573155
+Output Saturated in: 0.008792554
+Average Analysis Completed in: 0.007018255
+Output Saturated in: 0.01319655
+
+Name: mdb109.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.758908646
+Output Saturated in: 0.00967961
+Max Diff Analysis Completed in: 0.025788305
+Output Saturated in: 0.008371325
+Center Diff Analysis Completed in: 0.027002832
+Output Saturated in: 0.006589946
+Average Analysis Completed in: 0.004700284
+Output Saturated in: 0.005639342
+
+Name: mdb110.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.591872571
+Output Saturated in: 0.011690683
+Max Diff Analysis Completed in: 0.026508915
+Output Saturated in: 0.012458392
+Center Diff Analysis Completed in: 0.029719666
+Output Saturated in: 0.008300974
+Average Analysis Completed in: 0.005185724
+Output Saturated in: 0.010127693
+
+Name: mdb111.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.755434884
+Output Saturated in: 0.006065833
+Max Diff Analysis Completed in: 0.026315541
+Output Saturated in: 0.004316223
+Center Diff Analysis Completed in: 0.027344369
+Output Saturated in: 0.004270789
+Average Analysis Completed in: 0.00537093
+Output Saturated in: 0.011766316
+
+Name: mdb112.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.217240197
+Output Saturated in: 0.004504329
+Max Diff Analysis Completed in: 0.022666307
+Output Saturated in: 0.006725911
+Center Diff Analysis Completed in: 0.028574282
+Output Saturated in: 0.004358792
+Average Analysis Completed in: 0.005004567
+Output Saturated in: 0.011813358
+
+Name: mdb113.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.795373165
+Output Saturated in: 0.013759627
+Max Diff Analysis Completed in: 0.028384241
+Output Saturated in: 0.010103108
+Center Diff Analysis Completed in: 0.028497294
+Output Saturated in: 0.012133863
+Average Analysis Completed in: 0.004671175
+Output Saturated in: 0.012310053
+
+Name: mdb114.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.705045541
+Output Saturated in: 0.008333484
+Max Diff Analysis Completed in: 0.028580137
+Output Saturated in: 0.011804178
+Center Diff Analysis Completed in: 0.025618479
+Output Saturated in: 0.005976558
+Average Analysis Completed in: 0.010781184
+Output Saturated in: 0.007725025
+
+Name: mdb115.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.2987005099999998
+Output Saturated in: 0.004330615
+Max Diff Analysis Completed in: 0.038487875
+Output Saturated in: 0.004714639
+Center Diff Analysis Completed in: 0.029566988
+Output Saturated in: 0.006396299
+Average Analysis Completed in: 0.006754297
+Output Saturated in: 0.011683212
+
+Name: mdb117.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.598944354
+Output Saturated in: 0.007617392
+Max Diff Analysis Completed in: 0.022255314
+Output Saturated in: 0.00454594
+Center Diff Analysis Completed in: 0.02469024
+Output Saturated in: 0.004290002
+Average Analysis Completed in: 0.004578746
+Output Saturated in: 0.009575732
+
+Name: mdb118.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.454142754
+Output Saturated in: 0.004776868
+Max Diff Analysis Completed in: 0.034316545
+Output Saturated in: 0.008939939
+Center Diff Analysis Completed in: 0.055533956
+Output Saturated in: 0.004415611
+Average Analysis Completed in: 0.005475563
+Output Saturated in: 0.014590628
+
+Name: mdb119.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.832257995
+Output Saturated in: 0.00488183
+Max Diff Analysis Completed in: 0.022537912
+Output Saturated in: 0.004569985
+Center Diff Analysis Completed in: 0.024292456
+Output Saturated in: 0.004391733
+Average Analysis Completed in: 0.006321694
+Output Saturated in: 0.005166906
+
+Name: mdb120.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.113833849
+Output Saturated in: 0.004427002
+Max Diff Analysis Completed in: 0.02241684
+Output Saturated in: 0.004498573
+Center Diff Analysis Completed in: 0.022985507
+Output Saturated in: 0.004420776
+Average Analysis Completed in: 0.004920361
+Output Saturated in: 0.004295497
+
+Name: mdb121.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.151171462
+Output Saturated in: 0.004544392
+Max Diff Analysis Completed in: 0.023070014
+Output Saturated in: 0.00849323
+Center Diff Analysis Completed in: 0.024643738
+Output Saturated in: 0.004139529
+Average Analysis Completed in: 0.004907751
+Output Saturated in: 0.011452053
+
+Name: mdb122.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.834302489
+Output Saturated in: 0.004269438
+Max Diff Analysis Completed in: 0.022604411
+Output Saturated in: 0.004296387
+Center Diff Analysis Completed in: 0.043180956
+Output Saturated in: 0.008046638
+Average Analysis Completed in: 0.004669441
+Output Saturated in: 0.010056883
+
+Name: mdb123.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.544877708
+Output Saturated in: 0.009025166
+Max Diff Analysis Completed in: 0.022608001
+Output Saturated in: 0.010388556
+Center Diff Analysis Completed in: 0.022826478
+Output Saturated in: 0.006054122
+Average Analysis Completed in: 0.004879952
+Output Saturated in: 0.013867753
+
+Name: mdb124.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.097961721
+Output Saturated in: 0.004301196
+Max Diff Analysis Completed in: 0.020285827
+Output Saturated in: 0.007963506
+Center Diff Analysis Completed in: 0.0378349
+Output Saturated in: 0.004440888
+Average Analysis Completed in: 0.004929936
+Output Saturated in: 0.008713661
+
+Name: mdb125.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.708056099
+Output Saturated in: 0.01361001
+Max Diff Analysis Completed in: 0.031473955
+Output Saturated in: 0.013356452
+Center Diff Analysis Completed in: 0.023819153
+Output Saturated in: 0.013061969
+Average Analysis Completed in: 0.005552349
+Output Saturated in: 0.009091166
+
+Name: mdb126.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.93199076
+Output Saturated in: 0.02670276
+Max Diff Analysis Completed in: 0.026760695
+Output Saturated in: 0.007863562
+Center Diff Analysis Completed in: 0.036110119
+Output Saturated in: 0.004386534
+Average Analysis Completed in: 0.004647961
+Output Saturated in: 0.011770979
+
+Name: mdb127.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.869965138
+Output Saturated in: 0.01353071
+Max Diff Analysis Completed in: 0.030981621
+Output Saturated in: 0.013028713
+Center Diff Analysis Completed in: 0.031624546
+Output Saturated in: 0.010494781
+Average Analysis Completed in: 0.007469564
+Output Saturated in: 0.004801403
+
+Name: mdb128.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.725545242
+Output Saturated in: 0.006745565
+Max Diff Analysis Completed in: 0.019476521
+Output Saturated in: 0.018524891
+Center Diff Analysis Completed in: 0.031484809
+Output Saturated in: 0.008813914
+Average Analysis Completed in: 0.005754348
+Output Saturated in: 0.013007039
+
+Name: mdb129.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.915612308
+Output Saturated in: 0.011329405
+Max Diff Analysis Completed in: 0.022939014
+Output Saturated in: 0.013801039
+Center Diff Analysis Completed in: 0.027721913
+Output Saturated in: 0.005506782
+Average Analysis Completed in: 0.004680021
+Output Saturated in: 0.006717096
+
+Name: mdb130.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.053626747
+Output Saturated in: 0.00661418
+Max Diff Analysis Completed in: 0.022553544
+Output Saturated in: 0.011396152
+Center Diff Analysis Completed in: 0.023899579
+Output Saturated in: 0.008582606
+Average Analysis Completed in: 0.004964961
+Output Saturated in: 0.012625759
+
+Name: mdb131.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.09434828
+Output Saturated in: 0.00458092
+Max Diff Analysis Completed in: 0.028927094
+Output Saturated in: 0.009898702
+Center Diff Analysis Completed in: 0.028693181
+Output Saturated in: 0.00426085
+Average Analysis Completed in: 0.004872307
+Output Saturated in: 0.006085946
+
+Name: mdb132.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.785265591
+Output Saturated in: 0.004282827
+Max Diff Analysis Completed in: 0.024993291
+Output Saturated in: 0.004270925
+Center Diff Analysis Completed in: 0.026079048
+Output Saturated in: 0.004232813
+Average Analysis Completed in: 0.004982676
+Output Saturated in: 0.009322305
+
+Name: mdb133.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.9634224190000005
+Output Saturated in: 0.004117915
+Max Diff Analysis Completed in: 0.028037876
+Output Saturated in: 0.004149416
+Center Diff Analysis Completed in: 0.033594123
+Output Saturated in: 0.007799849
+Average Analysis Completed in: 0.004599586
+Output Saturated in: 0.006448435
+
+Name: mdb134.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.895449764
+Output Saturated in: 0.004233808
+Max Diff Analysis Completed in: 0.024852625
+Output Saturated in: 0.004205176
+Center Diff Analysis Completed in: 0.031897844
+Output Saturated in: 0.008543168
+Average Analysis Completed in: 0.004672586
+Output Saturated in: 0.00420901
+
+Name: mdb135.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.049991035
+Output Saturated in: 0.004279941
+Max Diff Analysis Completed in: 0.025941346
+Output Saturated in: 0.004555238
+Center Diff Analysis Completed in: 0.027056048
+Output Saturated in: 0.004322099
+Average Analysis Completed in: 0.004668278
+Output Saturated in: 0.00787204
+
+Name: mdb136.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.7931534080000002
+Output Saturated in: 0.004240262
+Max Diff Analysis Completed in: 0.024541444
+Output Saturated in: 0.004214268
+Center Diff Analysis Completed in: 0.025573147
+Output Saturated in: 0.004244753
+Average Analysis Completed in: 0.004724743
+Output Saturated in: 0.004594619
+
+Name: mdb137.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.768629433
+Output Saturated in: 0.009509042
+Max Diff Analysis Completed in: 0.028853213
+Output Saturated in: 0.012543354
+Center Diff Analysis Completed in: 0.033240884
+Output Saturated in: 0.007980513
+Average Analysis Completed in: 0.00511677
+Output Saturated in: 0.014372188
+
+Name: mdb138.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.521091614
+Output Saturated in: 0.007084032
+Max Diff Analysis Completed in: 0.043554655
+Output Saturated in: 0.00463658
+Center Diff Analysis Completed in: 0.024148218
+Output Saturated in: 0.005081245
+Average Analysis Completed in: 0.014432046
+Output Saturated in: 0.007388364
+
+Name: mdb139.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.012858087
+Output Saturated in: 0.004228336
+Max Diff Analysis Completed in: 0.024917442
+Output Saturated in: 0.004212455
+Center Diff Analysis Completed in: 0.026154893
+Output Saturated in: 0.004434096
+Average Analysis Completed in: 0.0061534
+Output Saturated in: 0.004925964
+
+Name: mdb140.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.162095756
+Output Saturated in: 0.004269642
+Max Diff Analysis Completed in: 0.025565586
+Output Saturated in: 0.004295563
+Center Diff Analysis Completed in: 0.026256465
+Output Saturated in: 0.004361439
+Average Analysis Completed in: 0.004889141
+Output Saturated in: 0.004391974
+
+Name: mdb141.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.972502701
+Output Saturated in: 0.004416553
+Max Diff Analysis Completed in: 0.025868361
+Output Saturated in: 0.004501747
+Center Diff Analysis Completed in: 0.027163448
+Output Saturated in: 0.004360716
+Average Analysis Completed in: 0.00487395
+Output Saturated in: 0.004461929
+
+Name: mdb142.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.907320101
+Output Saturated in: 0.004316829
+Max Diff Analysis Completed in: 0.024990752
+Output Saturated in: 0.00429877
+Center Diff Analysis Completed in: 0.025964423
+Output Saturated in: 0.004233339
+Average Analysis Completed in: 0.004763145
+Output Saturated in: 0.00819649
+
+Name: mdb143.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.612046022
+Output Saturated in: 0.004880529
+Max Diff Analysis Completed in: 0.027058682
+Output Saturated in: 0.004134438
+Center Diff Analysis Completed in: 0.027670688
+Output Saturated in: 0.004270238
+Average Analysis Completed in: 0.005570898
+Output Saturated in: 0.004251693
+
+Name: mdb144.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.645201033
+Output Saturated in: 0.004404169
+Max Diff Analysis Completed in: 0.027393795
+Output Saturated in: 0.004246119
+Center Diff Analysis Completed in: 0.026422024
+Output Saturated in: 0.004438483
+Average Analysis Completed in: 0.004744462
+Output Saturated in: 0.00425915
+
+Name: mdb145.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.735221816
+Output Saturated in: 0.004228071
+Max Diff Analysis Completed in: 0.028004625
+Output Saturated in: 0.007351874
+Center Diff Analysis Completed in: 0.027242099
+Output Saturated in: 0.004376227
+Average Analysis Completed in: 0.004908485
+Output Saturated in: 0.004549567
+
+Name: mdb146.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.497225471
+Output Saturated in: 0.004545994
+Max Diff Analysis Completed in: 0.025190681
+Output Saturated in: 0.005355315
+Center Diff Analysis Completed in: 0.028944399
+Output Saturated in: 0.00596719
+Average Analysis Completed in: 0.00571795
+Output Saturated in: 0.008523412
+
+Name: mdb147.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.583316738
+Output Saturated in: 0.004451839
+Max Diff Analysis Completed in: 0.027178136
+Output Saturated in: 0.007185306
+Center Diff Analysis Completed in: 0.027363551
+Output Saturated in: 0.00425065
+Average Analysis Completed in: 0.004748731
+Output Saturated in: 0.004284175
+
+Name: mdb148.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.607324468
+Output Saturated in: 0.004221848
+Max Diff Analysis Completed in: 0.026742787
+Output Saturated in: 0.004213827
+Center Diff Analysis Completed in: 0.028644099
+Output Saturated in: 0.004265876
+Average Analysis Completed in: 0.00474656
+Output Saturated in: 0.004294264
+
+Name: mdb149.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.943280433
+Output Saturated in: 0.004553835
+Max Diff Analysis Completed in: 0.025241488
+Output Saturated in: 0.004815287
+Center Diff Analysis Completed in: 0.045680564
+Output Saturated in: 0.00455383
+Average Analysis Completed in: 0.004896268
+Output Saturated in: 0.00765446
+
+Name: mdb150.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.614834243
+Output Saturated in: 0.00443658
+Max Diff Analysis Completed in: 0.025141323
+Output Saturated in: 0.004824595
+Center Diff Analysis Completed in: 0.031700163
+Output Saturated in: 0.004398008
+Average Analysis Completed in: 0.005118675
+Output Saturated in: 0.005006617
+
+Name: mdb151.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 5.158911914
+Output Saturated in: 0.004361578
+Max Diff Analysis Completed in: 0.029239434
+Output Saturated in: 0.004335049
+Center Diff Analysis Completed in: 0.028923269
+Output Saturated in: 0.004251042
+Average Analysis Completed in: 0.004837415
+Output Saturated in: 0.004316366
+
+Name: mdb152.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 5.072080635
+Output Saturated in: 0.004359181
+Max Diff Analysis Completed in: 0.027586479
+Output Saturated in: 0.004155649
+Center Diff Analysis Completed in: 0.026046713
+Output Saturated in: 0.004291785
+Average Analysis Completed in: 0.004687202
+Output Saturated in: 0.004337471
+
+Name: mdb034.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.036431925
+Output Saturated in: 0.021128574
+Max Diff Analysis Completed in: 0.027735478
+Output Saturated in: 0.009593363
+Center Diff Analysis Completed in: 0.02213636
+Output Saturated in: 0.01177756
+Average Analysis Completed in: 0.005596395
+Output Saturated in: 0.004982608
+
+Name: mdb054.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.596355545
+Output Saturated in: 0.011302036
+Max Diff Analysis Completed in: 0.023737932
+Output Saturated in: 0.012597778
+Center Diff Analysis Completed in: 0.028542256
+Output Saturated in: 0.0118256
+Average Analysis Completed in: 0.007238392
+Output Saturated in: 0.004458039
+
+Name: mdb082.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.3083868770000002
+Output Saturated in: 0.004396994
+Max Diff Analysis Completed in: 0.02327116
+Output Saturated in: 0.004328656
+Center Diff Analysis Completed in: 0.024771192
+Output Saturated in: 0.004227146
+Average Analysis Completed in: 0.004777781
+Output Saturated in: 0.010615833
+
+Name: mdb116.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.833177955
+Output Saturated in: 0.004343485
+Max Diff Analysis Completed in: 0.022575009
+Output Saturated in: 0.004320062
+Center Diff Analysis Completed in: 0.023735138
+Output Saturated in: 0.004264533
+Average Analysis Completed in: 0.004816628
+Output Saturated in: 0.016008882
+
+Name: mdb153.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.320004064
+Output Saturated in: 0.004391284
+Max Diff Analysis Completed in: 0.026117301
+Output Saturated in: 0.00423104
+Center Diff Analysis Completed in: 0.024817728
+Output Saturated in: 0.004273804
+Average Analysis Completed in: 0.004678579
+Output Saturated in: 0.004188054
+
+Name: mdb187.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.511436058
+Output Saturated in: 0.004524085
+Max Diff Analysis Completed in: 0.021344114
+Output Saturated in: 0.004384425
+Center Diff Analysis Completed in: 0.03526647
+Output Saturated in: 0.004657667
+Average Analysis Completed in: 0.00491401
+Output Saturated in: 0.006663259
+
+Name: mdb207.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.972796372
+Output Saturated in: 0.011328171
+Max Diff Analysis Completed in: 0.030602172
+Output Saturated in: 0.012438857
+Center Diff Analysis Completed in: 0.030200067
+Output Saturated in: 0.009325967
+Average Analysis Completed in: 0.01606099
+Output Saturated in: 0.013019136
+
+Name: mdb230.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.811637312
+Output Saturated in: 0.006571789
+Max Diff Analysis Completed in: 0.021530841
+Output Saturated in: 0.010231392
+Center Diff Analysis Completed in: 0.029667921
+Output Saturated in: 0.004274944
+Average Analysis Completed in: 0.004868744
+Output Saturated in: 0.006780458
+
+Name: mdb266.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.975022134
+Output Saturated in: 0.01305209
+Max Diff Analysis Completed in: 0.028023129
+Output Saturated in: 0.011762052
+Center Diff Analysis Completed in: 0.031761177
+Output Saturated in: 0.009015464
+Average Analysis Completed in: 0.008454011
+Output Saturated in: 0.00873879
+
+Name: mdb291.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.765044226
+Output Saturated in: 0.004312215
+Max Diff Analysis Completed in: 0.022336762
+Output Saturated in: 0.005477109
+Center Diff Analysis Completed in: 0.026566419
+Output Saturated in: 0.004352206
+Average Analysis Completed in: 0.004994105
+Output Saturated in: 0.006262108
+
+Name: mdb154.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.442110885
+Output Saturated in: 0.004299916
+Max Diff Analysis Completed in: 0.025480147
+Output Saturated in: 0.004312212
+Center Diff Analysis Completed in: 0.026458187
+Output Saturated in: 0.004210606
+Average Analysis Completed in: 0.004877899
+Output Saturated in: 0.004177808
+
+Name: mdb155.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.478947862
+Output Saturated in: 0.004547253
+Max Diff Analysis Completed in: 0.024128443
+Output Saturated in: 0.004651853
+Center Diff Analysis Completed in: 0.025300777
+Output Saturated in: 0.004637815
+Average Analysis Completed in: 0.004908313
+Output Saturated in: 0.007372598
+
+Name: mdb156.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.150202869
+Output Saturated in: 0.004224198
+Max Diff Analysis Completed in: 0.023317253
+Output Saturated in: 0.004463779
+Center Diff Analysis Completed in: 0.024686923
+Output Saturated in: 0.004586343
+Average Analysis Completed in: 0.006043909
+Output Saturated in: 0.005300993
+
+Name: mdb157.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.434628784
+Output Saturated in: 0.009034984
+Max Diff Analysis Completed in: 0.024294959
+Output Saturated in: 0.013659217
+Center Diff Analysis Completed in: 0.033669361
+Output Saturated in: 0.010955018
+Average Analysis Completed in: 0.009698208
+Output Saturated in: 0.008493811
+
+Name: mdb158.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.29297504
+Output Saturated in: 0.009909818
+Max Diff Analysis Completed in: 0.02423207
+Output Saturated in: 0.008584606
+Center Diff Analysis Completed in: 0.035951418
+Output Saturated in: 0.009591265
+Average Analysis Completed in: 0.006790577
+Output Saturated in: 0.013655431
+
+Name: mdb159.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.976483357
+Output Saturated in: 0.00427162
+Max Diff Analysis Completed in: 0.02283878
+Output Saturated in: 0.011861717
+Center Diff Analysis Completed in: 0.035037752
+Output Saturated in: 0.008303747
+Average Analysis Completed in: 0.004924598
+Output Saturated in: 0.009468171
+
+Name: mdb160.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.97633653
+Output Saturated in: 0.004294493
+Max Diff Analysis Completed in: 0.022487885
+Output Saturated in: 0.006752005
+Center Diff Analysis Completed in: 0.023904557
+Output Saturated in: 0.004424529
+Average Analysis Completed in: 0.006164857
+Output Saturated in: 0.004429961
+
+Name: mdb161.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.423876592
+Output Saturated in: 0.004537713
+Max Diff Analysis Completed in: 0.021692162
+Output Saturated in: 0.013526865
+Center Diff Analysis Completed in: 0.031962802
+Output Saturated in: 0.011002527
+Average Analysis Completed in: 0.004885153
+Output Saturated in: 0.008315782
+
+Name: mdb162.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.405900217
+Output Saturated in: 0.004354234
+Max Diff Analysis Completed in: 0.022182243
+Output Saturated in: 0.009226691
+Center Diff Analysis Completed in: 0.029869652
+Output Saturated in: 0.011583555
+Average Analysis Completed in: 0.004649871
+Output Saturated in: 0.004453935
+
+Name: mdb163.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.708453682
+Output Saturated in: 0.00521023
+Max Diff Analysis Completed in: 0.040319859
+Output Saturated in: 0.010654344
+Center Diff Analysis Completed in: 0.023692218
+Output Saturated in: 0.005269245
+Average Analysis Completed in: 0.005069674
+Output Saturated in: 0.006031985
+
+Name: mdb164.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.656777587
+Output Saturated in: 0.010680229
+Max Diff Analysis Completed in: 0.021849213
+Output Saturated in: 0.012972316
+Center Diff Analysis Completed in: 0.023281338
+Output Saturated in: 0.007590135
+Average Analysis Completed in: 0.004807154
+Output Saturated in: 0.010732873
+
+Name: mdb165.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.537855454
+Output Saturated in: 0.008742687
+Max Diff Analysis Completed in: 0.029155787
+Output Saturated in: 0.00636973
+Center Diff Analysis Completed in: 0.034496621
+Output Saturated in: 0.008404019
+Average Analysis Completed in: 0.010557669
+Output Saturated in: 0.008314167
+
+Name: mdb166.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7523602870000001
+Output Saturated in: 0.004686802
+Max Diff Analysis Completed in: 0.031197249
+Output Saturated in: 0.004898231
+Center Diff Analysis Completed in: 0.034480416
+Output Saturated in: 0.007928163
+Average Analysis Completed in: 0.014477313
+Output Saturated in: 0.004857782
+
+Name: mdb167.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.634251034
+Output Saturated in: 0.00700363
+Max Diff Analysis Completed in: 0.024685363
+Output Saturated in: 0.01079291
+Center Diff Analysis Completed in: 0.027982748
+Output Saturated in: 0.008735036
+Average Analysis Completed in: 0.005353633
+Output Saturated in: 0.011867669
+
+Name: mdb168.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.149281851
+Output Saturated in: 0.00470092
+Max Diff Analysis Completed in: 0.022486238
+Output Saturated in: 0.008808964
+Center Diff Analysis Completed in: 0.032685734
+Output Saturated in: 0.004437209
+Average Analysis Completed in: 0.007468445
+Output Saturated in: 0.023692661
+
+Name: mdb169.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.279964979
+Output Saturated in: 0.006673967
+Max Diff Analysis Completed in: 0.031493717
+Output Saturated in: 0.014326462
+Center Diff Analysis Completed in: 0.036421966
+Output Saturated in: 0.010268189
+Average Analysis Completed in: 0.017369704
+Output Saturated in: 0.007983565
+
+Name: mdb170.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.92880893
+Output Saturated in: 0.011171429
+Max Diff Analysis Completed in: 0.030258544
+Output Saturated in: 0.01327757
+Center Diff Analysis Completed in: 0.028755654
+Output Saturated in: 0.013971609
+Average Analysis Completed in: 0.017173712
+Output Saturated in: 0.009560187
+
+Name: mdb171.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.455874714
+Output Saturated in: 0.010587623
+Max Diff Analysis Completed in: 0.02178055
+Output Saturated in: 0.014025176
+Center Diff Analysis Completed in: 0.032071634
+Output Saturated in: 0.007049916
+Average Analysis Completed in: 0.005094285
+Output Saturated in: 0.012264079
+
+Name: mdb172.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.256333333
+Output Saturated in: 0.004331147
+Max Diff Analysis Completed in: 0.022098794
+Output Saturated in: 0.01305779
+Center Diff Analysis Completed in: 0.032059009
+Output Saturated in: 0.011372472
+Average Analysis Completed in: 0.004753733
+Output Saturated in: 0.006421993
+
+Name: mdb173.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.431840371
+Output Saturated in: 0.006509752
+Max Diff Analysis Completed in: 0.02936624
+Output Saturated in: 0.004421681
+Center Diff Analysis Completed in: 0.025182583
+Output Saturated in: 0.004527608
+Average Analysis Completed in: 0.00471476
+Output Saturated in: 0.00893164
+
+Name: mdb174.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.588100702
+Output Saturated in: 0.004299916
+Max Diff Analysis Completed in: 0.023460511
+Output Saturated in: 0.004427038
+Center Diff Analysis Completed in: 0.024679216
+Output Saturated in: 0.004317354
+Average Analysis Completed in: 0.00486112
+Output Saturated in: 0.0087113
+
+Name: mdb175.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.130755849
+Output Saturated in: 0.013111556
+Max Diff Analysis Completed in: 0.037473973
+Output Saturated in: 0.005544046
+Center Diff Analysis Completed in: 0.032349682
+Output Saturated in: 0.013398875
+Average Analysis Completed in: 0.012770893
+Output Saturated in: 0.011076444
+
+Name: mdb176.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.186880003
+Output Saturated in: 0.005601453
+Max Diff Analysis Completed in: 0.031806394
+Output Saturated in: 0.007181818
+Center Diff Analysis Completed in: 0.02974542
+Output Saturated in: 0.007198707
+Average Analysis Completed in: 0.005401878
+Output Saturated in: 0.010096375
+
+Name: mdb177.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.5815027160000001
+Output Saturated in: 0.013748468
+Max Diff Analysis Completed in: 0.030286841
+Output Saturated in: 0.005748608
+Center Diff Analysis Completed in: 0.029920437
+Output Saturated in: 0.0058168
+Average Analysis Completed in: 0.007048137
+Output Saturated in: 0.005153028
+
+Name: mdb178.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7170599530000001
+Output Saturated in: 0.007331598
+Max Diff Analysis Completed in: 0.028028959
+Output Saturated in: 0.004717351
+Center Diff Analysis Completed in: 0.035097564
+Output Saturated in: 0.019001378
+Average Analysis Completed in: 0.006496794
+Output Saturated in: 0.011420885
+
+Name: mdb179.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.335670358
+Output Saturated in: 0.006236331
+Max Diff Analysis Completed in: 0.031134966
+Output Saturated in: 0.008419909
+Center Diff Analysis Completed in: 0.030984369
+Output Saturated in: 0.005448923
+Average Analysis Completed in: 0.009729077
+Output Saturated in: 0.013389019
+
+Name: mdb180.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.41625019
+Output Saturated in: 0.014693925
+Max Diff Analysis Completed in: 0.027588963
+Output Saturated in: 0.007191987
+Center Diff Analysis Completed in: 0.030458493
+Output Saturated in: 0.007487343
+Average Analysis Completed in: 0.011958786
+Output Saturated in: 0.010240351
+
+Name: mdb181.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.395595566
+Output Saturated in: 0.01255948
+Max Diff Analysis Completed in: 0.0250003
+Output Saturated in: 0.012152072
+Center Diff Analysis Completed in: 0.042843641
+Output Saturated in: 0.012615258
+Average Analysis Completed in: 0.00497318
+Output Saturated in: 0.004539208
+
+Name: mdb182.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.314223587
+Output Saturated in: 0.012403129
+Max Diff Analysis Completed in: 0.030710935
+Output Saturated in: 0.004600211
+Center Diff Analysis Completed in: 0.033796964
+Output Saturated in: 0.014314442
+Average Analysis Completed in: 0.004986756
+Output Saturated in: 0.007171703
+
+Name: mdb183.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.442056611
+Output Saturated in: 0.011027293
+Max Diff Analysis Completed in: 0.026807352
+Output Saturated in: 0.008413843
+Center Diff Analysis Completed in: 0.024772171
+Output Saturated in: 0.005441532
+Average Analysis Completed in: 0.005037863
+Output Saturated in: 0.011818913
+
+Name: mdb184.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.949886406
+Output Saturated in: 0.021861313
+Max Diff Analysis Completed in: 0.031349459
+Output Saturated in: 0.007924866
+Center Diff Analysis Completed in: 0.034983222
+Output Saturated in: 0.009555077
+Average Analysis Completed in: 0.006247504
+Output Saturated in: 0.004288599
+
+Name: mdb185.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.042887353
+Output Saturated in: 0.007494041
+Max Diff Analysis Completed in: 0.023535476
+Output Saturated in: 0.011844733
+Center Diff Analysis Completed in: 0.035387006
+Output Saturated in: 0.0133778
+Average Analysis Completed in: 0.007772651
+Output Saturated in: 0.012268198
+
+Name: mdb186.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.994253503
+Output Saturated in: 0.009552876
+Max Diff Analysis Completed in: 0.026734968
+Output Saturated in: 0.004474897
+Center Diff Analysis Completed in: 0.0280295
+Output Saturated in: 0.011329334
+Average Analysis Completed in: 0.006692887
+Output Saturated in: 0.005538045
+
+Name: mdb188.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.382837419
+Output Saturated in: 0.008286284
+Max Diff Analysis Completed in: 0.022694895
+Output Saturated in: 0.005372867
+Center Diff Analysis Completed in: 0.022956971
+Output Saturated in: 0.004480231
+Average Analysis Completed in: 0.004603762
+Output Saturated in: 0.013260034
+
+Name: mdb189.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.346214819
+Output Saturated in: 0.004244286
+Max Diff Analysis Completed in: 0.023600723
+Output Saturated in: 0.00684981
+Center Diff Analysis Completed in: 0.027034595
+Output Saturated in: 0.00594826
+Average Analysis Completed in: 0.004960336
+Output Saturated in: 0.012530767
+
+Name: mdb190.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.889402057
+Output Saturated in: 0.004359443
+Max Diff Analysis Completed in: 0.02505267
+Output Saturated in: 0.00658684
+Center Diff Analysis Completed in: 0.024224253
+Output Saturated in: 0.004367084
+Average Analysis Completed in: 0.004807257
+Output Saturated in: 0.0106279
+
+Name: mdb191.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.919744117
+Output Saturated in: 0.012898567
+Max Diff Analysis Completed in: 0.019531727
+Output Saturated in: 0.013794614
+Center Diff Analysis Completed in: 0.029726537
+Output Saturated in: 0.011012928
+Average Analysis Completed in: 0.009617425
+Output Saturated in: 0.004307634
+
+Name: mdb192.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.894353775
+Output Saturated in: 0.011461716
+Max Diff Analysis Completed in: 0.019838626
+Output Saturated in: 0.012285936
+Center Diff Analysis Completed in: 0.030251819
+Output Saturated in: 0.00614693
+Average Analysis Completed in: 0.004821179
+Output Saturated in: 0.008075581
+
+Name: mdb193.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.163558074
+Output Saturated in: 0.00460197
+Max Diff Analysis Completed in: 0.024470931
+Output Saturated in: 0.007223249
+Center Diff Analysis Completed in: 0.027948827
+Output Saturated in: 0.004545545
+Average Analysis Completed in: 0.004856987
+Output Saturated in: 0.004348846
+
+Name: mdb194.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.124565339
+Output Saturated in: 0.011376505
+Max Diff Analysis Completed in: 0.022521888
+Output Saturated in: 0.004452769
+Center Diff Analysis Completed in: 0.030658018
+Output Saturated in: 0.004429419
+Average Analysis Completed in: 0.004823198
+Output Saturated in: 0.004443762
+
+Name: mdb195.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.115421742
+Output Saturated in: 0.004285279
+Max Diff Analysis Completed in: 0.023757902
+Output Saturated in: 0.004351969
+Center Diff Analysis Completed in: 0.027879938
+Output Saturated in: 0.005596081
+Average Analysis Completed in: 0.004836128
+Output Saturated in: 0.008401437
+
+Name: mdb196.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.418478275
+Output Saturated in: 0.004392752
+Max Diff Analysis Completed in: 0.023365526
+Output Saturated in: 0.007810819
+Center Diff Analysis Completed in: 0.025693276
+Output Saturated in: 0.004559146
+Average Analysis Completed in: 0.005004089
+Output Saturated in: 0.004265699
+
+Name: mdb197.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.508580334
+Output Saturated in: 0.011021395
+Max Diff Analysis Completed in: 0.031427068
+Output Saturated in: 0.013187005
+Center Diff Analysis Completed in: 0.032758636
+Output Saturated in: 0.011143801
+Average Analysis Completed in: 0.013411118
+Output Saturated in: 0.013008517
+
+Name: mdb198.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.324712842
+Output Saturated in: 0.01369725
+Max Diff Analysis Completed in: 0.031493613
+Output Saturated in: 0.011043866
+Center Diff Analysis Completed in: 0.032534171
+Output Saturated in: 0.008972643
+Average Analysis Completed in: 0.009400006
+Output Saturated in: 0.007998577
+
+Name: mdb199.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.543313034
+Output Saturated in: 0.011384122
+Max Diff Analysis Completed in: 0.026180894
+Output Saturated in: 0.011882313
+Center Diff Analysis Completed in: 0.031727048
+Output Saturated in: 0.007674712
+Average Analysis Completed in: 0.008726798
+Output Saturated in: 0.00714254
+
+Name: mdb200.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.347020328
+Output Saturated in: 0.004660574
+Max Diff Analysis Completed in: 0.03220484
+Output Saturated in: 0.01268827
+Center Diff Analysis Completed in: 0.033232119
+Output Saturated in: 0.008589814
+Average Analysis Completed in: 0.005110849
+Output Saturated in: 0.010166103
+
+Name: mdb201.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.345606114
+Output Saturated in: 0.00429923
+Max Diff Analysis Completed in: 0.024017823
+Output Saturated in: 0.004284359
+Center Diff Analysis Completed in: 0.024906775
+Output Saturated in: 0.004528588
+Average Analysis Completed in: 0.004746682
+Output Saturated in: 0.013120945
+
+Name: mdb202.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.291152032
+Output Saturated in: 0.004313159
+Max Diff Analysis Completed in: 0.023633973
+Output Saturated in: 0.004805002
+Center Diff Analysis Completed in: 0.024977561
+Output Saturated in: 0.00435417
+Average Analysis Completed in: 0.00512989
+Output Saturated in: 0.005548232
+
+Name: mdb203.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.931194924
+Output Saturated in: 0.006293025
+Max Diff Analysis Completed in: 0.0278476
+Output Saturated in: 0.00464152
+Center Diff Analysis Completed in: 0.027775541
+Output Saturated in: 0.00586108
+Average Analysis Completed in: 0.005298734
+Output Saturated in: 0.004573938
+
+Name: mdb204.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.195191376
+Output Saturated in: 0.004299111
+Max Diff Analysis Completed in: 0.026655189
+Output Saturated in: 0.004345247
+Center Diff Analysis Completed in: 0.025860969
+Output Saturated in: 0.004239699
+Average Analysis Completed in: 0.004709102
+Output Saturated in: 0.005179135
+
+Name: mdb205.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.085826221
+Output Saturated in: 0.008040034
+Max Diff Analysis Completed in: 0.023679161
+Output Saturated in: 0.01067803
+Center Diff Analysis Completed in: 0.028510581
+Output Saturated in: 0.006004517
+Average Analysis Completed in: 0.004768999
+Output Saturated in: 0.013100298
+
+Name: mdb206.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.805097383
+Output Saturated in: 0.005709859
+Max Diff Analysis Completed in: 0.022599429
+Output Saturated in: 0.006365437
+Center Diff Analysis Completed in: 0.024237033
+Output Saturated in: 0.004456756
+Average Analysis Completed in: 0.005244047
+Output Saturated in: 0.013431261
+
+Name: mdb231.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.416242521
+Output Saturated in: 0.004486894
+Max Diff Analysis Completed in: 0.024025727
+Output Saturated in: 0.004293383
+Center Diff Analysis Completed in: 0.025138567
+Output Saturated in: 0.004529153
+Average Analysis Completed in: 0.007275351
+Output Saturated in: 0.004522502
+
+Name: mdb232.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.295467319
+Output Saturated in: 0.004698657
+Max Diff Analysis Completed in: 0.023016512
+Output Saturated in: 0.0045139
+Center Diff Analysis Completed in: 0.024522488
+Output Saturated in: 0.004466393
+Average Analysis Completed in: 0.004698752
+Output Saturated in: 0.007640694
+
+Name: mdb233.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.1225541
+Output Saturated in: 0.007098795
+Max Diff Analysis Completed in: 0.022776788
+Output Saturated in: 0.013507132
+Center Diff Analysis Completed in: 0.031840949
+Output Saturated in: 0.013828755
+Average Analysis Completed in: 0.004743698
+Output Saturated in: 0.005297645
+
+Name: mdb234.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.211686693
+Output Saturated in: 0.009164339
+Max Diff Analysis Completed in: 0.021553956
+Output Saturated in: 0.008674086
+Center Diff Analysis Completed in: 0.027067323
+Output Saturated in: 0.004617285
+Average Analysis Completed in: 0.004766525
+Output Saturated in: 0.004366379
+
+Name: mdb235.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.925207819
+Output Saturated in: 0.007634451
+Max Diff Analysis Completed in: 0.025965486
+Output Saturated in: 0.00632301
+Center Diff Analysis Completed in: 0.039139168
+Output Saturated in: 0.008054479
+Average Analysis Completed in: 0.010451856
+Output Saturated in: 0.0055051
+
+Name: mdb236.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.8437501899999997
+Output Saturated in: 0.005058807
+Max Diff Analysis Completed in: 0.022140942
+Output Saturated in: 0.005964436
+Center Diff Analysis Completed in: 0.02320288
+Output Saturated in: 0.004257291
+Average Analysis Completed in: 0.004848988
+Output Saturated in: 0.007431116
+
+Name: mdb237.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.765924702
+Output Saturated in: 0.012468433
+Max Diff Analysis Completed in: 0.029126152
+Output Saturated in: 0.010360232
+Center Diff Analysis Completed in: 0.03061241
+Output Saturated in: 0.00828195
+Average Analysis Completed in: 0.004984493
+Output Saturated in: 0.011747378
+
+Name: mdb238.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.309125154
+Output Saturated in: 0.00431394
+Max Diff Analysis Completed in: 0.020903985
+Output Saturated in: 0.004455224
+Center Diff Analysis Completed in: 0.026002935
+Output Saturated in: 0.007866879
+Average Analysis Completed in: 0.005105127
+Output Saturated in: 0.012269185
+
+Name: mdb239.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.048885569
+Output Saturated in: 0.004425072
+Max Diff Analysis Completed in: 0.022976049
+Output Saturated in: 0.004694626
+Center Diff Analysis Completed in: 0.023526374
+Output Saturated in: 0.004393534
+Average Analysis Completed in: 0.011721242
+Output Saturated in: 0.008124996
+
+Name: mdb240.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.889269958
+Output Saturated in: 0.008013815
+Max Diff Analysis Completed in: 0.02738896
+Output Saturated in: 0.007952867
+Center Diff Analysis Completed in: 0.055226501
+Output Saturated in: 0.009180621
+Average Analysis Completed in: 0.00564279
+Output Saturated in: 0.007653937
+
+Name: mdb241.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.009626825
+Output Saturated in: 0.014494967
+Max Diff Analysis Completed in: 0.033442515
+Output Saturated in: 0.014722585
+Center Diff Analysis Completed in: 0.030751581
+Output Saturated in: 0.01430637
+Average Analysis Completed in: 0.004962052
+Output Saturated in: 0.008033058
+
+Name: mdb242.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.856102197
+Output Saturated in: 0.007473141
+Max Diff Analysis Completed in: 0.027104413
+Output Saturated in: 0.01345759
+Center Diff Analysis Completed in: 0.022427839
+Output Saturated in: 0.004387695
+Average Analysis Completed in: 0.005027816
+Output Saturated in: 0.013024003
+
+Name: mdb243.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.527354369
+Output Saturated in: 0.011342143
+Max Diff Analysis Completed in: 0.0232531
+Output Saturated in: 0.016276098
+Center Diff Analysis Completed in: 0.023511817
+Output Saturated in: 0.004550263
+Average Analysis Completed in: 0.004918794
+Output Saturated in: 0.01302465
+
+Name: mdb244.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.396475433
+Output Saturated in: 0.012636246
+Max Diff Analysis Completed in: 0.021648035
+Output Saturated in: 0.00862488
+Center Diff Analysis Completed in: 0.034845761
+Output Saturated in: 0.006022418
+Average Analysis Completed in: 0.006417188
+Output Saturated in: 0.008429989
+
+Name: mdb245.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.160127028
+Output Saturated in: 0.008140087
+Max Diff Analysis Completed in: 0.031106372
+Output Saturated in: 0.008716225
+Center Diff Analysis Completed in: 0.034640519
+Output Saturated in: 0.012275643
+Average Analysis Completed in: 0.009826463
+Output Saturated in: 0.006343003
+
+Name: mdb246.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.9562334890000002
+Output Saturated in: 0.011516549
+Max Diff Analysis Completed in: 0.029385927
+Output Saturated in: 0.013063891
+Center Diff Analysis Completed in: 0.024312897
+Output Saturated in: 0.013697982
+Average Analysis Completed in: 0.007870409
+Output Saturated in: 0.008418925
+
+Name: mdb247.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.055642352
+Output Saturated in: 0.004469339
+Max Diff Analysis Completed in: 0.025537739
+Output Saturated in: 0.005616841
+Center Diff Analysis Completed in: 0.029035172
+Output Saturated in: 0.004557598
+Average Analysis Completed in: 0.006511988
+Output Saturated in: 0.010678651
+
+Name: mdb248.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.048634826
+Output Saturated in: 0.005166404
+Max Diff Analysis Completed in: 0.022385348
+Output Saturated in: 0.005528147
+Center Diff Analysis Completed in: 0.024150352
+Output Saturated in: 0.004452123
+Average Analysis Completed in: 0.005343588
+Output Saturated in: 0.011776861
+
+Name: mdb249.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.471009117
+Output Saturated in: 0.008286275
+Max Diff Analysis Completed in: 0.025992321
+Output Saturated in: 0.00798144
+Center Diff Analysis Completed in: 0.030449329
+Output Saturated in: 0.00461203
+Average Analysis Completed in: 0.009984249
+Output Saturated in: 0.011216065
+
+Name: mdb250.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.669582649
+Output Saturated in: 0.011148221
+Max Diff Analysis Completed in: 0.026977739
+Output Saturated in: 0.004645779
+Center Diff Analysis Completed in: 0.032424724
+Output Saturated in: 0.012139161
+Average Analysis Completed in: 0.006619156
+Output Saturated in: 0.013704064
+
+Name: mdb251.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.540840332
+Output Saturated in: 0.011959822
+Max Diff Analysis Completed in: 0.028147677
+Output Saturated in: 0.011391315
+Center Diff Analysis Completed in: 0.030801912
+Output Saturated in: 0.01017213
+Average Analysis Completed in: 0.008191831
+Output Saturated in: 0.019496614
+
+Name: mdb252.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.637397332
+Output Saturated in: 0.012966134
+Max Diff Analysis Completed in: 0.024374784
+Output Saturated in: 0.011516424
+Center Diff Analysis Completed in: 0.032816879
+Output Saturated in: 0.009005168
+Average Analysis Completed in: 0.007411018
+Output Saturated in: 0.011657808
+
+Name: mdb253.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.141427765
+Output Saturated in: 0.004398292
+Max Diff Analysis Completed in: 0.023290132
+Output Saturated in: 0.004272028
+Center Diff Analysis Completed in: 0.024171524
+Output Saturated in: 0.004367629
+Average Analysis Completed in: 0.004787384
+Output Saturated in: 0.010179988
+
+Name: mdb254.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.964475893
+Output Saturated in: 0.00603972
+Max Diff Analysis Completed in: 0.023273228
+Output Saturated in: 0.004636494
+Center Diff Analysis Completed in: 0.024197972
+Output Saturated in: 0.004318585
+Average Analysis Completed in: 0.004926773
+Output Saturated in: 0.008182893
+
+Name: mdb255.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.000133434
+Output Saturated in: 0.004467422
+Max Diff Analysis Completed in: 0.022811823
+Output Saturated in: 0.004542347
+Center Diff Analysis Completed in: 0.024866678
+Output Saturated in: 0.00439745
+Average Analysis Completed in: 0.004954928
+Output Saturated in: 0.008391554
+
+Name: mdb256.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.120413553
+Output Saturated in: 0.004441543
+Max Diff Analysis Completed in: 0.023117234
+Output Saturated in: 0.007466123
+Center Diff Analysis Completed in: 0.026038606
+Output Saturated in: 0.004233719
+Average Analysis Completed in: 0.004720264
+Output Saturated in: 0.009295748
+
+Name: mdb257.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.273113619
+Output Saturated in: 0.011433114
+Max Diff Analysis Completed in: 0.032405924
+Output Saturated in: 0.011579572
+Center Diff Analysis Completed in: 0.027268156
+Output Saturated in: 0.010939349
+Average Analysis Completed in: 0.00555679
+Output Saturated in: 0.007134686
+
+Name: mdb258.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.597327893
+Output Saturated in: 0.007899247
+Max Diff Analysis Completed in: 0.022145636
+Output Saturated in: 0.00777857
+Center Diff Analysis Completed in: 0.033641398
+Output Saturated in: 0.009058769
+Average Analysis Completed in: 0.004879777
+Output Saturated in: 0.014353689
+
+Name: mdb259.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.69984605
+Output Saturated in: 0.005350439
+Max Diff Analysis Completed in: 0.022344593
+Output Saturated in: 0.004355015
+Center Diff Analysis Completed in: 0.02710256
+Output Saturated in: 0.004521034
+Average Analysis Completed in: 0.004626042
+Output Saturated in: 0.007607886
+
+Name: mdb260.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.033887818
+Output Saturated in: 0.004448506
+Max Diff Analysis Completed in: 0.022338816
+Output Saturated in: 0.00438183
+Center Diff Analysis Completed in: 0.025258744
+Output Saturated in: 0.004382637
+Average Analysis Completed in: 0.005505614
+Output Saturated in: 0.013717167
+
+Name: mdb261.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.574666075
+Output Saturated in: 0.012039461
+Max Diff Analysis Completed in: 0.030675396
+Output Saturated in: 0.012800542
+Center Diff Analysis Completed in: 0.049784359
+Output Saturated in: 0.013212297
+Average Analysis Completed in: 0.019094936
+Output Saturated in: 0.016779717
+
+Name: mdb262.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.782929593
+Output Saturated in: 0.008851808
+Max Diff Analysis Completed in: 0.028854174
+Output Saturated in: 0.013038749
+Center Diff Analysis Completed in: 0.031913189
+Output Saturated in: 0.014064423
+Average Analysis Completed in: 0.005528833
+Output Saturated in: 0.014330819
+
+Name: mdb263.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.558592853
+Output Saturated in: 0.011918577
+Max Diff Analysis Completed in: 0.0226519
+Output Saturated in: 0.007882472
+Center Diff Analysis Completed in: 0.028718279
+Output Saturated in: 0.006090009
+Average Analysis Completed in: 0.004780082
+Output Saturated in: 0.01100674
+
+Name: mdb264.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.743635479
+Output Saturated in: 0.005078677
+Max Diff Analysis Completed in: 0.021799215
+Output Saturated in: 0.011024976
+Center Diff Analysis Completed in: 0.023343479
+Output Saturated in: 0.007228963
+Average Analysis Completed in: 0.005390238
+Output Saturated in: 0.012195027
+
+Name: mdb265.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.003952151
+Output Saturated in: 0.010930364
+Max Diff Analysis Completed in: 0.025743389
+Output Saturated in: 0.013388765
+Center Diff Analysis Completed in: 0.029294131
+Output Saturated in: 0.010861137
+Average Analysis Completed in: 0.01615508
+Output Saturated in: 0.016140109
+
+Name: mdb267.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.122596402
+Output Saturated in: 0.004257684
+Max Diff Analysis Completed in: 0.023089046
+Output Saturated in: 0.004261938
+Center Diff Analysis Completed in: 0.024501912
+Output Saturated in: 0.00421791
+Average Analysis Completed in: 0.005071465
+Output Saturated in: 0.004501592
+
+Name: mdb268.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.883370529
+Output Saturated in: 0.00426236
+Max Diff Analysis Completed in: 0.022324307
+Output Saturated in: 0.004413144
+Center Diff Analysis Completed in: 0.023837917
+Output Saturated in: 0.00433756
+Average Analysis Completed in: 0.004754017
+Output Saturated in: 0.005720438
+
+Name: mdb269.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.38915103
+Output Saturated in: 0.012908138
+Max Diff Analysis Completed in: 0.042472441
+Output Saturated in: 0.010408981
+Center Diff Analysis Completed in: 0.028484987
+Output Saturated in: 0.00882918
+Average Analysis Completed in: 0.005167066
+Output Saturated in: 0.008012753
+
+Name: mdb270.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.49371954
+Output Saturated in: 0.01029479
+Max Diff Analysis Completed in: 0.022380081
+Output Saturated in: 0.008088597
+Center Diff Analysis Completed in: 0.022724584
+Output Saturated in: 0.008336152
+Average Analysis Completed in: 0.005091581
+Output Saturated in: 0.01177595
+
+Name: mdb271.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.98396221
+Output Saturated in: 0.015009956
+Max Diff Analysis Completed in: 0.035613512
+Output Saturated in: 0.004485464
+Center Diff Analysis Completed in: 0.036207095
+Output Saturated in: 0.004736278
+Average Analysis Completed in: 0.006123026
+Output Saturated in: 0.004854399
+
+Name: mdb272.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.126602339
+Output Saturated in: 0.004293658
+Max Diff Analysis Completed in: 0.027676336
+Output Saturated in: 0.004335079
+Center Diff Analysis Completed in: 0.023810439
+Output Saturated in: 0.004065908
+Average Analysis Completed in: 0.027168039
+Output Saturated in: 0.004618215
+
+Name: mdb273.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.398304925
+Output Saturated in: 0.013875586
+Max Diff Analysis Completed in: 0.023926302
+Output Saturated in: 0.004249335
+Center Diff Analysis Completed in: 0.024981235
+Output Saturated in: 0.004481811
+Average Analysis Completed in: 0.004589257
+Output Saturated in: 0.013640049
+
+Name: mdb274.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.107014826
+Output Saturated in: 0.010014704
+Max Diff Analysis Completed in: 0.035545313
+Output Saturated in: 0.004268216
+Center Diff Analysis Completed in: 0.025879035
+Output Saturated in: 0.00414719
+Average Analysis Completed in: 0.004941581
+Output Saturated in: 0.005533125
+
+Name: mdb275.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.476657381
+Output Saturated in: 0.005646262
+Max Diff Analysis Completed in: 0.026190311
+Output Saturated in: 0.014331009
+Center Diff Analysis Completed in: 0.027812139
+Output Saturated in: 0.010682574
+Average Analysis Completed in: 0.006772795
+Output Saturated in: 0.008054881
+
+Name: mdb276.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.87130881
+Output Saturated in: 0.010745351
+Max Diff Analysis Completed in: 0.026111647
+Output Saturated in: 0.014385537
+Center Diff Analysis Completed in: 0.030463643
+Output Saturated in: 0.010400291
+Average Analysis Completed in: 0.005149476
+Output Saturated in: 0.011298002
+
+Name: mdb277.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.575725673
+Output Saturated in: 0.00423364
+Max Diff Analysis Completed in: 0.021000761
+Output Saturated in: 0.013460869
+Center Diff Analysis Completed in: 0.045944778
+Output Saturated in: 0.012942622
+Average Analysis Completed in: 0.005575964
+Output Saturated in: 0.010125134
+
+Name: mdb278.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.264621849
+Output Saturated in: 0.00744802
+Max Diff Analysis Completed in: 0.0221018
+Output Saturated in: 0.011002278
+Center Diff Analysis Completed in: 0.032617817
+Output Saturated in: 0.010649034
+Average Analysis Completed in: 0.004956667
+Output Saturated in: 0.012550007
+
+Name: mdb279.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.318954929
+Output Saturated in: 0.004357209
+Max Diff Analysis Completed in: 0.023668329
+Output Saturated in: 0.00853216
+Center Diff Analysis Completed in: 0.02455638
+Output Saturated in: 0.004562259
+Average Analysis Completed in: 0.005060998
+Output Saturated in: 0.009612852
+
+Name: mdb280.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 4.110286142
+Output Saturated in: 0.010160003
+Max Diff Analysis Completed in: 0.025467755
+Output Saturated in: 0.004223066
+Center Diff Analysis Completed in: 0.026030389
+Output Saturated in: 0.004217557
+Average Analysis Completed in: 0.004796171
+Output Saturated in: 0.008569314
+
+Name: mdb281.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.113121798
+Output Saturated in: 0.010408291
+Max Diff Analysis Completed in: 0.021282685
+Output Saturated in: 0.010648634
+Center Diff Analysis Completed in: 0.022623326
+Output Saturated in: 0.008490538
+Average Analysis Completed in: 0.005030551
+Output Saturated in: 0.013579962
+
+Name: mdb282.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.2984599279999998
+Output Saturated in: 0.011085506
+Max Diff Analysis Completed in: 0.028014538
+Output Saturated in: 0.013035655
+Center Diff Analysis Completed in: 0.032367923
+Output Saturated in: 0.012440673
+Average Analysis Completed in: 0.009161128
+Output Saturated in: 0.009813159
+
+Name: mdb283.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.32729533
+Output Saturated in: 0.010547195
+Max Diff Analysis Completed in: 0.02838768
+Output Saturated in: 0.012770085
+Center Diff Analysis Completed in: 0.024966414
+Output Saturated in: 0.013554173
+Average Analysis Completed in: 0.009611172
+Output Saturated in: 0.01315775
+
+Name: mdb284.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.5145019570000002
+Output Saturated in: 0.011300319
+Max Diff Analysis Completed in: 0.02373008
+Output Saturated in: 0.008756766
+Center Diff Analysis Completed in: 0.031920352
+Output Saturated in: 0.012448467
+Average Analysis Completed in: 0.017020647
+Output Saturated in: 0.01045258
+
+Name: mdb285.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.476824276
+Output Saturated in: 0.013504235
+Max Diff Analysis Completed in: 0.022203583
+Output Saturated in: 0.012237161
+Center Diff Analysis Completed in: 0.03119995
+Output Saturated in: 0.008664326
+Average Analysis Completed in: 0.005293867
+Output Saturated in: 0.012050534
+
+Name: mdb286.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.613038806
+Output Saturated in: 0.004393339
+Max Diff Analysis Completed in: 0.0214399
+Output Saturated in: 0.013921983
+Center Diff Analysis Completed in: 0.032149696
+Output Saturated in: 0.007583707
+Average Analysis Completed in: 0.00537352
+Output Saturated in: 0.013917531
+
+Name: mdb287.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.521430762
+Output Saturated in: 0.014002504
+Max Diff Analysis Completed in: 0.028927869
+Output Saturated in: 0.010275067
+Center Diff Analysis Completed in: 0.030447445
+Output Saturated in: 0.012230396
+Average Analysis Completed in: 0.005807969
+Output Saturated in: 0.013293077
+
+Name: mdb288.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7764081109999998
+Output Saturated in: 0.013557618
+Max Diff Analysis Completed in: 0.029756265
+Output Saturated in: 0.012834
+Center Diff Analysis Completed in: 0.030228965
+Output Saturated in: 0.012959002
+Average Analysis Completed in: 0.012581321
+Output Saturated in: 0.01480048
+
+Name: mdb289.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7936217060000001
+Output Saturated in: 0.00999791
+Max Diff Analysis Completed in: 0.037218284
+Output Saturated in: 0.01043166
+Center Diff Analysis Completed in: 0.031429645
+Output Saturated in: 0.01232775
+Average Analysis Completed in: 0.01464524
+Output Saturated in: 0.011466491
+
+Name: mdb290.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.873103263
+Output Saturated in: 0.004295629
+Max Diff Analysis Completed in: 0.018987232
+Output Saturated in: 0.004313029
+Center Diff Analysis Completed in: 0.05234693
+Output Saturated in: 0.005191786
+Average Analysis Completed in: 0.017290054
+Output Saturated in: 0.014670991
+
+Name: mdb292.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.670981597
+Output Saturated in: 0.004372978
+Max Diff Analysis Completed in: 0.021773663
+Output Saturated in: 0.007771577
+Center Diff Analysis Completed in: 0.030904286
+Output Saturated in: 0.004494349
+Average Analysis Completed in: 0.004934508
+Output Saturated in: 0.006815524
+
+Name: mdb293.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.235719076
+Output Saturated in: 0.005234965
+Max Diff Analysis Completed in: 0.023474344
+Output Saturated in: 0.005342947
+Center Diff Analysis Completed in: 0.025186302
+Output Saturated in: 0.004556867
+Average Analysis Completed in: 0.005052
+Output Saturated in: 0.013899583
+
+Name: mdb294.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.179612553
+Output Saturated in: 0.004208223
+Max Diff Analysis Completed in: 0.022675107
+Output Saturated in: 0.008616415
+Center Diff Analysis Completed in: 0.050229947
+Output Saturated in: 0.004367203
+Average Analysis Completed in: 0.004669964
+Output Saturated in: 0.013574019
+
+Name: mdb295.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.809270013
+Output Saturated in: 0.00430551
+Max Diff Analysis Completed in: 0.023328965
+Output Saturated in: 0.00430366
+Center Diff Analysis Completed in: 0.024633699
+Output Saturated in: 0.004214147
+Average Analysis Completed in: 0.005515208
+Output Saturated in: 0.006127111
+
+Name: mdb296.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.240743408
+Output Saturated in: 0.004264917
+Max Diff Analysis Completed in: 0.02233444
+Output Saturated in: 0.006592392
+Center Diff Analysis Completed in: 0.024069274
+Output Saturated in: 0.004366353
+Average Analysis Completed in: 0.004708031
+Output Saturated in: 0.0132574
+
+Name: mdb297.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.562261498
+Output Saturated in: 0.005419982
+Max Diff Analysis Completed in: 0.029097007
+Output Saturated in: 0.007082147
+Center Diff Analysis Completed in: 0.043995349
+Output Saturated in: 0.007610436
+Average Analysis Completed in: 0.010811569
+Output Saturated in: 0.004616375
+
+Name: mdb298.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.637070726
+Output Saturated in: 0.012275643
+Max Diff Analysis Completed in: 0.025618446
+Output Saturated in: 0.014166759
+Center Diff Analysis Completed in: 0.033123719
+Output Saturated in: 0.009606138
+Average Analysis Completed in: 0.005340313
+Output Saturated in: 0.008430375
+
+Name: mdb299.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.367491179
+Output Saturated in: 0.007738267
+Max Diff Analysis Completed in: 0.023433078
+Output Saturated in: 0.007189801
+Center Diff Analysis Completed in: 0.027743256
+Output Saturated in: 0.004428431
+Average Analysis Completed in: 0.004939042
+Output Saturated in: 0.012927524
+
+Name: mdb300.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.866184715
+Output Saturated in: 0.004615345
+Max Diff Analysis Completed in: 0.022458774
+Output Saturated in: 0.008275511
+Center Diff Analysis Completed in: 0.030410464
+Output Saturated in: 0.00893752
+Average Analysis Completed in: 0.008438438
+Output Saturated in: 0.017225902
+
+Name: mdb301.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.389163727
+Output Saturated in: 0.012519906
+Max Diff Analysis Completed in: 0.024292157
+Output Saturated in: 0.011497213
+Center Diff Analysis Completed in: 0.032271334
+Output Saturated in: 0.018110072
+Average Analysis Completed in: 0.009869276
+Output Saturated in: 0.008024023
+
+Name: mdb302.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.911028901
+Output Saturated in: 0.012760666
+Max Diff Analysis Completed in: 0.026242364
+Output Saturated in: 0.007186196
+Center Diff Analysis Completed in: 0.036493142
+Output Saturated in: 0.006532914
+Average Analysis Completed in: 0.005122156
+Output Saturated in: 0.00700507
+
+Name: mdb303.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.558092937
+Output Saturated in: 0.010894886
+Max Diff Analysis Completed in: 0.028361391
+Output Saturated in: 0.008240946
+Center Diff Analysis Completed in: 0.028428422
+Output Saturated in: 0.007865307
+Average Analysis Completed in: 0.008092009
+Output Saturated in: 0.013705436
+
+Name: mdb304.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.564239632
+Output Saturated in: 0.007128438
+Max Diff Analysis Completed in: 0.023267578
+Output Saturated in: 0.026670527
+Center Diff Analysis Completed in: 0.04327137
+Output Saturated in: 0.004447441
+Average Analysis Completed in: 0.004917327
+Output Saturated in: 0.00922952
+
+Name: mdb305.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.439083641
+Output Saturated in: 0.004055291
+Max Diff Analysis Completed in: 0.018799699
+Output Saturated in: 0.004036541
+Center Diff Analysis Completed in: 0.020995219
+Output Saturated in: 0.004045697
+Average Analysis Completed in: 0.004509343
+Output Saturated in: 0.008004243
+
+Name: mdb306.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.446102246
+Output Saturated in: 0.006679049
+Max Diff Analysis Completed in: 0.04546628
+Output Saturated in: 0.00772717
+Center Diff Analysis Completed in: 0.023632735
+Output Saturated in: 0.004462533
+Average Analysis Completed in: 0.004696132
+Output Saturated in: 0.004486244
+
+Name: mdb307.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.9347483949999997
+Output Saturated in: 0.004296107
+Max Diff Analysis Completed in: 0.032925633
+Output Saturated in: 0.009253026
+Center Diff Analysis Completed in: 0.065197326
+Output Saturated in: 0.009081868
+Average Analysis Completed in: 0.004541117
+Output Saturated in: 0.007191187
+
+Name: mdb308.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.001129319
+Output Saturated in: 0.004244856
+Max Diff Analysis Completed in: 0.022716388
+Output Saturated in: 0.004173294
+Center Diff Analysis Completed in: 0.024121177
+Output Saturated in: 0.004147368
+Average Analysis Completed in: 0.004934912
+Output Saturated in: 0.005021207
+
+Name: mdb309.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.047887518
+Output Saturated in: 0.004341638
+Max Diff Analysis Completed in: 0.022887754
+Output Saturated in: 0.013715718
+Center Diff Analysis Completed in: 0.024786515
+Output Saturated in: 0.007349272
+Average Analysis Completed in: 0.006714975
+Output Saturated in: 0.005003259
+
+Name: mdb310.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.94589037
+Output Saturated in: 0.004256242
+Max Diff Analysis Completed in: 0.020878036
+Output Saturated in: 0.004196534
+Center Diff Analysis Completed in: 0.024310734
+Output Saturated in: 0.004034407
+Average Analysis Completed in: 0.004813313
+Output Saturated in: 0.006236442
+
+Name: mdb311.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.884841019
+Output Saturated in: 0.004179646
+Max Diff Analysis Completed in: 0.023137037
+Output Saturated in: 0.004163307
+Center Diff Analysis Completed in: 0.024315698
+Output Saturated in: 0.004169945
+Average Analysis Completed in: 0.004698512
+Output Saturated in: 0.006101402
+
+Name: mdb312.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.508174839
+Output Saturated in: 0.004257537
+Max Diff Analysis Completed in: 0.025956787
+Output Saturated in: 0.004861176
+Center Diff Analysis Completed in: 0.042580553
+Output Saturated in: 0.005681508
+Average Analysis Completed in: 0.00507214
+Output Saturated in: 0.00460638
+
+Name: mdb313.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.184067236
+Output Saturated in: 0.004184373
+Max Diff Analysis Completed in: 0.029259936
+Output Saturated in: 0.00758965
+Center Diff Analysis Completed in: 0.026818196
+Output Saturated in: 0.004168415
+Average Analysis Completed in: 0.004767086
+Output Saturated in: 0.00628007
+
+Name: mdb314.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.217232128
+Output Saturated in: 0.004360199
+Max Diff Analysis Completed in: 0.02269951
+Output Saturated in: 0.004385926
+Center Diff Analysis Completed in: 0.024158085
+Output Saturated in: 0.00434931
+Average Analysis Completed in: 0.004725406
+Output Saturated in: 0.006190819
+
+Name: mdb315.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.703754476
+Output Saturated in: 0.008341739
+Max Diff Analysis Completed in: 0.023063352
+Output Saturated in: 0.004483825
+Center Diff Analysis Completed in: 0.036313484
+Output Saturated in: 0.004609778
+Average Analysis Completed in: 0.004990688
+Output Saturated in: 0.007272508
+
+Name: mdb316.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.108427633
+Output Saturated in: 0.00623602
+Max Diff Analysis Completed in: 0.02567615
+Output Saturated in: 0.007735784
+Center Diff Analysis Completed in: 0.02393987
+Output Saturated in: 0.004522753
+Average Analysis Completed in: 0.004841327
+Output Saturated in: 0.012382503
+
+Name: mdb317.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.6555139840000002
+Output Saturated in: 0.011358613
+Max Diff Analysis Completed in: 0.029484455
+Output Saturated in: 0.011764187
+Center Diff Analysis Completed in: 0.034738203
+Output Saturated in: 0.006423279
+Average Analysis Completed in: 0.0060241
+Output Saturated in: 0.013331449
+
+Name: mdb318.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.84351499
+Output Saturated in: 0.01468369
+Max Diff Analysis Completed in: 0.019220585
+Output Saturated in: 0.012331704
+Center Diff Analysis Completed in: 0.026609913
+Output Saturated in: 0.014279871
+Average Analysis Completed in: 0.008538295
+Output Saturated in: 0.012119683
+
+Name: mdb319.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.093400275
+Output Saturated in: 0.007158428
+Max Diff Analysis Completed in: 0.02688485
+Output Saturated in: 0.004333635
+Center Diff Analysis Completed in: 0.043165674
+Output Saturated in: 0.004299271
+Average Analysis Completed in: 0.013541654
+Output Saturated in: 0.004532359
+
+Name: mdb320.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.935003862
+Output Saturated in: 0.004292854
+Max Diff Analysis Completed in: 0.024245012
+Output Saturated in: 0.004437256
+Center Diff Analysis Completed in: 0.024153187
+Output Saturated in: 0.004265187
+Average Analysis Completed in: 0.004744248
+Output Saturated in: 0.008131362
+
+Name: mdb321.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.621228707
+Output Saturated in: 0.014038019
+Max Diff Analysis Completed in: 0.021604674
+Output Saturated in: 0.012593621
+Center Diff Analysis Completed in: 0.02647072
+Output Saturated in: 0.006446812
+Average Analysis Completed in: 0.005111165
+Output Saturated in: 0.011136652
+
+Name: mdb322.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.198931926
+Output Saturated in: 0.005986408
+Max Diff Analysis Completed in: 0.023376463
+Output Saturated in: 0.006252951
+Center Diff Analysis Completed in: 0.026165163
+Output Saturated in: 0.00446975
+Average Analysis Completed in: 0.009955925
+Output Saturated in: 0.012302211
+
+Name: mdb208.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.273633203
+Output Saturated in: 0.009856904
+Max Diff Analysis Completed in: 0.024444011
+Output Saturated in: 0.008599471
+Center Diff Analysis Completed in: 0.029560272
+Output Saturated in: 0.004240896
+Average Analysis Completed in: 0.005460111
+Output Saturated in: 0.010357288
+
+Name: mdb209.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.838339691
+Output Saturated in: 0.008316526
+Max Diff Analysis Completed in: 0.025363135
+Output Saturated in: 0.004571036
+Center Diff Analysis Completed in: 0.025073368
+Output Saturated in: 0.004673592
+Average Analysis Completed in: 0.004999741
+Output Saturated in: 0.007693443
+
+Name: mdb210.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.113169547
+Output Saturated in: 0.00434438
+Max Diff Analysis Completed in: 0.023868781
+Output Saturated in: 0.004510145
+Center Diff Analysis Completed in: 0.023946156
+Output Saturated in: 0.004393575
+Average Analysis Completed in: 0.004566399
+Output Saturated in: 0.006263971
+
+Name: mdb211.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.622931354
+Output Saturated in: 0.010665391
+Max Diff Analysis Completed in: 0.025561812
+Output Saturated in: 0.013053219
+Center Diff Analysis Completed in: 0.023782198
+Output Saturated in: 0.004968999
+Average Analysis Completed in: 0.005048856
+Output Saturated in: 0.012397643
+
+Name: mdb212.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.287136431
+Output Saturated in: 0.009814248
+Max Diff Analysis Completed in: 0.020732951
+Output Saturated in: 0.008641073
+Center Diff Analysis Completed in: 0.031404501
+Output Saturated in: 0.011528172
+Average Analysis Completed in: 0.004886079
+Output Saturated in: 0.011175949
+
+Name: mdb213.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.040675716
+Output Saturated in: 0.004255847
+Max Diff Analysis Completed in: 0.029661108
+Output Saturated in: 0.004636565
+Center Diff Analysis Completed in: 0.052214641
+Output Saturated in: 0.014196994
+Average Analysis Completed in: 0.00609687
+Output Saturated in: 0.013190512
+
+Name: mdb214.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.7973822350000002
+Output Saturated in: 0.014676183
+Max Diff Analysis Completed in: 0.030363884
+Output Saturated in: 0.013315317
+Center Diff Analysis Completed in: 0.031323526
+Output Saturated in: 0.011592397
+Average Analysis Completed in: 0.006177225
+Output Saturated in: 0.006839443
+
+Name: mdb215.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.241127681
+Output Saturated in: 0.005271781
+Max Diff Analysis Completed in: 0.023662046
+Output Saturated in: 0.011035799
+Center Diff Analysis Completed in: 0.033408556
+Output Saturated in: 0.004468269
+Average Analysis Completed in: 0.004796589
+Output Saturated in: 0.005059139
+
+Name: mdb216.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.692910506
+Output Saturated in: 0.004414115
+Max Diff Analysis Completed in: 0.021893837
+Output Saturated in: 0.00802152
+Center Diff Analysis Completed in: 0.02719463
+Output Saturated in: 0.004617122
+Average Analysis Completed in: 0.004985033
+Output Saturated in: 0.013460721
+
+Name: mdb217.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.985564584
+Output Saturated in: 0.004822333
+Max Diff Analysis Completed in: 0.022714248
+Output Saturated in: 0.004361193
+Center Diff Analysis Completed in: 0.024045643
+Output Saturated in: 0.00440609
+Average Analysis Completed in: 0.004626037
+Output Saturated in: 0.005826262
+
+Name: mdb218.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.942763481
+Output Saturated in: 0.011800875
+Max Diff Analysis Completed in: 0.023018147
+Output Saturated in: 0.004419547
+Center Diff Analysis Completed in: 0.023856203
+Output Saturated in: 0.004467714
+Average Analysis Completed in: 0.005170419
+Output Saturated in: 0.004505403
+
+Name: mdb219.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.235306973
+Output Saturated in: 0.006124682
+Max Diff Analysis Completed in: 0.024570747
+Output Saturated in: 0.008451284
+Center Diff Analysis Completed in: 0.026191499
+Output Saturated in: 0.004627849
+Average Analysis Completed in: 0.004912993
+Output Saturated in: 0.013558486
+
+Name: mdb220.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 3.281559129
+Output Saturated in: 0.004455702
+Max Diff Analysis Completed in: 0.023274809
+Output Saturated in: 0.00446562
+Center Diff Analysis Completed in: 0.025009953
+Output Saturated in: 0.004861274
+Average Analysis Completed in: 0.004752069
+Output Saturated in: 0.012271143
+
+Name: mdb221.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.509866185
+Output Saturated in: 0.011048201
+Max Diff Analysis Completed in: 0.031310735
+Output Saturated in: 0.012692074
+Center Diff Analysis Completed in: 0.030454178
+Output Saturated in: 0.008841567
+Average Analysis Completed in: 0.009700974
+Output Saturated in: 0.012272697
+
+Name: mdb222.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.258950404
+Output Saturated in: 0.009082925
+Max Diff Analysis Completed in: 0.025010773
+Output Saturated in: 0.010694194
+Center Diff Analysis Completed in: 0.028977847
+Output Saturated in: 0.007588061
+Average Analysis Completed in: 0.004937966
+Output Saturated in: 0.014850956
+
+Name: mdb223.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.063198166
+Output Saturated in: 0.007116131
+Max Diff Analysis Completed in: 0.037027852
+Output Saturated in: 0.012487353
+Center Diff Analysis Completed in: 0.0307007
+Output Saturated in: 0.014447579
+Average Analysis Completed in: 0.005143629
+Output Saturated in: 0.01579125
+
+Name: mdb224.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 1.8113793440000001
+Output Saturated in: 0.014070758
+Max Diff Analysis Completed in: 0.025327306
+Output Saturated in: 0.013461003
+Center Diff Analysis Completed in: 0.031855287
+Output Saturated in: 0.011066472
+Average Analysis Completed in: 0.006544409
+Output Saturated in: 0.008108059
+
+Name: mdb225.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.552377701
+Output Saturated in: 0.012982996
+Max Diff Analysis Completed in: 0.027721355
+Output Saturated in: 0.007455332
+Center Diff Analysis Completed in: 0.029651245
+Output Saturated in: 0.011772465
+Average Analysis Completed in: 0.005039435
+Output Saturated in: 0.014355111
+
+Name: mdb226.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.182556708
+Output Saturated in: 0.004193531
+Max Diff Analysis Completed in: 0.028817721
+Output Saturated in: 0.010811712
+Center Diff Analysis Completed in: 0.029364631
+Output Saturated in: 0.007685119
+Average Analysis Completed in: 0.008281474
+Output Saturated in: 0.010534997
+
+Name: mdb227.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.346380221
+Output Saturated in: 0.012736504
+Max Diff Analysis Completed in: 0.022109098
+Output Saturated in: 0.013063306
+Center Diff Analysis Completed in: 0.032261491
+Output Saturated in: 0.013723474
+Average Analysis Completed in: 0.016471381
+Output Saturated in: 0.010673028
+
+Name: mdb228.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.010411739
+Output Saturated in: 0.013672648
+Max Diff Analysis Completed in: 0.024622452
+Output Saturated in: 0.008849349
+Center Diff Analysis Completed in: 0.031304288
+Output Saturated in: 0.011033424
+Average Analysis Completed in: 0.004896331
+Output Saturated in: 0.006818808
+
+Name: mdb229.pgm | Dimensions: (1024, 1024)
+Affinity Analysis Completed in: 2.694616409
+Output Saturated in: 0.011210275
+Max Diff Analysis Completed in: 0.032555476
+Output Saturated in: 0.011103381
+Center Diff Analysis Completed in: 0.030670742
+Output Saturated in: 0.007525105
+Average Analysis Completed in: 0.005550223
+Output Saturated in: 0.010691336
+
