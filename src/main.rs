@@ -28,7 +28,7 @@ const OUTPUT_MAX_DIFF_DIR: &str = "output_max_diff";           //Stores output d
 const OUTPUT_CENTER_DIFF_DIR: &str = "output_center_diff";           //Stores output directory globally
 const OUTPUT_AVERAGE_DIR: &str = "output_average";           //Stores output directory globally
 
-const DIRS: [&str; 8] = [TRACE_DIR, MAMMOGRAM_DIR, BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR];
+const DIRS: [&str; 6] = [BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR];
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
