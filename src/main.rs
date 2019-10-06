@@ -28,7 +28,7 @@ const OUTPUT_MAX_DIFF_DIR: &str = "output_max_diff";           //Stores output d
 const OUTPUT_CENTER_DIFF_DIR: &str = "output_center_diff";           //Stores output directory globally
 const OUTPUT_AVERAGE_DIR: &str = "output_average";           //Stores output directory globally
 
-const DIRS: [&str; 6] = [BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR];
+const DIRS: [&str; 6] = [BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR]; //Stores a list of output directories for later use
 
 fn get_trace_file(filename: String, x: usize, y: usize) -> Vec<Vec<u64>>    //Converts a file of numbers seperated by spaces and new lines into a 2D array of those numbers
 {
@@ -231,6 +231,18 @@ fn saturate(image: &mut image::GrayImage)
         {
             let pixel = image.get_pixel(i, j) [0];
             (*image).get_pixel_mut(i, j) [0] = ((pixel - min) as f64 * scale) as u8;
+        }
+    }
+}
+
+fn div16(image: &mut image::GrayImage)
+{
+    for i in 0 .. image.width()
+    {
+        for j in 0 .. image.height()
+        {
+            let pixel = image.get_pixel(i, j) [0];
+            (*image).get_pixel_mut(i, j) [0] = pixel / 16;
         }
     }
 }
@@ -493,6 +505,18 @@ fn main() -> std::io::Result<()>
         saturate(&mut original);
         original.save(SATURATED_DIR.to_owned() + &"/" + &name).unwrap();
         analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "/"));
+        
+        println!("\tDividing by 16:");
+        let mut original = image::open(entry.path()).unwrap().to_luma();
+        div16(&mut original);
+        original.save(BASE_DIR.to_owned() + &"_div16/" + &name).unwrap();
+        analyze_affinity(&original, &name, &(OUTPUT_DIR.to_owned() + "_div16/"));
+        analyze_max_diff(&original, &name, &(OUTPUT_MAX_DIFF_DIR.to_owned() + "_div16/"));
+        analyze_center_diff(&original, &name, &(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"));
+        let analyzed = image::open("saturated_".to_owned() + OUTPUT_DIR + &"_div16/" + &name).unwrap().to_luma();
+        saturate(&mut original);
+        original.save(SATURATED_DIR.to_owned() + &"_div16/" + &name).unwrap();
+        analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"));
         println!("");
     }
 
