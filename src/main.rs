@@ -224,7 +224,7 @@ fn saturate(image: &mut image::GrayImage)
         }
     }
 
-    let scale: f64 = (max - min) as f64 / 256.0;
+    let scale: f64 = 255.0 / (max - min) as f64;
     for i in 0 .. image.width()
     {
         for j in 0 .. image.height()
