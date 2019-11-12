@@ -1,0 +1,44 @@
+RUN #1:
+BASE:               Final test accuracy = 47.1% (N=34)
+AFFINITY:           Final test accuracy = 55.2% (N=29)
+SIMPLE:             Final test accuracy = 43.8% (N=32)
+SATURATED AFFINITY: Final test accuracy = 40.7% (N=27)
+SATURATED SIMPLE:   Final test accuracy = 54.8% (N=42)
+
+RUN #2:
+BASE:               Final test accuracy = 52.9% (N=34)
+AFFINITY:           Final test accuracy = 58.6% (N=29)
+SIMPLE:             Final test accuracy = 40.6% (N=32)
+SATURATED AFFINITY: Final test accuracy = 44.4% (N=27)
+SATURATED SIMPLE:   Final test accuracy = 57.1% (N=42)
+
+RUN #3:
+BASE:               Final test accuracy = 52.9% (N=34)
+AFFINITY:           Final test accuracy = 55.2% (N=29)
+SIMPLE:             Final test accuracy = 46.9% (N=32)
+SATURATED AFFINITY: Final test accuracy = 40.7% (N=27)
+SATURATED SIMPLE:   Final test accuracy = 52.4% (N=42)
+
+--------------SWITCHED TO BMP-------------------------
+
+RUN #1:
+BASE:                   Final test accuracy = 56.2% (N=32)
+AFFINITY:               Final test accuracy = 47.8% (N=23)
+MAX DIFF:               Final test accuracy = 59.4% (N=32)
+CENTER DIFF:            Final test accuracy = 58.6% (N=29)
+AVERAGE:                Final test accuracy = 50.0% (N=30)
+SATURATED AFFINITY:     Final test accuracy = 63.4% (N=41)
+SATURATED MAX DIFF:     Final test accuracy = 56.2% (N=32)
+SATURATED CENTER DIFF:  Final test accuracy = 61.3% (N=31)
+SATURATED AVERAGE:      Final test accuracy = 52.9% (N=34)
+
+RUN #2:
+BASE:                   Final test accuracy = 56.2% (N=32)
+AFFINITY:               Final test accuracy = 47.8% (N=23)
+MAX DIFF:               Final test accuracy = 59.4% (N=32)
+CENTER DIFF:            Final test accuracy = 58.6% (N=29)
+AVERAGE:                Final test accuracy = 50.0% (N=30)
+SATURATED AFFINITY:     Final test accuracy = 63.4% (N=41)
+SATURATED MAX DIFF:     Final test accuracy = 56.2% (N=32)
+SATURATED CENTER DIFF:  Final test accuracy = 61.3% (N=31)
+SATURATED AVERAGE:      Final test accuracy = 52.9% (N=34)
