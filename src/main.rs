@@ -14,8 +14,9 @@ use saturate::saturate;
 
 extern crate image;                 //Used for image processing
 use std::fs;                        //Used for file I/O
+use argparse::{ArgumentParser, StoreTrue, Store};
 
-const MAMMOGRAM_DIR: &str = "../../mammograms";    //Stores trace directory globally
+const IMAGE_DIR: &str = "images/";    //Stores trace directory globally
 const BASE_DIR: &str = "base";                 //Stores the base storage directory globally
 const SATURATED_DIR: &str = "saturated";      //Stores saturated output directory globally
 const OUTPUT_DIR: &str = "output";           //Stores output directory globally
@@ -27,6 +28,16 @@ const DIRS: [&str; 6] = [BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DI
 
 fn main() -> std::io::Result<()>
 {
+    let mut image_dir = IMAGE_DIR.to_string();
+    {
+        let mut ap = ArgumentParser::new();
+        ap.set_description("Pre-process images to demonstrate affinity's usefulness in machine learning");
+        ap.refer(&mut image_dir)
+            .add_option(&["-i", "--images"], Store,
+            "Set the directory of input images (set to images/ in executable directory by default)");
+        ap.parse_args_or_exit();
+    }
+
     for dir in &DIRS
     {
         let d = "".to_owned() + dir + "/";
@@ -56,7 +67,7 @@ fn main() -> std::io::Result<()>
     }
     println!("");
 
-    for entry in fs::read_dir(MAMMOGRAM_DIR.to_owned() + &"/")?
+    for entry in fs::read_dir(image_dir)?
     {
         let entry = entry?;
         let mut original = image::open(entry.path()).unwrap().to_luma();
