@@ -1,12 +1,13 @@
+// Scales every pixel value in the image to fit the scale 0-255
 pub fn saturate(image: &mut image::GrayImage)
 {
+    // Finds the minimum and maximum pixel values in the image
     let mut min = 255;
     let mut max = 0;
-    for i in 0 .. image.width()
-    {
-        for j in 0 .. image.height()
+    image.iter().for_each(
+        | p |
         {
-            let pixel = image.get_pixel(i, j) [0];
+            let pixel = *p;
             if pixel > max
             {
                 max = pixel;
@@ -16,15 +17,20 @@ pub fn saturate(image: &mut image::GrayImage)
                 min = pixel;
             }
         }
+    );
+
+    // Sets the scale factor to 255 divided by the current pixel value range
+    let mut scale: f64 = 255.0;
+    if max != min
+    {
+        scale /= (max - min) as f64;
     }
 
-    let scale: f64 = 255.0 / (max - min) as f64;
-    for i in 0 .. image.width()
-    {
-        for j in 0 .. image.height()
+    // Shifts each pixel back by the minimum pixel value and then applies the scaling factor
+    image.iter_mut().for_each(
+        | pixel |
         {
-            let pixel = image.get_pixel(i, j) [0];
-            (*image).get_pixel_mut(i, j) [0] = ((pixel - min) as f64 * scale) as u8;
+            *pixel = ((*pixel - min) as f64 * scale) as u8;
         }
-    }
+    );
 }
