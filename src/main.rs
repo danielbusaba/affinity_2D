@@ -16,7 +16,7 @@ extern crate image;                 //Used for image processing
 use std::fs;                        //Used for file I/O
 use argparse::{ArgumentParser, Store};   //StoreTrue
 
-const IMAGE_DIR: &str = "images";    //Stores trace directory globally
+const IMAGE_DIR: &str = "images";    //Stores image directory globally
 const BASE_DIR: &str = "base";                 //Stores the base storage directory globally
 const SATURATED_DIR: &str = "saturated";      //Stores saturated output directory globally
 const OUTPUT_DIR: &str = "output";           //Stores output directory globally
