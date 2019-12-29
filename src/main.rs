@@ -31,7 +31,7 @@ fn main() -> std::io::Result<()>
     let mut image_dir = IMAGE_DIR.to_string() + &"/";
     {
         let mut ap = ArgumentParser::new();
-        ap.set_description("Pre-process images to demonstrate affinity's usefulness in machine learning");
+        ap.set_description("Pre-process images to demonstrate affinity analysis's usefulness in machine learning");
         ap.refer(&mut image_dir)
             .add_option(&["-i", "--images"], Store,
             "Set the directory of input images (set to images/ in executable directory by default)");

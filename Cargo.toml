@@ -10,5 +10,5 @@ edition = "2018"
 image = "*"
 argparse="*"
 rayon="*"
-faster = { git = "https://github.com/AdamNiederer/faster.git", branch = "master"}
+faster = { git = "https://github.com/AdamNiederer/faster.git", branch = "master" }
 num_cpus = "*"
