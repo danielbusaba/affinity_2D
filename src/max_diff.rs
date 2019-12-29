@@ -2,8 +2,10 @@ use crate::saturate::saturate;
 
 use std::time::Instant;
 
+// Sets every pixel to the largest difference in a 3x3 square around it
 pub fn analyze_max_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
 {
+    // Setup image to be copied to and start counting time
     let (width, height) = img.dimensions();
     let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
@@ -31,10 +33,11 @@ pub fn analyze_max_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
             let mut min = 255;
             let mut max = 0;
 
+            // Handle edge cases to allow keeping the image 1024x1024
             let rl = if x > 0 { x - 1 } else { x };
-            let rr = if x < img.width() - 1 { x + 1 } else { x };
+            let rr = if x < width - 1 { x + 1 } else { x };
             let cl = if y > 0 { y - 1 } else { y };
-            let cr = if y < img.height() - 1 { y + 1 } else { y };
+            let cr = if y < height - 1 { y + 1 } else { y };
 
             for r in rl .. rr
             {
@@ -51,6 +54,7 @@ pub fn analyze_max_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
                     }
                 }
             }
+            
             *pixel = image::Luma([max - min]);
         }
     );
