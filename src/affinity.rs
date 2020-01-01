@@ -175,23 +175,23 @@ pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
             let (single, joint) = get_frequencies(&subimage);
             let mut max_diff: u8 = 0;
             let mut max_affinity: f64 = 0.0;
-            for pair in joint.keys()
+            for (l, r) in joint.keys()
             {
-                let a = *single.get(&pair.0).unwrap();
-                let b = *single.get(&pair.1).unwrap();
-                let affinity = *joint.get(pair).unwrap() as f64 / (std::cmp::max(a, b) as f64);
+                let a = *single.get(l).unwrap();
+                let b = *single.get(r).unwrap();
+                let affinity = *joint.get(&(*l, *r)).unwrap() as f64 / (std::cmp::max(a, b) as f64);
 
                 if affinity > max_affinity
                 {
                     max_affinity = affinity;
-                    max_diff = (pair.0 - pair.1) as u8;
+                    max_diff = l - r;
                 }
                 else if affinity == max_affinity
                 {
-                    let diff = (pair.0 - pair.1) as u8;
+                    let diff = l - r;
                     if diff > max_diff
                     {
-                        max_diff = (pair.0 - pair.1) as u8;
+                        max_diff = l - r;
                     }
                 }
             }
