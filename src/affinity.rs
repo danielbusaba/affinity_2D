@@ -177,9 +177,9 @@ pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
             let mut max_affinity: f64 = 0.0;
             for pair in joint.keys()
             {
-                let a = *single.get(&pair.0).unwrap() as f64;
-                let b = *single.get(&pair.1).unwrap() as f64;
-                let affinity = *joint.get(pair).unwrap() as f64 / if a > b { a } else { b };
+                let a = *single.get(&pair.0).unwrap();
+                let b = *single.get(&pair.1).unwrap();
+                let affinity = *joint.get(pair).unwrap() as f64 / (std::cmp::max(a, b) as f64);
 
                 if affinity > max_affinity
                 {
