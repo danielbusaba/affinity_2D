@@ -3,8 +3,9 @@ use crate::saturate::saturate;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::time::Instant;
+use crate::image::GenericImageView;
 
-fn get_frequencies_naive(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec<HashMap<u64, usize>>, Vec<HashMap<(u64, u64), usize>>)
+fn _get_frequencies_abstract(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec<HashMap<u64, usize>>, Vec<HashMap<(u64, u64), usize>>)
 {
     let mut single_frequencies_list: Vec<HashMap<u64, usize>> = Vec::with_capacity(window_sizes.len());
     let mut joint_frequencies_list: Vec<HashMap<(u64, u64), usize>> = Vec::with_capacity(window_sizes.len());
@@ -77,89 +78,125 @@ fn get_frequencies_naive(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec
     (single_frequencies_list, joint_frequencies_list)
 }
 
+/*
+
+-------------
+| 1 | 2 | 3 |
+-------------
+| 4 | 5 | 6 |
+-------------
+| 7 | 8 | 9 |
+-------------
+
+*/
+
+// Insert the joint frequency with the key beinng sorted
+fn joint_insert(map: &mut HashMap<(u8, u8), usize>, a: u8, b: u8, num: usize)
+{
+    if a > b
+    {
+        *map.entry((a, b)).or_insert(num) += num;
+    }
+    else if b < a   // Allow pixels to have affinity with themselves?
+    {
+        *map.entry((b, a)).or_insert(num) += num;
+    }
+}
+
+// Gets the single and joint frequencies of pixels in each subimage
+fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Luma<u8>, std::vec::Vec<u8>>>) -> (HashMap<u8, usize>, HashMap<(u8, u8), usize>)
+{
+    let mut single_frequencies: HashMap<u8, usize> = HashMap::new();
+    let mut joint_frequencies: HashMap<(u8, u8), usize> = HashMap::new();
+
+    if subimage.dimensions() == (3, 3)
+    {
+        // Acquire each pixel in subimage according to diagram above
+        let one = subimage.get_pixel(0, 0) [0];
+        let two = subimage.get_pixel(0, 1) [0];
+        let three = subimage.get_pixel(0, 2) [0];
+        let four = subimage.get_pixel(1, 0) [0];
+        let five = subimage.get_pixel(1, 1) [0];
+        let six = subimage.get_pixel(1, 2) [0];
+        let seven = subimage.get_pixel(2, 0) [0];
+        let eight = subimage.get_pixel(2, 1) [0];
+        let nine = subimage.get_pixel(2, 2) [0];
+
+        // Corner pixels occur once
+        single_frequencies.insert(one, 1);
+        *single_frequencies.entry(three).or_insert(1) += 1;
+        *single_frequencies.entry(seven).or_insert(1) += 1;
+        *single_frequencies.entry(nine).or_insert(1) += 1;
+
+        // Off-center pixels occur twice
+        *single_frequencies.entry(two).or_insert(2) += 2;
+        *single_frequencies.entry(four).or_insert(2) += 2;
+        *single_frequencies.entry(six).or_insert(2) += 2;
+        *single_frequencies.entry(eight).or_insert(2) += 2;
+
+        // Center pixel occurs four times
+        *single_frequencies.entry(five).or_insert(4) += 4;
+
+        // Corner pixels occur once with their neighbors
+        joint_insert(&mut joint_frequencies, one, two, 1);
+        joint_insert(&mut joint_frequencies, one, four, 1);
+        joint_insert(&mut joint_frequencies, one, five, 1);
+        joint_insert(&mut joint_frequencies, three, two, 1);
+        joint_insert(&mut joint_frequencies, three, six, 1);
+        joint_insert(&mut joint_frequencies, three, five, 1);
+        joint_insert(&mut joint_frequencies, seven, four, 1);
+        joint_insert(&mut joint_frequencies, seven, eight, 1);
+        joint_insert(&mut joint_frequencies, seven, five, 1);
+        joint_insert(&mut joint_frequencies, nine, six, 1);
+        joint_insert(&mut joint_frequencies, nine, eight, 1);
+        joint_insert(&mut joint_frequencies, nine, five, 1);
+
+        // Off-center pixels occur twice with the center
+        joint_insert(&mut joint_frequencies, two, five, 2);
+        joint_insert(&mut joint_frequencies, four, five, 2);
+        joint_insert(&mut joint_frequencies, six, five, 2);
+        joint_insert(&mut joint_frequencies, eight, five, 2);
+    }
+
+    (single_frequencies, joint_frequencies)
+}
+
 pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
 {
     let mut image: image::GrayImage = image::ImageBuffer::new(img.width() - 2, img.height() - 2);
     let now = Instant::now();
+    let mut subimage = img.view(0, 0, 3, 3);
+
     for i in 0 .. img.width() - 2
     {
         for j in 0 .. img.height() - 2
         {
-            let mut square: Vec<Vec<u64>> = Vec::with_capacity(3);
-            let mut not_zero = false;
-            for r in i .. i + 3
+            subimage.change_bounds(i, j, 3, 3);
+            let (single, joint) = get_frequencies(&subimage);
+            let mut max_diff: u8 = 0;
+            let mut max_affinity: f64 = 0.0;
+            for pair in joint.keys()
             {
-                let mut col = Vec::with_capacity(3);
-                for c in j .. j + 3
+                let a = *single.get(&pair.0).unwrap() as f64;
+                let b = *single.get(&pair.1).unwrap() as f64;
+                let affinity = *joint.get(pair).unwrap() as f64 / if a > b { a } else { b };
+
+                if affinity > max_affinity
                 {
-                    let num = img.get_pixel(r, c) [0];
-                    if num != 0
-                    {
-                        not_zero = true;
-                    }
-                    col.push(num as u64);
+                    max_affinity = affinity;
+                    max_diff = (pair.0 - pair.1) as u8;
                 }
-                square.push(col);
-            }
-
-            if not_zero
-            {
-                let frequencies = get_frequencies_naive(square, vec!(2));
-                let mut max_diff: u8 = 0;
-                let mut max_affinity: f64 = 0.0;
-                for pair in frequencies.1 [0].keys()
+                else if affinity == max_affinity
                 {
-                    let single_frequecy_a = *frequencies.0 [0].get(&pair.0).unwrap() as f64;
-                    let single_frequecy_b = *frequencies.0 [0].get(&pair.1).unwrap() as f64;
-                    let mut affinity = *frequencies.1 [0].get(pair).unwrap() as f64;
-                    if single_frequecy_b < single_frequecy_a
+                    let diff = (pair.0 - pair.1) as u8;
+                    if diff > max_diff
                     {
-                        affinity = affinity / single_frequecy_b;
-                    }
-                    else
-                    {
-                        affinity = affinity / single_frequecy_a;
-                    }
-
-                    if affinity > max_affinity
-                    {
-                        max_affinity = affinity;
-                        if pair.0 > pair.1
-                        {
-                            max_diff = (pair.0 - pair.1) as u8;
-                        }
-                        else
-                        {
-                            max_diff = (pair.1 - pair.0) as u8;
-                        }
-                    }
-                    else if affinity == max_affinity
-                    {
-                        if pair.0 > pair.1
-                        {
-                            let diff = (pair.0 - pair.1) as u8;
-                            if diff > max_diff
-                            {
-                                max_diff = (pair.0 - pair.1) as u8;
-                            }
-                        }
-                        else
-                        {
-                            let diff = (pair.1 - pair.0) as u8;
-                            if diff > max_diff
-                            {
-                                max_diff = (pair.1 - pair.0) as u8;
-                            }
-                        }
+                        max_diff = (pair.0 - pair.1) as u8;
                     }
                 }
+            }
 
-                image.get_pixel_mut(i, j) [0] = max_diff;
-            }
-            else
-            {
-                image.get_pixel_mut(i, j) [0] = 0;
-            }
+            image.get_pixel_mut(i, j) [0] = max_diff;
         }
     }
     let elapsed = now.elapsed();

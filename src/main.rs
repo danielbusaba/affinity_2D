@@ -18,13 +18,12 @@ use argparse::{ArgumentParser, Store};   //StoreTrue
 
 const IMAGE_DIR: &str = "images";    //Stores image directory globally
 const BASE_DIR: &str = "base";                 //Stores the base storage directory globally
-const SATURATED_DIR: &str = "saturated";      //Stores saturated output directory globally
 const OUTPUT_DIR: &str = "output";           //Stores output directory globally
 const OUTPUT_MAX_DIFF_DIR: &str = "output_max_diff";           //Stores output directory globally
 const OUTPUT_CENTER_DIFF_DIR: &str = "output_center_diff";           //Stores output directory globally
 const OUTPUT_AVERAGE_DIR: &str = "output_average";           //Stores output directory globally
 
-const DIRS: [&str; 6] = [BASE_DIR, SATURATED_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR]; //Stores a list of output directories for later use
+const DIRS: [&str; 5] = [BASE_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR]; //Stores a list of output directories for later use
 
 fn main() -> std::io::Result<()>
 {
@@ -79,7 +78,7 @@ fn main() -> std::io::Result<()>
         analyze_center_diff(&original, &name, &(OUTPUT_CENTER_DIFF_DIR.to_owned() + "/"));
         let analyzed = image::open("saturated_".to_owned() + OUTPUT_DIR + &"/" + &name).unwrap().to_luma();
         saturate(&mut original);
-        original.save(SATURATED_DIR.to_owned() + &"/" + &name).unwrap();
+        original.save("saturated_".to_owned() + BASE_DIR + &"/" + &name).unwrap();
         analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "/"));
         
         println!("\tDividing by 16:");
@@ -91,7 +90,7 @@ fn main() -> std::io::Result<()>
         analyze_center_diff(&original, &name, &(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"));
         let analyzed = image::open("saturated_".to_owned() + OUTPUT_DIR + &"_div16/" + &name).unwrap().to_luma();
         saturate(&mut original);
-        original.save(SATURATED_DIR.to_owned() + &"_div16/" + &name).unwrap();
+        original.save("saturated_".to_owned() + BASE_DIR + &"_div16/" + &name).unwrap();
         analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"));
         println!("");
     }
