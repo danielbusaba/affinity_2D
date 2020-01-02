@@ -4,15 +4,17 @@ use std::time::Instant;
 
 pub fn analyze_average(original: &image::GrayImage, analyzed: &image::GrayImage, entry: &str, output_dir: &str)
 {
-    let mut image: image::GrayImage = image::ImageBuffer::new(analyzed.width(), analyzed.height());
+    // Setup image to be copied to and start counting time
+    let (width, height) = analyzed.dimensions();
+    let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
-    for i in 0 .. analyzed.width()
-    {
-        for j in 0 .. analyzed.height()
+
+    image.enumerate_pixels_mut().for_each(
+        | (x, y, pixel) |
         {
-            image.get_pixel_mut(i, j) [0] = ((original.get_pixel(i + 1, j + 1) [0] as u16 + analyzed.get_pixel(i, j) [0] as u16) / 2) as u8;
+            *pixel = image::Luma([ ((original.get_pixel(x, y) [0] as u16 + analyzed.get_pixel(x, y) [0] as u16) / 2) as u8 ]);
         }
-    }
+    );
 
     let elapsed = now.elapsed();
     let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
