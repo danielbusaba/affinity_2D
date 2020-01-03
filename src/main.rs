@@ -47,11 +47,20 @@ fn create_dir(dir: &str, categories: &HashSet<String>)
                 let sub = dir.to_owned() + category + &"/";
                 match fs::create_dir(&sub)
                 {
-                    Ok(()) => println!("Made directory {}", sub),
-                    Err(_) => println!("Directory {} already exists", sub),
+                    Ok(()) => println!("Made subdirectory {}", sub),
+                    Err(_) => println!("Subdirectory {} already exists", sub),
                 }
             }
         )
+    }
+}
+
+fn output_dir(dir: &str, sample: &str, examples: &HashMap<String, String>) -> String
+{
+    match examples.get(sample)
+    {
+        Some(subdir) => dir.to_owned() + "/" + subdir + "/",
+        None => dir.to_owned() + "/",
     }
 }
 
@@ -85,9 +94,10 @@ fn main()
 
         // Reads the category names from the header
         let header = reader.headers().unwrap();
-        let num = header [1].parse::<usize>().unwrap();
-        assert_eq!(num + 2, header.len());
-        for i in 2 .. 2 + num
+        let num_categories = header [1].parse::<usize>().expect("Invalid number of categories in CSV");
+        let num_images = header [0].parse::<usize>().expect("Invalid number of images in CSV");
+        assert_eq!(num_categories + 2, header.len());
+        for i in 2 .. 2 + num_categories
         {
             categories.insert(header [i].to_owned());
         }
@@ -102,6 +112,7 @@ fn main()
                 examples.insert(record [0].to_owned(), record [1].to_owned());
             }
         );
+        assert_eq!(num_images, examples.len());
     }
 
     // Create directories to store images
@@ -118,32 +129,33 @@ fn main()
     }
     println!("");
 
-    for entry in fs::read_dir(image_dir).unwrap()
+    for entry in fs::read_dir(image_dir).expect("Image directory not found")
     {
         let entry = entry.unwrap();
         let mut original = image::open(entry.path()).unwrap().to_luma();
         let name = entry.file_name().into_string().unwrap();
-        original.save(BASE_DIR.to_owned() + &"/" + &name).unwrap();
+        if !examples.is_empty() { assert!(examples.contains_key(&name)); }
+        original.save(output_dir(&BASE_DIR, &name, &examples) + &name).unwrap();
         println!("Name: {} | Dimensions: {:?}", name, original.dimensions());
-        analyze_affinity(&original, &name, &(OUTPUT_DIR.to_owned() + "/"));
-        analyze_max_diff(&original, &name, &(OUTPUT_MAX_DIFF_DIR.to_owned() + "/"));
-        analyze_center_diff(&original, &name, &(OUTPUT_CENTER_DIFF_DIR.to_owned() + "/"));
-        let analyzed = image::open("saturated_".to_owned() + OUTPUT_DIR + &"/" + &name).unwrap().to_luma();
+        analyze_affinity(&original, &name, &output_dir(&OUTPUT_DIR, &name, &examples));
+        analyze_max_diff(&original, &name, &output_dir(&OUTPUT_MAX_DIFF_DIR, &name, &examples));
+        analyze_center_diff(&original, &name, &output_dir(&OUTPUT_CENTER_DIFF_DIR, &name, &examples));
+        let analyzed = image::open("saturated_".to_owned() + &output_dir(&OUTPUT_DIR, &name, &examples) + &name).unwrap().to_luma();
         saturate(&mut original);
-        original.save("saturated_".to_owned() + BASE_DIR + &"/" + &name).unwrap();
-        analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "/"));
+        original.save("saturated_".to_owned() + &output_dir(&BASE_DIR, &name, &examples) + &name).unwrap();
+        analyze_average(&original, &analyzed, &name, &output_dir(&OUTPUT_AVERAGE_DIR, &name, &examples));
         
         println!("\tDividing by 16:");
         let mut original = image::open(entry.path()).unwrap().to_luma();
         div16(&mut original);
-        original.save(BASE_DIR.to_owned() + &"_div16/" + &name).unwrap();
-        analyze_affinity(&original, &name, &(OUTPUT_DIR.to_owned() + "_div16/"));
-        analyze_max_diff(&original, &name, &(OUTPUT_MAX_DIFF_DIR.to_owned() + "_div16/"));
-        analyze_center_diff(&original, &name, &(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"));
-        let analyzed = image::open("saturated_".to_owned() + OUTPUT_DIR + &"_div16/" + &name).unwrap().to_luma();
+        original.save(output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap();
+        analyze_affinity(&original, &name, &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name, &examples));
+        analyze_max_diff(&original, &name, &output_dir(&(OUTPUT_MAX_DIFF_DIR.to_owned() + "_div16/"), &name, &examples));
+        analyze_center_diff(&original, &name, &output_dir(&(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"), &name, &examples));
+        let analyzed = image::open("saturated_".to_owned() + &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap().to_luma();
         saturate(&mut original);
-        original.save("saturated_".to_owned() + BASE_DIR + &"_div16/" + &name).unwrap();
-        analyze_average(&original, &analyzed, &name, &(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"));
+        original.save("saturated_".to_owned() + &output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap();
+        analyze_average(&original, &analyzed, &name, &output_dir(&(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"), &name, &examples));
         println!("");
     }
 }
