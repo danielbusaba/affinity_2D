@@ -5,9 +5,9 @@ pub fn saturate(image: &mut image::GrayImage)
     let mut min = 255;
     let mut max = 0;
     image.iter().for_each(
-        | p |
+        | pixel |
         {
-            let pixel = *p;
+            let pixel = *pixel;
             if pixel > max
             {
                 max = pixel;

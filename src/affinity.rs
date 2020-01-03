@@ -266,9 +266,9 @@ pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
                 let mut min = 255;
                 let mut max = 0;
                 subimage.pixels().for_each(
-                    | (_, _, p) |
+                    | (_, _, px) |
                     {
-                        let px = p [0];
+                        let px = px [0];
                         if px < min
                         {
                             min = px;

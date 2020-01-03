@@ -13,23 +13,6 @@ pub fn analyze_max_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
     image.enumerate_pixels_mut().for_each(
         | (x, y, pixel) |
         {
-            //let subimage = img.view(x, y, 3, 3);
-            // let mut min = 255;
-            // let mut max = 0;
-            // subimage.to_image().iter().for_each(
-            //     | sp |
-            //     {
-            //         let subpixel = *sp;
-            //         if subpixel < min
-            //         {
-            //             min = subpixel;
-            //         }
-            //         if subpixel > max
-            //         {
-            //             max = subpixel;
-            //         }
-            //     }
-            // );
             let mut min = 255;
             let mut max = 0;
 
