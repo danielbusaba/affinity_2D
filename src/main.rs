@@ -132,30 +132,33 @@ fn main()
     for entry in fs::read_dir(image_dir).expect("Image directory not found")
     {
         let entry = entry.unwrap();
-        let mut original = image::open(entry.path()).unwrap().to_luma();
-        let name = entry.file_name().into_string().unwrap();
-        if !examples.is_empty() { assert!(examples.contains_key(&name)); }
-        original.save(output_dir(&BASE_DIR, &name, &examples) + &name).unwrap();
-        println!("Name: {} | Dimensions: {:?}", name, original.dimensions());
-        analyze_affinity(&original, &name, &output_dir(&OUTPUT_DIR, &name, &examples));
-        analyze_max_diff(&original, &name, &output_dir(&OUTPUT_MAX_DIFF_DIR, &name, &examples));
-        analyze_center_diff(&original, &name, &output_dir(&OUTPUT_CENTER_DIFF_DIR, &name, &examples));
-        let analyzed = image::open("saturated_".to_owned() + &output_dir(&OUTPUT_DIR, &name, &examples) + &name).unwrap().to_luma();
+        let name_in = entry.file_name().into_string().unwrap();
+        let bmp = entry.path().with_extension("bmp");
+        let name_out = bmp.file_name().unwrap().to_str().unwrap();
+        if !examples.is_empty() { assert!(examples.contains_key(&name_in)); }
+
+        let mut original = image::open(entry.path()).unwrap().to_rgb();
+        original.save(output_dir(&BASE_DIR, &name_in, &examples) + name_out).unwrap();
+        println!("Name: {} | Dimensions: {:?}", name_in, original.dimensions());
+        analyze_affinity(&original, name_out, &output_dir(&OUTPUT_DIR, &name_in, &examples));
+        analyze_max_diff(&original, name_out, &output_dir(&OUTPUT_MAX_DIFF_DIR, &name_in, &examples));
+        analyze_center_diff(&original, name_out, &output_dir(&OUTPUT_CENTER_DIFF_DIR, &name_in, &examples));
+        let analyzed = image::open("saturated_".to_owned() + &output_dir(&OUTPUT_DIR, &name_in, &examples) + name_out).unwrap().to_rgb();
         saturate(&mut original);
-        original.save("saturated_".to_owned() + &output_dir(&BASE_DIR, &name, &examples) + &name).unwrap();
-        analyze_average(&original, &analyzed, &name, &output_dir(&OUTPUT_AVERAGE_DIR, &name, &examples));
+        original.save("saturated_".to_owned() + &output_dir(&BASE_DIR, &name_in, &examples) + name_out).unwrap();
+        analyze_average(&original, &analyzed, name_out, &output_dir(&OUTPUT_AVERAGE_DIR, &name_in, &examples));
         
         println!("\tDividing by 16:");
-        let mut original = image::open(entry.path()).unwrap().to_luma();
+        let mut original = image::open(entry.path()).unwrap().to_rgb();
         div16(&mut original);
-        original.save(output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap();
-        analyze_affinity(&original, &name, &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name, &examples));
-        analyze_max_diff(&original, &name, &output_dir(&(OUTPUT_MAX_DIFF_DIR.to_owned() + "_div16/"), &name, &examples));
-        analyze_center_diff(&original, &name, &output_dir(&(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"), &name, &examples));
-        let analyzed = image::open("saturated_".to_owned() + &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap().to_luma();
+        original.save(output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name_in, &examples) + name_out).unwrap();
+        analyze_affinity(&original, name_out, &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name_in, &examples));
+        analyze_max_diff(&original, name_out, &output_dir(&(OUTPUT_MAX_DIFF_DIR.to_owned() + "_div16/"), &name_in, &examples));
+        analyze_center_diff(&original, name_out, &output_dir(&(OUTPUT_CENTER_DIFF_DIR.to_owned() + "_div16/"), &name_in, &examples));
+        let analyzed = image::open("saturated_".to_owned() + &output_dir(&(OUTPUT_DIR.to_owned() + "_div16/"), &name_in, &examples) + name_out).unwrap().to_rgb();
         saturate(&mut original);
-        original.save("saturated_".to_owned() + &output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name, &examples) + &name).unwrap();
-        analyze_average(&original, &analyzed, &name, &output_dir(&(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"), &name, &examples));
+        original.save("saturated_".to_owned() + &output_dir(&(BASE_DIR.to_owned() + "_div16/"), &name_in, &examples) + name_out).unwrap();
+        analyze_average(&original, &analyzed, name_out, &output_dir(&(OUTPUT_AVERAGE_DIR.to_owned() + "_div16/"), &name_in, &examples));
         println!("");
     }
 }

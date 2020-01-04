@@ -3,42 +3,46 @@ use crate::saturate::saturate;
 use std::time::Instant;
 
 // Sets every pixel to the largest difference in a 3x3 square around it
-pub fn analyze_max_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
+pub fn analyze_max_diff(img: &image::RgbImage, entry: &str, output_dir: &str)
 {
     // Setup image to be copied to and start counting time
     let (width, height) = img.dimensions();
-    let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
+    let mut image: image::RgbImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
     
     image.enumerate_pixels_mut().for_each(
         | (x, y, pixel) |
         {
-            let mut min = 255;
-            let mut max = 0;
-
             // Handle edge cases to allow keeping the image 1024x1024
             let rl = if x > 0 { x - 1 } else { x };
             let rr = if x < width - 1 { x + 1 } else { x };
             let cl = if y > 0 { y - 1 } else { y };
             let cr = if y < height - 1 { y + 1 } else { y };
 
-            for r in rl .. rr
+            let mut out = [0; 3];
+            for i in 0 .. 3
             {
-                for c in cl .. cr
+                let mut min = 255;
+                let mut max = 0;
+                for r in rl .. rr
                 {
-                    let num = img.get_pixel(r, c) [0];
-                    if num < min
+                    for c in cl .. cr
                     {
-                        min = num;
-                    }
-                    if num > max
-                    {
-                        max = num;
+                        let num = img.get_pixel(r, c) [i];
+                        if num < min
+                        {
+                            min = num;
+                        }
+                        if num > max
+                        {
+                            max = num;
+                        }
                     }
                 }
+                out [i] = max - min;
             }
             
-            *pixel = image::Luma([max - min]);
+            *pixel = image::Rgb(out);
         }
     );
 

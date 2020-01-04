@@ -1,5 +1,5 @@
 // Scales every pixel value in the image to fit the scale 0-255
-pub fn saturate(image: &mut image::GrayImage)
+pub fn saturate(image: &mut image::RgbImage)
 {
     // Finds the minimum and maximum pixel values in the image
     let mut min = 255;

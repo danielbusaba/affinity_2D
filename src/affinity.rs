@@ -1,82 +1,8 @@
 use crate::saturate::saturate;
 
 use std::collections::HashMap;
-use std::collections::HashSet;
 use std::time::Instant;
 use crate::image::GenericImageView;
-
-fn _get_frequencies_abstract(trace: Vec<Vec<u64>>, window_sizes: Vec<usize>) -> (Vec<HashMap<u64, usize>>, Vec<HashMap<(u64, u64), usize>>)
-{
-    let mut single_frequencies_list: Vec<HashMap<u64, usize>> = Vec::with_capacity(window_sizes.len());
-    let mut joint_frequencies_list: Vec<HashMap<(u64, u64), usize>> = Vec::with_capacity(window_sizes.len());
-    for size in window_sizes
-    {
-        let mut single_frequencies: HashMap<u64, usize> = HashMap::new();
-        let mut joint_frequencies: HashMap<(u64, u64), usize> = HashMap::new();
-        for i in 0 .. (trace.len() - size + 1)
-        {
-            for j in 0 .. (trace.get(i).unwrap().len() - size + 1)
-            {
-                let mut singles: HashSet<u64> = HashSet::new();
-                let mut doubles: HashSet<(u64, u64)> = HashSet::new();
-                for r in i .. i + size
-                {
-                    for c in j .. j + size
-                    {
-                        let num = *trace.get(r).unwrap().get(c).unwrap();
-
-                        for sub_num in &singles
-                        {
-                            if *sub_num != num
-                            {
-                                if *sub_num < num
-                                {
-                                    doubles.insert((num, *sub_num));
-                                }
-                                else
-                                {
-                                    doubles.insert((*sub_num, num));
-                                }
-                            }
-                        }
-                        singles.insert(num);
-                    }
-                }
-
-                for single in singles
-                {
-                    if single_frequencies.contains_key(&single)
-                    {
-                        let current = *single_frequencies.get_mut(&single).unwrap();
-                        single_frequencies.insert(single, current + 1);
-                    }
-                    else
-                    {
-                        single_frequencies.insert(single, 1);
-                    }
-                }
-
-                for double in doubles
-                {
-                    if joint_frequencies.contains_key(&double)
-                    {
-                        let current = *joint_frequencies.get_mut(&double).unwrap();
-                        joint_frequencies.insert(double, current + 1);
-                    }
-                    else
-                    {
-                        joint_frequencies.insert(double, 1);
-                    }
-                }
-            }
-        }
-
-        single_frequencies_list.push(single_frequencies);
-        joint_frequencies_list.push(joint_frequencies);
-    }
-
-    (single_frequencies_list, joint_frequencies_list)
-}
 
 /*
 
@@ -104,134 +30,149 @@ fn joint_insert(map: &mut HashMap<(u8, u8), usize>, a: u8, b: u8, num: usize)
 }
 
 // Gets the single and joint frequencies of pixels in each subimage
-fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Luma<u8>, std::vec::Vec<u8>>>) -> (HashMap<u8, usize>, HashMap<(u8, u8), usize>)
+fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Rgb<u8>, std::vec::Vec<u8>>>) -> (Vec<HashMap<u8, usize>>, Vec<HashMap<(u8, u8), usize>>)
 {
-    let mut single_frequencies: HashMap<u8, usize> = HashMap::new();
-    let mut joint_frequencies: HashMap<(u8, u8), usize> = HashMap::new();
+    let mut single_frequencies: Vec<HashMap<u8, usize>> = Vec::with_capacity(3);
+    let mut joint_frequencies: Vec<HashMap<(u8, u8), usize>> = Vec::with_capacity(3);
+
+    for _ in 0 .. 3
+    {
+        single_frequencies.push(HashMap::new());
+        joint_frequencies.push(HashMap::new());
+    }
 
     if subimage.dimensions() == (3, 3)
     {
-        // Acquire each pixel in subimage according to diagram above
-        let one = subimage.get_pixel(0, 0) [0];
-        let two = subimage.get_pixel(0, 1) [0];
-        let three = subimage.get_pixel(0, 2) [0];
-        let four = subimage.get_pixel(1, 0) [0];
-        let five = subimage.get_pixel(1, 1) [0];
-        let six = subimage.get_pixel(1, 2) [0];
-        let seven = subimage.get_pixel(2, 0) [0];
-        let eight = subimage.get_pixel(2, 1) [0];
-        let nine = subimage.get_pixel(2, 2) [0];
+        for i in 0 .. 3
+        {
+            // Acquire each pixel in subimage according to diagram above
+            let one = subimage.get_pixel(0, 0) [i];
+            let two = subimage.get_pixel(0, 1) [i];
+            let three = subimage.get_pixel(0, 2) [i];
+            let four = subimage.get_pixel(1, 0) [i];
+            let five = subimage.get_pixel(1, 1) [i];
+            let six = subimage.get_pixel(1, 2) [i];
+            let seven = subimage.get_pixel(2, 0) [i];
+            let eight = subimage.get_pixel(2, 1) [i];
+            let nine = subimage.get_pixel(2, 2) [i];
 
-        // Corner pixels occur once
-        single_frequencies.insert(one, 1);
-        *single_frequencies.entry(three).or_insert(1) += 1;
-        *single_frequencies.entry(seven).or_insert(1) += 1;
-        *single_frequencies.entry(nine).or_insert(1) += 1;
+            // Corner pixels occur once
+            single_frequencies [i].insert(one, 1);
+            *single_frequencies [i].entry(three).or_insert(1) += 1;
+            *single_frequencies [i].entry(seven).or_insert(1) += 1;
+            *single_frequencies [i].entry(nine).or_insert(1) += 1;
 
-        // Off-center pixels occur twice
-        *single_frequencies.entry(two).or_insert(2) += 2;
-        *single_frequencies.entry(four).or_insert(2) += 2;
-        *single_frequencies.entry(six).or_insert(2) += 2;
-        *single_frequencies.entry(eight).or_insert(2) += 2;
+            // Off-center pixels occur twice
+            *single_frequencies [i].entry(two).or_insert(2) += 2;
+            *single_frequencies [i].entry(four).or_insert(2) += 2;
+            *single_frequencies [i].entry(six).or_insert(2) += 2;
+            *single_frequencies [i].entry(eight).or_insert(2) += 2;
 
-        // Center pixel occurs four times
-        *single_frequencies.entry(five).or_insert(4) += 4;
+            // Center pixel occurs four times
+            *single_frequencies [i].entry(five).or_insert(4) += 4;
 
-        // Corner pixels occur once with their neighbors
-        joint_insert(&mut joint_frequencies, one, two, 1);
-        joint_insert(&mut joint_frequencies, one, four, 1);
-        joint_insert(&mut joint_frequencies, one, five, 1);
-        joint_insert(&mut joint_frequencies, three, two, 1);
-        joint_insert(&mut joint_frequencies, three, six, 1);
-        joint_insert(&mut joint_frequencies, three, five, 1);
-        joint_insert(&mut joint_frequencies, seven, four, 1);
-        joint_insert(&mut joint_frequencies, seven, eight, 1);
-        joint_insert(&mut joint_frequencies, seven, five, 1);
-        joint_insert(&mut joint_frequencies, nine, six, 1);
-        joint_insert(&mut joint_frequencies, nine, eight, 1);
-        joint_insert(&mut joint_frequencies, nine, five, 1);
+            // Corner pixels occur once with their neighbors
+            joint_insert(&mut joint_frequencies [i], one, two, 1);
+            joint_insert(&mut joint_frequencies [i], one, four, 1);
+            joint_insert(&mut joint_frequencies [i], one, five, 1);
+            joint_insert(&mut joint_frequencies [i], three, two, 1);
+            joint_insert(&mut joint_frequencies [i], three, six, 1);
+            joint_insert(&mut joint_frequencies [i], three, five, 1);
+            joint_insert(&mut joint_frequencies [i], seven, four, 1);
+            joint_insert(&mut joint_frequencies [i], seven, eight, 1);
+            joint_insert(&mut joint_frequencies [i], seven, five, 1);
+            joint_insert(&mut joint_frequencies [i], nine, six, 1);
+            joint_insert(&mut joint_frequencies [i], nine, eight, 1);
+            joint_insert(&mut joint_frequencies [i], nine, five, 1);
 
-        // Off-center pixels occur once with each other
-        joint_insert(&mut joint_frequencies, four, two, 1);
-        joint_insert(&mut joint_frequencies, four, eight, 1);
-        joint_insert(&mut joint_frequencies, six, two, 1);
-        joint_insert(&mut joint_frequencies, six, eight, 1);
+            // Off-center pixels occur once with each other
+            joint_insert(&mut joint_frequencies [i], four, two, 1);
+            joint_insert(&mut joint_frequencies [i], four, eight, 1);
+            joint_insert(&mut joint_frequencies [i], six, two, 1);
+            joint_insert(&mut joint_frequencies [i], six, eight, 1);
 
-        // Off-center pixels occur twice with the center
-        joint_insert(&mut joint_frequencies, two, five, 2);
-        joint_insert(&mut joint_frequencies, four, five, 2);
-        joint_insert(&mut joint_frequencies, six, five, 2);
-        joint_insert(&mut joint_frequencies, eight, five, 2);
+            // Off-center pixels occur twice with the center
+            joint_insert(&mut joint_frequencies [i], two, five, 2);
+            joint_insert(&mut joint_frequencies [i], four, five, 2);
+            joint_insert(&mut joint_frequencies [i], six, five, 2);
+            joint_insert(&mut joint_frequencies [i], eight, five, 2);
+        }
     }
     else if subimage.dimensions() == (2, 3)
     {
-        // Acquire each pixel in subimage according to diagram above
-        let one = subimage.get_pixel(0, 0) [0];
-        let two = subimage.get_pixel(0, 1) [0];
-        let three = subimage.get_pixel(0, 2) [0];
-        let four = subimage.get_pixel(1, 0) [0];
-        let five = subimage.get_pixel(1, 1) [0];
-        let six = subimage.get_pixel(1, 2) [0];
+        for i in 0 .. 3
+        {
+            // Acquire each pixel in subimage according to diagram above
+            let one = subimage.get_pixel(0, 0) [i];
+            let two = subimage.get_pixel(0, 1) [i];
+            let three = subimage.get_pixel(0, 2) [i];
+            let four = subimage.get_pixel(1, 0) [i];
+            let five = subimage.get_pixel(1, 1) [i];
+            let six = subimage.get_pixel(1, 2) [i];
 
-        // Corner pixels occur once
-        single_frequencies.insert(one, 1);
-        *single_frequencies.entry(three).or_insert(1) += 1;
-        *single_frequencies.entry(four).or_insert(1) += 1;
-        *single_frequencies.entry(six).or_insert(1) += 1;
+            // Corner pixels occur once
+            single_frequencies [i].insert(one, 1);
+            *single_frequencies [i].entry(three).or_insert(1) += 1;
+            *single_frequencies [i].entry(four).or_insert(1) += 1;
+            *single_frequencies [i].entry(six).or_insert(1) += 1;
 
-        // Off-center pixels occur twice
-        *single_frequencies.entry(two).or_insert(2) += 2;
-        *single_frequencies.entry(five).or_insert(2) += 2;
+            // Off-center pixels occur twice
+            *single_frequencies [i].entry(two).or_insert(2) += 2;
+            *single_frequencies [i].entry(five).or_insert(2) += 2;
 
-        // Corner pixels occur once with their neighbors
-        joint_insert(&mut joint_frequencies, one, two, 1);
-        joint_insert(&mut joint_frequencies, one, four, 1);
-        joint_insert(&mut joint_frequencies, one, five, 1);
-        joint_insert(&mut joint_frequencies, four, two, 1);
-        joint_insert(&mut joint_frequencies, four, five, 1);
-        joint_insert(&mut joint_frequencies, three, two, 1);
-        joint_insert(&mut joint_frequencies, three, five, 1);
-        joint_insert(&mut joint_frequencies, three, six, 1);
-        joint_insert(&mut joint_frequencies, six, two, 1);
-        joint_insert(&mut joint_frequencies, six, five, 1);
+            // Corner pixels occur once with their neighbors
+            joint_insert(&mut joint_frequencies [i], one, two, 1);
+            joint_insert(&mut joint_frequencies [i], one, four, 1);
+            joint_insert(&mut joint_frequencies [i], one, five, 1);
+            joint_insert(&mut joint_frequencies [i], four, two, 1);
+            joint_insert(&mut joint_frequencies [i], four, five, 1);
+            joint_insert(&mut joint_frequencies [i], three, two, 1);
+            joint_insert(&mut joint_frequencies [i], three, five, 1);
+            joint_insert(&mut joint_frequencies [i], three, six, 1);
+            joint_insert(&mut joint_frequencies [i], six, two, 1);
+            joint_insert(&mut joint_frequencies [i], six, five, 1);
 
-        // Off-center pixels occur twice with each other
-        joint_insert(&mut joint_frequencies, two, five, 2);
+            // Off-center pixels occur twice with each other
+            joint_insert(&mut joint_frequencies [i], two, five, 2);
+        }
     }
     else if subimage.dimensions() == (3, 2)
     {
-        // Acquire each pixel in subimage according to diagram above
-        let one = subimage.get_pixel(0, 0) [0];
-        let two = subimage.get_pixel(0, 1) [0];
-        let three = subimage.get_pixel(1, 0) [0];
-        let four = subimage.get_pixel(1, 1) [0];
-        let five = subimage.get_pixel(2, 0) [0];
-        let six = subimage.get_pixel(2, 1) [0];
+        for i in 0 .. 3
+        {
+            // Acquire each pixel in subimage according to diagram above
+            let one = subimage.get_pixel(0, 0) [i];
+            let two = subimage.get_pixel(0, 1) [i];
+            let three = subimage.get_pixel(1, 0) [i];
+            let four = subimage.get_pixel(1, 1) [i];
+            let five = subimage.get_pixel(2, 0) [i];
+            let six = subimage.get_pixel(2, 1) [i];
 
-        // Corner pixels occur once
-        single_frequencies.insert(one, 1);
-        *single_frequencies.entry(two).or_insert(1) += 1;
-        *single_frequencies.entry(five).or_insert(1) += 1;
-        *single_frequencies.entry(six).or_insert(1) += 1;
+            // Corner pixels occur once
+            single_frequencies [i].insert(one, 1);
+            *single_frequencies [i].entry(two).or_insert(1) += 1;
+            *single_frequencies [i].entry(five).or_insert(1) += 1;
+            *single_frequencies [i].entry(six).or_insert(1) += 1;
 
-        // Off-center pixels occur twice
-        *single_frequencies.entry(three).or_insert(2) += 2;
-        *single_frequencies.entry(four).or_insert(2) += 2;
+            // Off-center pixels occur twice
+            *single_frequencies [i].entry(three).or_insert(2) += 2;
+            *single_frequencies [i].entry(four).or_insert(2) += 2;
 
-        // Corner pixels occur once with their neighbors
-        joint_insert(&mut joint_frequencies, one, two, 1);
-        joint_insert(&mut joint_frequencies, one, three, 1);
-        joint_insert(&mut joint_frequencies, one, four, 1);
-        joint_insert(&mut joint_frequencies, two, three, 1);
-        joint_insert(&mut joint_frequencies, two, four, 1);
-        joint_insert(&mut joint_frequencies, five, three, 1);
-        joint_insert(&mut joint_frequencies, five, four, 1);
-        joint_insert(&mut joint_frequencies, five, six, 1);
-        joint_insert(&mut joint_frequencies, six, three, 1);
-        joint_insert(&mut joint_frequencies, six, four, 1);
+            // Corner pixels occur once with their neighbors
+            joint_insert(&mut joint_frequencies [i], one, two, 1);
+            joint_insert(&mut joint_frequencies [i], one, three, 1);
+            joint_insert(&mut joint_frequencies [i], one, four, 1);
+            joint_insert(&mut joint_frequencies [i], two, three, 1);
+            joint_insert(&mut joint_frequencies [i], two, four, 1);
+            joint_insert(&mut joint_frequencies [i], five, three, 1);
+            joint_insert(&mut joint_frequencies [i], five, four, 1);
+            joint_insert(&mut joint_frequencies [i], five, six, 1);
+            joint_insert(&mut joint_frequencies [i], six, three, 1);
+            joint_insert(&mut joint_frequencies [i], six, four, 1);
 
-        // Off-center pixels occur twice with each other
-        joint_insert(&mut joint_frequencies, three, four, 2);
+            // Off-center pixels occur twice with each other
+            joint_insert(&mut joint_frequencies [i], three, four, 2);
+        }
     }
     else
     {
@@ -242,11 +183,11 @@ fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Luma<u8
 }
 
 // Uses affinity analysis to set each pixel to the highest affinity in a 3x3 square around it
-pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
+pub fn analyze_affinity(img: &image::RgbImage, entry: &str, output_dir: &str)
 {
     // Setup image to be copied to and start counting time
     let (width, height) = img.dimensions();
-    let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
+    let mut image: image::RgbImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
     let mut subimage = img.view(0, 0, 2, 2);
 
@@ -263,52 +204,61 @@ pub fn analyze_affinity(img: &image::GrayImage, entry: &str, output_dir: &str)
             // Handles corners with only one window
             if subimage.dimensions() == (2, 2)
             {
-                let mut min = 255;
-                let mut max = 0;
-                subimage.pixels().for_each(
-                    | (_, _, px) |
-                    {
-                        let px = px [0];
-                        if px < min
+                let mut out = [0; 3];
+                for i in 0 .. 3
+                {
+                    let mut min = 255;
+                    let mut max = 0;
+                    subimage.pixels().for_each(
+                        | (_, _, px) |
                         {
-                            min = px;
+                            let px = px [i];
+                            if px < min
+                            {
+                                min = px;
+                            }
+                            if px > max
+                            {
+                                max = px;
+                            }
                         }
-                        if px > max
-                        {
-                            max = px;
-                        }
-                    }
-                );
-                *pixel = image::Luma([max - min]);
+                    );
+                    out [i] = max - min;
+                }
+                *pixel = image::Rgb(out);
             }
             else
             {
                 // Find the strongest affinity with the largest pixel difference
                 let (single, joint) = get_frequencies(&subimage);
-                let mut max_diff: u8 = 0;
-                let mut max_affinity: f64 = 0.0;
-                for (l, r) in joint.keys()
+                
+                let mut out = [0; 3];
+                for i in 0 .. 3
                 {
-                    let a = *single.get(l).unwrap();
-                    let b = *single.get(r).unwrap();
-                    let affinity = *joint.get(&(*l, *r)).unwrap() as f64 / (std::cmp::max(a, b) as f64);
+                    let mut max_affinity: f64 = 0.0;
+                    for (l, r) in joint [i].keys()
+                    {
+                        let a = *single [i].get(l).unwrap();
+                        let b = *single [i].get(r).unwrap();
+                        let affinity = *joint [i].get(&(*l, *r)).unwrap() as f64 / (std::cmp::max(a, b) as f64);
 
-                    if affinity > max_affinity
-                    {
-                        max_affinity = affinity;
-                        max_diff = l - r;
-                    }
-                    else if affinity == max_affinity
-                    {
-                        let diff = l - r;
-                        if diff > max_diff
+                        if affinity > max_affinity
                         {
-                            max_diff = l - r;
+                            max_affinity = affinity;
+                            out [i] = l - r;
+                        }
+                        else if affinity == max_affinity
+                        {
+                            let diff = l - r;
+                            if diff > out [i]
+                            {
+                                out [i] = l - r;
+                            }
                         }
                     }
                 }
 
-                *pixel = image::Luma([max_diff]);
+                *pixel = image::Rgb(out);
             }
         }
     );

@@ -3,52 +3,56 @@ use crate::saturate::saturate;
 use std::time::Instant;
 
 // Sets every pixel to the largest difference between it and its neighbors
-pub fn analyze_center_diff(img: &image::GrayImage, entry: &str, output_dir: &str)
+pub fn analyze_center_diff(img: &image::RgbImage, entry: &str, output_dir: &str)
 {
     // Setup image to be copied to and start counting time
     let (width, height) = img.dimensions();
-    let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
+    let mut image: image::RgbImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
 
     image.enumerate_pixels_mut().for_each(
         | (x, y, pixel) |
         {
-            let mut max = 0;
-
             // Handle edge cases to allow keeping the image 1024x1024
             let rl = if x > 0 { x - 1 } else { x };
             let rr = if x < width - 1 { x + 1 } else { x };
             let cl = if y > 0 { y - 1 } else { y };
             let cr = if y < height - 1 { y + 1 } else { y };
 
-            for r in rl .. rr
+            let mut out = [0; 3];
+            for i in 0 .. 3
             {
-                for c in cl .. cr
+                let mut max = 0;
+                for r in rl .. rr
                 {
-                    let num = img.get_pixel(r, c) [0];
-                    let center = img.get_pixel(x, y) [0];
+                    for c in cl .. cr
+                    {
+                        let num = img.get_pixel(r, c) [i];
+                        let center = img.get_pixel(x, y) [i];
 
-                    // Keeps the largest difference with respect to the center pixel
-                    if num > center
-                    {
-                        let diff = num - center;
-                        if diff > max
+                        // Keeps the largest difference with respect to the center pixel
+                        if num > center
                         {
-                            max = diff;
+                            let diff = num - center;
+                            if diff > max
+                            {
+                                max = diff;
+                            }
                         }
-                    }
-                    else
-                    {
-                        let diff = center - num;
-                        if diff > max
+                        else
                         {
-                            max = diff;
+                            let diff = center - num;
+                            if diff > max
+                            {
+                                max = diff;
+                            }
                         }
                     }
                 }
+                out [i] = max;
             }
 
-            *pixel = image::Luma([max]);
+            *pixel = image::Rgb(out);
         }
     );
 

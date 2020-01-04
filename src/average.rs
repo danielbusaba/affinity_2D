@@ -2,17 +2,22 @@ use crate::saturate::saturate;
 
 use std::time::Instant;
 
-pub fn analyze_average(original: &image::GrayImage, analyzed: &image::GrayImage, entry: &str, output_dir: &str)
+pub fn analyze_average(original: &image::RgbImage, analyzed: &image::RgbImage, entry: &str, output_dir: &str)
 {
     // Setup image to be copied to and start counting time
     let (width, height) = analyzed.dimensions();
-    let mut image: image::GrayImage = image::ImageBuffer::new(width, height);
+    let mut image: image::RgbImage = image::ImageBuffer::new(width, height);
     let now = Instant::now();
 
     image.enumerate_pixels_mut().for_each(
         | (x, y, pixel) |
         {
-            *pixel = image::Luma([ ((original.get_pixel(x, y) [0] as u16 + analyzed.get_pixel(x, y) [0] as u16) / 2) as u8 ]);
+            let mut out = [0; 3];
+            for i in 0 .. 3
+            {
+                out [i] = ((original.get_pixel(x, y) [i] as u16 + analyzed.get_pixel(x, y) [i] as u16) / 2) as u8;
+            }
+            *pixel = image::Rgb(out);
         }
     );
 
