@@ -30,8 +30,16 @@ const OUTPUT_AVERAGE_DIR: &str = "output_average";             // Stores average
 // Stores a list of output directories for directory creation
 const DIRS: [&str; 5] = [BASE_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR];
 
-fn create_dir(dir: &str, categories: &HashSet<String>)
+fn create_dir(dir: &str, del: bool, categories: &HashSet<String>)
 {
+    if del
+    {
+        match fs::remove_dir_all(dir)
+        {
+            Ok(()) => println!("Deleted directory {}", dir),
+            Err(_) => println!("Failed to delete directory {} ", dir),
+        }
+    }
     match fs::create_dir(dir)
     {
         Ok(()) => println!("Made directory {}", dir),
@@ -68,6 +76,7 @@ fn main()
 {
     // Read arguments from user
     let mut image_dir = IMAGE_DIR.to_owned() + &"/";
+    let mut delete = false;
     let mut verbose = false;
     let mut answers = "".to_owned();
     {
@@ -79,6 +88,9 @@ fn main()
         ap.refer(&mut answers)
             .add_option(&["-a", "--answers"], Store,
             "Set the path of a CSV file with answers to classify the provided images");
+        ap.refer(&mut delete)
+            .add_option(&["-d", "--delete"], StoreTrue,
+            "Delete the existing directories of processed images");
         ap.refer(&mut verbose)
             .add_option(&["-v", "--verbose"], StoreTrue,
             "Print verbose logging messages");
@@ -119,13 +131,13 @@ fn main()
     for dir in &DIRS
     {
         let d = "".to_owned() + dir + "/";
-        create_dir(&d, &categories);
+        create_dir(&d, delete, &categories);
         let d = "saturated_".to_owned() + dir + "/";
-        create_dir(&d, &categories);
+        create_dir(&d, delete, &categories);
         let d = "".to_owned() + dir + "_div16/";
-        create_dir(&d, &categories);
+        create_dir(&d, delete, &categories);
         let d = "saturated_".to_owned() + dir + "_div16/";
-        create_dir(&d, &categories);
+        create_dir(&d, delete, &categories);
     }
     println!("");
 
