@@ -238,9 +238,10 @@ pub fn analyze_affinity(img: &image::RgbImage, entry: &str, output_dir: &str)
                     let mut max_affinity: f64 = 0.0;
                     for (l, r) in joint [i].keys()
                     {
+                        // Divide the joint frequency by the minimum of the single frequencies to get the largest conditional probability of the pair
                         let a = *single [i].get(l).unwrap();
                         let b = *single [i].get(r).unwrap();
-                        let affinity = *joint [i].get(&(*l, *r)).unwrap() as f64 / (std::cmp::max(a, b) as f64);
+                        let affinity = *joint [i].get(&(*l, *r)).unwrap() as f64 / (std::cmp::min(a, b) as f64);
 
                         if affinity > max_affinity
                         {
