@@ -23,12 +23,13 @@ pub fn analyze_center_diff(img: &image::RgbImage, entry: &str, output_dir: &str)
             for i in 0 .. 3
             {
                 let mut max = 0;
+                let center = img.get_pixel(x, y) [i];
+                
                 for r in rl .. rr
                 {
                     for c in cl .. cr
                     {
                         let num = img.get_pixel(r, c) [i];
-                        let center = img.get_pixel(x, y) [i];
 
                         // Keeps the largest difference with respect to the center pixel
                         if num > center
