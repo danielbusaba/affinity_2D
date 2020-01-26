@@ -13,6 +13,8 @@ mod saturate;
 use saturate::saturate;
 
 extern crate image;                 // Used for image processing
+extern crate rand;                  // Used for randomly splitting data
+use rand::Rng;                      // Used for randomly splitting data
 use std::fs;                        // Used for file I/O and directory creation
 use std::collections::HashMap;      // Used for storing examples in the answers file
 use std::collections::HashSet;      // Used for storing categories from the answers file
@@ -30,7 +32,7 @@ const OUTPUT_AVERAGE_DIR: &str = "output_average";             // Stores average
 // Stores a list of output directories for directory creation
 const DIRS: [&str; 5] = [BASE_DIR, OUTPUT_DIR, OUTPUT_MAX_DIFF_DIR, OUTPUT_CENTER_DIFF_DIR, OUTPUT_AVERAGE_DIR];
 
-fn create_dir(dir: &str, del: bool, categories: &HashSet<String>)
+fn create_dir(dir: &str, del: bool, val: bool, categories: &HashSet<String>)
 {
     if del
     {
@@ -45,6 +47,23 @@ fn create_dir(dir: &str, del: bool, categories: &HashSet<String>)
         Ok(()) => println!("Made directory {}", dir),
         Err(_) => println!("Directory {} already exists", dir),
     }
+
+    // Create validation and test folders
+    if val
+    {
+        let sub = dir.to_owned() + &"validation/";
+        match fs::create_dir(&sub)
+        {
+            Ok(()) => println!("Made subdirectory {}", sub),
+            Err(_) => println!("Subdirectory {} already exists", sub),
+        }
+        let sub = dir.to_owned() + &"training/";
+        match fs::create_dir(&sub)
+        {
+            Ok(()) => println!("Made subdirectory {}", sub),
+            Err(_) => println!("Subdirectory {} already exists", sub),
+        }
+    }
     
     // Create subdirectories for each category
     if !categories.is_empty()
@@ -52,11 +71,29 @@ fn create_dir(dir: &str, del: bool, categories: &HashSet<String>)
         categories.iter().for_each(
             | category |
             {
-                let sub = dir.to_owned() + category + &"/";
-                match fs::create_dir(&sub)
+                if val
                 {
-                    Ok(()) => println!("Made subdirectory {}", sub),
-                    Err(_) => println!("Subdirectory {} already exists", sub),
+                    let sub = dir.to_owned() + &"validation/" + category + &"/";
+                    match fs::create_dir(&sub)
+                    {
+                        Ok(()) => println!("Made subdirectory {}", sub),
+                        Err(_) => println!("Subdirectory {} already exists", sub),
+                    }
+                    let sub = dir.to_owned() + &"training/" + category + &"/";
+                    match fs::create_dir(&sub)
+                    {
+                        Ok(()) => println!("Made subdirectory {}", sub),
+                        Err(_) => println!("Subdirectory {} already exists", sub),
+                    }
+                }
+                else
+                {
+                    let sub = dir.to_owned() + category + &"/";
+                    match fs::create_dir(&sub)
+                    {
+                        Ok(()) => println!("Made subdirectory {}", sub),
+                        Err(_) => println!("Subdirectory {} already exists", sub),
+                    }
                 }
             }
         )
@@ -76,9 +113,10 @@ fn main()
 {
     // Read arguments from user
     let mut image_dir = IMAGE_DIR.to_owned() + &"/";
+    let mut answers = "".to_owned();
+    let mut validation = 0;
     let mut delete = false;
     let mut verbose = false;
-    let mut answers = "".to_owned();
     {
         let mut ap = ArgumentParser::new();
         ap.set_description("Pre-process images to demonstrate affinity analysis's usefulness in machine learning");
@@ -88,6 +126,9 @@ fn main()
         ap.refer(&mut answers)
             .add_option(&["-a", "--answers"], Store,
             "Set the path of a CSV file with answers to classify the provided images");
+        ap.refer(&mut validation)
+            .add_option(&["-t", "--test"], Store,
+            "Set the number of images to be split off into a validation set for training (ignores negative and 0 values and requires answers file to be set)");
         ap.refer(&mut delete)
             .add_option(&["-d", "--delete"], StoreTrue,
             "Delete the existing directories of processed images");
@@ -114,30 +155,64 @@ fn main()
             categories.insert(header [i].to_owned());
         }
 
+        // Handles creating the training and validation sets
+        let mut validation_index: HashSet<usize> = HashSet::new();
+        let mut rng = rand::thread_rng();
+        for _ in 0 .. validation
+        {
+            // Loop until we find a new value
+            let mut sample = rng.gen_range(0, num_images);
+            while validation_index.contains(&sample)
+            {
+                sample = rng.gen_range(0, num_images);
+            }
+            validation_index.insert(sample);
+        }
+
         // Insert the example answers into a HashMap for sorting later
-        reader.records().for_each(
-            | record |
+        reader.records().enumerate().for_each(
+            | (index, record) |
             {
                 let record = record.unwrap();
                 assert_eq!(record.len(), 2);
                 if !categories.contains(&record [1]) { panic!("Category {} not defined in provided answers file", &record [1]); }
-                examples.insert(record [0].to_owned(), record [1].to_owned());
+
+                // Handle appending validation/training set path to answer path
+                let mut set = "".to_owned();
+                if validation > 0
+                {
+                    if validation_index.contains(&index)
+                    {
+                        set = "validation/".to_owned();
+                    }
+                    else
+                    {
+                        set = "training/".to_owned();
+                    }
+                }
+
+                examples.insert(record [0].to_owned(), set + &record [1]);
             }
         );
         assert_eq!(num_images, examples.len());
+    }
+    else if validation > 0
+    {
+        panic!("Validation size set without any provided categorization");
     }
 
     // Create directories to store images
     for dir in &DIRS
     {
+        let val = validation > 0;
         let d = "".to_owned() + dir + "/";
-        create_dir(&d, delete, &categories);
+        create_dir(&d, delete, val, &categories);
         let d = "saturated_".to_owned() + dir + "/";
-        create_dir(&d, delete, &categories);
+        create_dir(&d, delete, val, &categories);
         let d = "".to_owned() + dir + "_div16/";
-        create_dir(&d, delete, &categories);
+        create_dir(&d, delete, val, &categories);
         let d = "saturated_".to_owned() + dir + "_div16/";
-        create_dir(&d, delete, &categories);
+        create_dir(&d, delete, val, &categories);
     }
     println!("");
 

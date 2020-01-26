@@ -9,7 +9,5 @@ edition = "2018"
 [dependencies]
 image = "*"
 argparse="*"
-rayon="*"
-faster = { git = "https://github.com/AdamNiederer/faster.git", branch = "master" }
-num_cpus = "*"
 csv = "*"
+rand = "*"
