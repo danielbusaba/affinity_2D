@@ -864,8 +864,8 @@ def create_model_info(architecture):
     # pylint: enable=line-too-long
     bottleneck_tensor_name = 'pool_3/_reshape:0'
     bottleneck_tensor_size = 2048
-    input_width = 299
-    input_height = 299
+    input_width = 1024
+    input_height = 1024
     input_depth = 3
     resized_input_tensor_name = 'Mul:0'
     model_file_name = 'classify_image_graph_def.pb'
