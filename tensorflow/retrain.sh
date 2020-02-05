@@ -4,6 +4,7 @@ rm *.out
 
 for i in "${folders[@]}"
 do
+    rm -rf tf_files/bottlenecks/
     python3 -m scripts.retrain \
             --bottleneck_dir=tf_files/bottlenecks \
             --model_dir=tf_files/models \

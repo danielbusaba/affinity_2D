@@ -49,7 +49,7 @@ fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Rgb<u8>
                         {
                             let seen_pixel = *seen_pixel;
                             // Handle pair if affinity is not with self
-                            if seen_pixel != pixel
+                            if true //seen_pixel != pixel
                             {
                                 let tuple = if seen_pixel < pixel
                                             {
@@ -104,26 +104,42 @@ pub fn analyze_affinity(img: &image::RgbImage, entry: &str, output_dir: &str)
             subimage.change_bounds(xb, yb, wb, hb);
 
             // Find the strongest affinity with the largest pixel difference
-            let (single, joint) = get_frequencies(&subimage);
+            let (_, joint) = get_frequencies(&subimage);
             
             let mut out = [0; 3];
             for i in 0 .. 3
             {
-                let mut max_affinity: f64 = 0.0;
+                // let mut max_affinity: f64 = 0.0;
+                let mut max_cooccurance = 0;
                 for (l, r) in joint [i].keys()
                 {
-                    // Divide the joint frequency by the minimum of the single frequencies to get the largest conditional probability of the pair
-                    let a = *single [i].get(l).unwrap();
-                    let b = *single [i].get(r).unwrap();
-                    let affinity = *joint [i].get(&(*l, *r)).unwrap() as f64 / (std::cmp::min(a, b) as f64);
+                    // // Divide the joint frequency by the minimum of the single frequencies to get the largest conditional probability of the pair
+                    // let a = *single [i].get(l).unwrap();
+                    // let b = *single [i].get(r).unwrap();
+                    // let affinity = *joint [i].get(&(*l, *r)).unwrap() as f64 / (std::cmp::min(a, b) as f64);
 
-                    // Keep widest affinity with the largest pixel difference
-                    if affinity > max_affinity
+                    // // Keep widest affinity with the largest pixel difference
+                    // if affinity > max_affinity
+                    // {
+                    //     max_affinity = affinity;
+                    //     out [i] = l - r;
+                    // }
+                    // else if affinity == max_affinity
+                    // {
+                    //     let diff = l - r;
+                    //     if diff > out [i]
+                    //     {
+                    //         out [i] = l - r;
+                    //     }
+                    // }
+                    
+                    let cooccurance = *joint [i].get(&(*l, *r)).unwrap();
+                    if cooccurance > max_cooccurance
                     {
-                        max_affinity = affinity;
+                        max_cooccurance = cooccurance;
                         out [i] = l - r;
                     }
-                    else if affinity == max_affinity
+                    else if cooccurance == max_cooccurance
                     {
                         let diff = l - r;
                         if diff > out [i]
