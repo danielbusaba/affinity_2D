@@ -49,7 +49,7 @@ fn get_frequencies(subimage: &image::SubImage<&image::ImageBuffer<image::Rgb<u8>
                         {
                             let seen_pixel = *seen_pixel;
                             // Handle pair if affinity is not with self
-                            if true //seen_pixel != pixel
+                            if seen_pixel != pixel
                             {
                                 let tuple = if seen_pixel < pixel
                                             {
